@@ -247,15 +247,30 @@ const App = () => {
         <div className="text-center">
           <h3 className="text-xl font-bold mb-4">Síguenos en redes sociales</h3>
           <div className="flex justify-center space-x-6">
-            <a href="instagram.com" className="flex items-center text-gray-300 hover:text-white">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-300 hover:text-white"
+            >
               <Instagram className="w-6 h-6 mr-2" />
               Instagram
             </a>
-            <a href="facebook.com" className="flex items-center text-gray-300 hover:text-white">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-300 hover:text-white"
+            >
               <Facebook className="w-6 h-6 mr-2" />
               Facebook
             </a>
-            <a href="x.com" className="flex items-center text-gray-300 hover:text-white">
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-300 hover:text-white"
+            >
               <Twitter className="w-6 h-6 mr-2" />
               Twitter
             </a>
@@ -354,12 +369,12 @@ const App = () => {
           <h2 className="text-3xl font-bold mb-4">Listo para mejorar tus muebles</h2>
           <p className="text-xl mb-8">Contáctanos para una cotización sin costo</p>
           <button
-              onClick={() => setCurrentPage('contacto')}
-              className={`bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 ${currentPage === 'contacto' ? 'text-orange-600' : ''
-                }`}
-            >
-              Contactar ahora
-            </button>
+            onClick={() => setCurrentPage('contacto')}
+            className={`bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 ${currentPage === 'contacto' ? 'text-orange-600' : ''
+              }`}
+          >
+            Contactar ahora
+          </button>
         </div>
       </section>
     </div>
