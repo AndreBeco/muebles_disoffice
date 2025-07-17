@@ -1,0 +1,1 @@
+// Componente de navegación extraído de App.js

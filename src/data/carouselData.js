@@ -1,0 +1,1 @@
+// Datos del carrusel extraídos de App.js

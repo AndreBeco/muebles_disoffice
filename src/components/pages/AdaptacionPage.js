@@ -1,0 +1,1 @@
+// Página AdaptacionPage extraída de App.js

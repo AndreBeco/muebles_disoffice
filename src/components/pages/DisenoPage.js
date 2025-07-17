@@ -1,0 +1,1 @@
+// Página DisenoPage extraída de App.js

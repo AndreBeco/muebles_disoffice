@@ -1,0 +1,1 @@
+// Página QuienesSomosPage extraída de App.js
