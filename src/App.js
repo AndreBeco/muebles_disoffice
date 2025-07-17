@@ -280,7 +280,12 @@ const App = () => {
               pero lo que nos hace únicos es que lo mejoramos para que se
               ajuste a tus necesidades.
             </p>
-            <button className="bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700">
+
+            <button
+              onClick={() => setCurrentPage('contacto')}
+              className={`bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 ${currentPage === 'contacto' ? 'text-orange-600' : ''
+                }`}
+            >
               Recibe una cotización sin costo
             </button>
           </div>
@@ -348,9 +353,13 @@ const App = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">Listo para mejorar tus muebles</h2>
           <p className="text-xl mb-8">Contáctanos para una cotización sin costo</p>
-          <button className="bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100">
-            Contactar ahora
-          </button>
+          <button
+              onClick={() => setCurrentPage('contacto')}
+              className={`bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 ${currentPage === 'contacto' ? 'text-orange-600' : ''
+                }`}
+            >
+              Contactar ahora
+            </button>
         </div>
       </section>
     </div>
