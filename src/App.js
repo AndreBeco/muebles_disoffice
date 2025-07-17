@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 // Datos del carrusel desde JSON
 const carouselData = {
@@ -560,52 +562,48 @@ const App = () => {
     </div>
   );
 
-  const ContactoPage = () => (
+  
+
+const ContactoPage = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs // debe ir algo asi andre por si ak .sendForm('service_miempresa', 'template_contacto', form.current, 'x73QpWkU9vAbcdEFG')
+      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+      .then(
+        () => {
+          alert('Mensaje enviado correctamente ✅');
+          form.current.reset();
+        },
+        (error) => {
+          alert('Error al enviar el mensaje ❌');
+          console.log(error.text);
+        }
+      );
+  };
+
+  return (
     <div className="py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold mb-8 text-center">Contacto</h1>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div>
-            <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
-
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-orange-600 mr-3" />
-                <span>+57 (2) 123-4567</span>
-              </div>
-
-              <div className="flex items-center">
-                <Mail className="w-5 h-5 text-orange-600 mr-3" />
-                <span>info@mueblesdisoffice.com</span>
-              </div>
-
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5 text-orange-600 mr-3" />
-                <span>Cali, Valle del Cauca, Colombia</span>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <h3 className="text-xl font-bold mb-4">Horarios de Atención</h3>
-              <p className="text-gray-700">
-                Lunes a Viernes: 8:00 AM - 6:00 PM<br />
-                Sábados: 9:00 AM - 4:00 PM<br />
-                Domingos: Cerrado
-              </p>
-            </div>
-          </div>
+          {/* ... Información de contacto (igual que antes) */}
 
           <div>
             <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
 
-            <form className="space-y-4">
+            <form ref={form} onSubmit={sendEmail} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Nombre
                 </label>
                 <input
                   type="text"
+                  name="user_name"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
@@ -616,6 +614,8 @@ const App = () => {
                 </label>
                 <input
                   type="email"
+                  name="user_email"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
@@ -626,6 +626,7 @@ const App = () => {
                 </label>
                 <input
                   type="tel"
+                  name="user_phone"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 />
               </div>
@@ -635,7 +636,9 @@ const App = () => {
                   Mensaje
                 </label>
                 <textarea
+                  name="message"
                   rows={4}
+                  required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 ></textarea>
               </div>
@@ -652,6 +655,10 @@ const App = () => {
       </div>
     </div>
   );
+};
+
+
+
 
   const renderCurrentPage = () => {
     switch (currentPage) {
