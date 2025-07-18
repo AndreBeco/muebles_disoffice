@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
-import React, { useRef } from 'react';
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 // Datos del carrusel desde JSON
 const carouselData = {
@@ -153,7 +152,7 @@ const App = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=60&h=60&fit=crop" alt="Logo" className="w-12 h-12 rounded" />
+            <img src="/public/logo.png" alt="Logo" className="w-12 h-12 rounded" />
             <div className="ml-3">
               <h1 className="text-xl font-bold text-gray-800">Muebles DisOffice</h1>
               <p className="text-sm text-orange-600">Diseño e Innovación de Espacios</p>
@@ -249,34 +248,35 @@ const App = () => {
         <div className="text-center">
           <h3 className="text-xl font-bold mb-4">Síguenos en redes sociales</h3>
           <div className="flex justify-center space-x-6">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-gray-300 hover:text-white"
-            >
-              <Instagram className="w-6 h-6 mr-2" />
-              Instagram
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-gray-300 hover:text-white"
-            >
-              <Facebook className="w-6 h-6 mr-2" />
-              Facebook
-            </a>
-            <a
-              href="https://x.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-gray-300 hover:text-white"
-            >
-              <Twitter className="w-6 h-6 mr-2" />
-              Twitter
-            </a>
-          </div>
+  <a
+    href="https://instagram.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center text-gray-300 hover:text-white"
+  >
+    <Instagram className="w-6 h-6 mr-2" />
+    Instagram
+  </a>
+  <a
+    href="https://facebook.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center text-gray-300 hover:text-white"
+  >
+    <Facebook className="w-6 h-6 mr-2" />
+    Facebook
+  </a>
+  <a
+    href="https://x.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center text-gray-300 hover:text-white"
+  >
+    <Twitter className="w-6 h-6 mr-2" />
+    Twitter
+  </a>
+</div>
+
         </div>
       </div>
     </footer>
@@ -371,12 +371,12 @@ const App = () => {
           <h2 className="text-3xl font-bold mb-4">Listo para mejorar tus muebles</h2>
           <p className="text-xl mb-8">Contáctanos para una cotización sin costo</p>
           <button
-            onClick={() => setCurrentPage('contacto')}
-            className={`bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 ${currentPage === 'contacto' ? 'text-orange-600' : ''
-              }`}
-          >
-            Contactar ahora
-          </button>
+              onClick={() => setCurrentPage('contacto')}
+              className={`bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 ${currentPage === 'contacto' ? 'text-orange-600' : ''
+                }`}
+            >
+              Contactar ahora
+            </button>
         </div>
       </section>
     </div>
@@ -562,26 +562,36 @@ const App = () => {
     </div>
   );
 
-  
+
+
 
 const ContactoPage = () => {
-  const form = useRef();
+  const form = useRef(null);
+  const [sending, setSending] = useState(false);
 
-  const sendEmail = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    setSending(true);
 
-    emailjs // debe ir algo asi andre por si ak .sendForm('service_miempresa', 'template_contacto', form.current, 'x73QpWkU9vAbcdEFG')
-      .sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs
+      .sendForm(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        form.current,
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+      )
       .then(
-        () => {
-          alert('Mensaje enviado correctamente ✅');
+        (result) => {
+          console.log("Email enviado:", result.text);
+          alert("Mensaje enviado correctamente");
           form.current.reset();
         },
         (error) => {
-          alert('Error al enviar el mensaje ❌');
-          console.log(error.text);
+          console.error("Error al enviar:", error.text);
+          alert("Hubo un error al enviar el mensaje.");
         }
-      );
+      )
+      .finally(() => setSending(false));
   };
 
   return (
@@ -590,64 +600,84 @@ const ContactoPage = () => {
         <h1 className="text-4xl font-bold mb-8 text-center">Contacto</h1>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* ... Información de contacto (igual que antes) */}
+          <div>
+            <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
+            <div className="space-y-4">
+              <div className="flex items-center">
+                <Phone className="w-5 h-5 text-orange-600 mr-3" />
+                <span>+57 (2) 123-4567</span>
+              </div>
+              <div className="flex items-center">
+                <Mail className="w-5 h-5 text-orange-600 mr-3" />
+                <span>info@mueblesdisoffice.com</span>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="w-5 h-5 text-orange-600 mr-3" />
+                <span>Cali, Valle del Cauca, Colombia</span>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-xl font-bold mb-4">Horarios de Atención</h3>
+              <p className="text-gray-700">
+                Lunes a Viernes: 8:00 AM - 6:00 PM<br />
+                Sábados: 9:00 AM - 4:00 PM<br />
+                Domingos: Cerrado
+              </p>
+            </div>
+          </div>
 
           <div>
             <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
 
-            <form ref={form} onSubmit={sendEmail} className="space-y-4">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Nombre
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
                 <input
                   type="text"
-                  name="user_name"
+                  name="nombre"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Email
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                 <input
                   type="email"
-                  name="user_email"
+                  name="email"
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Teléfono
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
                 <input
                   type="tel"
-                  name="user_phone"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  name="telefono"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Mensaje
-                </label>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
                 <textarea
-                  name="message"
+                  name="mensaje"
                   rows={4}
                   required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full bg-orange-600 text-white py-2 px-4 rounded-md hover:bg-orange-700 font-semibold"
+                disabled={sending}
+                className={`w-full bg-orange-600 text-white py-2 px-4 rounded-md font-semibold ${
+                  sending ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-700"
+                }`}
               >
-                Enviar Mensaje
+                {sending ? "Enviando..." : "Enviar Mensaje"}
               </button>
             </form>
           </div>
@@ -656,6 +686,9 @@ const ContactoPage = () => {
     </div>
   );
 };
+
+
+
 
 
 
