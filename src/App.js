@@ -1,69 +1,71 @@
 import React, { useState, useRef } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import emailjs from "@emailjs/browser";
+import carouselData from "./data/carouselData";
+
 
 // Datos del carrusel desde JSON
-const carouselData = {
-  adaptacion: [
-    {
-      id: 1,
-      before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-      after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-      title: "Silla Ergonómica Mejorada",
-      description: "Transformamos esta silla antigua en una silla ergonómica moderna"
-    },
-    {
-      id: 2,
-      before: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
-      after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-      title: "Escritorio Ajustable",
-      description: "Mejoramos la altura y funcionalidad de este escritorio"
-    },
-    {
-      id: 3,
-      before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-      after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-      title: "Mesa de Trabajo",
-      description: "Reparación completa con mejoras ergonómicas"
-    }
-  ],
-  diseno: [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-      title: "Escritorio Ejecutivo",
-      description: "Diseño personalizado para oficina ejecutiva"
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
-      title: "Estantería Modular",
-      description: "Solución de almacenamiento a medida"
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-      title: "Silla Ergonómica",
-      description: "Diseño ergonómico personalizado"
-    }
-  ],
-  reparacion: [
-    {
-      id: 1,
-      before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-      after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-      title: "Reparación de Silla",
-      description: "Cambio completo de tapicería y mecanismos"
-    },
-    {
-      id: 2,
-      before: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
-      after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-      title: "Restauración de Escritorio",
-      description: "Reparación integral de escritorio ejecutivo"
-    }
-  ]
-};
+// const carouselData = {
+//   adaptacion: [
+//     {
+//       id: 1,
+//       before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
+//       title: "Silla Ergonómica Mejorada",
+//       description: "Transformamos esta silla antigua en una silla ergonómica moderna"
+//     },
+//     {
+//       id: 2,
+//       before: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
+//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
+//       title: "Escritorio Ajustable",
+//       description: "Mejoramos la altura y funcionalidad de este escritorio"
+//     },
+//     {
+//       id: 3,
+//       before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
+//       title: "Mesa de Trabajo",
+//       description: "Reparación completa con mejoras ergonómicas"
+//     }
+//   ],
+//   diseno: [
+//     {
+//       id: 1,
+//       image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+//       title: "Escritorio Ejecutivo",
+//       description: "Diseño personalizado para oficina ejecutiva"
+//     },
+//     {
+//       id: 2,
+//       image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
+//       title: "Estantería Modular",
+//       description: "Solución de almacenamiento a medida"
+//     },
+//     {
+//       id: 3,
+//       image: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
+//       title: "Silla Ergonómica",
+//       description: "Diseño ergonómico personalizado"
+//     }
+//   ],
+//   reparacion: [
+//     {
+//       id: 1,
+//       before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
+//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
+//       title: "Reparación de Silla",
+//       description: "Cambio completo de tapicería y mecanismos"
+//     },
+//     {
+//       id: 2,
+//       before: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
+//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
+//       title: "Restauración de Escritorio",
+//       description: "Reparación integral de escritorio ejecutivo"
+//     }
+//   ]
+// };
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('inicio');
@@ -421,6 +423,41 @@ const App = () => {
               <li>• Garantía en todos nuestros trabajos</li>
             </ul>
           </div>
+
+          <div className="bg-gray-50 p-6 rounded-lg mb-8">
+            <h2 className="text-2xl font-bold mb-4">PRESENTACIÓN </h2>
+            <p className="text-gray-700">
+              Muebles DisOffice es una Empresa Colombiana con sede en Cali, enfocada en la Fabricación, comercialización y asesoría en todo tipo de Muebles para Oficina y hogar, como se puede registrar en mi Rut y Cámara y Comercio, Fabricamos muebles de oficina y otros y hacemos restauración o reparación de los mismos.
+              <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                <li>Contamos con personal de alta experiencia para FABRICAR nuestros productos.</li>
+                <li>Nuestras garantías son de 1 a 3 años.</li>
+                <li>Cuenta con un excelente equipo para diseñar y asesorar sin costo alguno.</li>
+                <li>Diseñamos y fabricamos muebles personalizados.</li>
+                <li>Contamos con transporte e instalación en Cali sin ningún costo.</li>
+                <li>Dependiendo de la cantidad de muebles a comprar en cualquier ciudad podemos llegar a un acuerdo para incluir transporte e instalación.</li>
+              </ul>
+            </p>
+          </div>
+
+          <div className="bg-orange-50 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">FABRICACIÓN, VENTA E INSTALACION</h2>
+            <ul className="space-y-2 text-gray-700">
+              Como son: Puestos de trabajo, islas, divisiones, archivos rodantes, archivos horizontales y verticales de 2-3-4 gavetas, estanterías de peso liviano y pesado, suministro de sillas - ergonómicas (presidente, gerente y secretariales) sillas fijas, tándem de diferentes estilos, sillas y mesas para cafetería y escolar, Muebles especiales, recepción y diseños personalizados dándole al cliente diseñar su propia oficina contando con nuestra asesoría.
+            </ul>
+          </div>
+
+          <div className="bg-orange-50 p-6 rounded-lg">
+            <h2 className="text-2xl font-bold mb-4">SERVICIOS ADICIONALES</h2>
+            <ul className="space-y-2 text-gray-700">
+              Muchas Empresas son engañadas al creer que las sillas, sofás, y otros muebles de oficina, No tienen arreglo. Se equivocan, MUEBLES DISOFFICE Restaura esos Muebles; en cada revisión analizamos si se puede arreglar o definitivamente cambiarlo.
+              Prestamos el servicio de mantenimiento y reparación de sillas en partes y tapizados, en la reubicación y adecuación de oficinas con existentes que la empresa tenga en buen estado.
+
+              Les vendemos las partes de las sillas que necesiten y se le instala sin costo alguno.
+
+              Esperamos poder tener una alianza comercial que nos permita conocerlo y ofrecerle lo mejor de nuestros productos.
+            </ul>
+          </div>
+
         </div>
       </div>
     </div>
@@ -564,154 +601,154 @@ const App = () => {
 
 
 
-const ContactoPage = () => {
-  const form = useRef(null);
-  const [sending, setSending] = useState(false);
+  const ContactoPage = () => {
+    const form = useRef(null);
+    const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSending(true);
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setSending(true);
 
-    const formData = new FormData(form.current);
-const debugData = Object.fromEntries(formData.entries());
+      const formData = new FormData(form.current);
+      const debugData = Object.fromEntries(formData.entries());
 
-console.log("📤 Enviando formulario con los siguientes datos:", debugData);
+      console.log("📤 Enviando formulario con los siguientes datos:", debugData);
 
-    emailjs
-      .sendForm(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-        form.current,
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        (result) => {
-          console.log("Email enviado:", result.text, );
-          alert("Mensaje enviado correctamente.");
-          form.current.reset();
-        },
-        (error) => {
-          console.error("Error al enviar:", error.text);
-          alert("Hubo un error al enviar el mensaje.");
-        }
-      )
-      .finally(() => setSending(false));
-  };
+      emailjs
+        .sendForm(
+          process.env.REACT_APP_EMAILJS_SERVICE_ID,
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+          form.current,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          (result) => {
+            console.log("Email enviado:", result.text,);
+            alert("Mensaje enviado correctamente.");
+            form.current.reset();
+          },
+          (error) => {
+            console.error("Error al enviar:", error.text);
+            alert("Hubo un error al enviar el mensaje.");
+          }
+        )
+        .finally(() => setSending(false));
+    };
 
-  // emailjs
-  // .sendForm(
-  //   "service_t54zu7g",
-  //   "template_zbtfd4u",
-  //   form.current,
-  //   "KoPBk4x9Jh92ZElz3"
-  // )
-  // .then(
-  //   (result) => {
-  //     console.log("✅ Email enviado:", result.text);
-  //     alert("Mensaje enviado correctamente");
-  //     form.current.reset();
-  //   },
-  //   (error) => {
-  //     console.error("❌ Error al enviar:", error);
-  //     alert("Error al enviar el mensaje");
-  //   }
-  // );
+    // emailjs
+    // .sendForm(
+    //   "service_t54zu7g",
+    //   "template_zbtfd4u",
+    //   form.current,
+    //   "KoPBk4x9Jh92ZElz3"
+    // )
+    // .then(
+    //   (result) => {
+    //     console.log("✅ Email enviado:", result.text);
+    //     alert("Mensaje enviado correctamente");
+    //     form.current.reset();
+    //   },
+    //   (error) => {
+    //     console.error("❌ Error al enviar:", error);
+    //     alert("Error al enviar el mensaje");
+    //   }
+    // );
 
 
-  return (
-    <div className="py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold mb-8 text-center">Contacto</h1>
+    return (
+      <div className="py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-bold mb-8 text-center">Contacto</h1>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Información de contacto */}
-          <div>
-            <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
-            <div className="space-y-4">
-              <div className="flex items-center">
-                <Phone className="w-5 h-5 text-orange-600 mr-3" />
-                <span>+57 (2) 123-4567</span>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Información de contacto */}
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <Phone className="w-5 h-5 text-orange-600 mr-3" />
+                  <span>+57 (2) 123-4567</span>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="w-5 h-5 text-orange-600 mr-3" />
+                  <span>info@mueblesdisoffice.com</span>
+                </div>
+                <div className="flex items-center">
+                  <MapPin className="w-5 h-5 text-orange-600 mr-3" />
+                  <span>Cali, Valle del Cauca, Colombia</span>
+                </div>
               </div>
-              <div className="flex items-center">
-                <Mail className="w-5 h-5 text-orange-600 mr-3" />
-                <span>info@mueblesdisoffice.com</span>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="w-5 h-5 text-orange-600 mr-3" />
-                <span>Cali, Valle del Cauca, Colombia</span>
+
+              <div className="mt-8">
+                <h3 className="text-xl font-bold mb-4">Horarios de Atención</h3>
+                <p className="text-gray-700">
+                  Lunes a Viernes: 8:00 AM - 6:00 PM<br />
+                  Sábados: 9:00 AM - 4:00 PM<br />
+                  Domingos: Cerrado
+                </p>
               </div>
             </div>
 
-            <div className="mt-8">
-              <h3 className="text-xl font-bold mb-4">Horarios de Atención</h3>
-              <p className="text-gray-700">
-                Lunes a Viernes: 8:00 AM - 6:00 PM<br />
-                Sábados: 9:00 AM - 4:00 PM<br />
-                Domingos: Cerrado
-              </p>
+            {/* Formulario de contacto */}
+            <div>
+              <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
+
+              <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                  <input
+                    type="text"
+                    name="nombre"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                  <input
+                    type="tel"
+                    name="telefono"
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+                  <textarea
+                    name="mensaje"
+                    rows={4}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={sending}
+                  className={`w-full bg-orange-600 text-white py-2 px-4 rounded-md font-semibold ${sending ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-700"
+                    }`}
+                >
+                  {sending ? "Enviando..." : "Enviar Mensaje"}
+                </button>
+              </form>
             </div>
-          </div>
-
-          {/* Formulario de contacto */}
-          <div>
-            <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
-
-            <form ref={form} onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                <input
-                  type="text"
-                  name="nombre"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                <input
-                  type="tel"
-                  name="telefono"
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                <textarea
-                  name="mensaje"
-                  rows={4}
-                  required
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={sending}
-                className={`w-full bg-orange-600 text-white py-2 px-4 rounded-md font-semibold ${sending ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-700"
-                  }`}
-              >
-                {sending ? "Enviando..." : "Enviar Mensaje"}
-              </button>
-            </form>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
 
 
