@@ -248,34 +248,34 @@ const App = () => {
         <div className="text-center">
           <h3 className="text-xl font-bold mb-4">Síguenos en redes sociales</h3>
           <div className="flex justify-center space-x-6">
-  <a
-    href="https://instagram.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center text-gray-300 hover:text-white"
-  >
-    <Instagram className="w-6 h-6 mr-2" />
-    Instagram
-  </a>
-  <a
-    href="https://facebook.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center text-gray-300 hover:text-white"
-  >
-    <Facebook className="w-6 h-6 mr-2" />
-    Facebook
-  </a>
-  <a
-    href="https://x.com"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="flex items-center text-gray-300 hover:text-white"
-  >
-    <Twitter className="w-6 h-6 mr-2" />
-    Twitter
-  </a>
-</div>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-300 hover:text-white"
+            >
+              <Instagram className="w-6 h-6 mr-2" />
+              Instagram
+            </a>
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-300 hover:text-white"
+            >
+              <Facebook className="w-6 h-6 mr-2" />
+              Facebook
+            </a>
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center text-gray-300 hover:text-white"
+            >
+              <Twitter className="w-6 h-6 mr-2" />
+              Twitter
+            </a>
+          </div>
 
         </div>
       </div>
@@ -371,12 +371,12 @@ const App = () => {
           <h2 className="text-3xl font-bold mb-4">Listo para mejorar tus muebles</h2>
           <p className="text-xl mb-8">Contáctanos para una cotización sin costo</p>
           <button
-              onClick={() => setCurrentPage('contacto')}
-              className={`bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 ${currentPage === 'contacto' ? 'text-orange-600' : ''
-                }`}
-            >
-              Contactar ahora
-            </button>
+            onClick={() => setCurrentPage('contacto')}
+            className={`bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 ${currentPage === 'contacto' ? 'text-orange-600' : ''
+              }`}
+          >
+            Contactar ahora
+          </button>
         </div>
       </section>
     </div>
@@ -564,7 +564,6 @@ const App = () => {
 
 
 
-
 const ContactoPage = () => {
   const form = useRef(null);
   const [sending, setSending] = useState(false);
@@ -572,6 +571,11 @@ const ContactoPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSending(true);
+
+    const formData = new FormData(form.current);
+const debugData = Object.fromEntries(formData.entries());
+
+console.log("📤 Enviando formulario con los siguientes datos:", debugData);
 
     emailjs
       .sendForm(
@@ -582,8 +586,8 @@ const ContactoPage = () => {
       )
       .then(
         (result) => {
-          console.log("Email enviado:", result.text);
-          alert("Mensaje enviado correctamente");
+          console.log("Email enviado:", result.text, );
+          alert("Mensaje enviado correctamente.");
           form.current.reset();
         },
         (error) => {
@@ -594,12 +598,33 @@ const ContactoPage = () => {
       .finally(() => setSending(false));
   };
 
+  // emailjs
+  // .sendForm(
+  //   "service_t54zu7g",
+  //   "template_zbtfd4u",
+  //   form.current,
+  //   "KoPBk4x9Jh92ZElz3"
+  // )
+  // .then(
+  //   (result) => {
+  //     console.log("✅ Email enviado:", result.text);
+  //     alert("Mensaje enviado correctamente");
+  //     form.current.reset();
+  //   },
+  //   (error) => {
+  //     console.error("❌ Error al enviar:", error);
+  //     alert("Error al enviar el mensaje");
+  //   }
+  // );
+
+
   return (
     <div className="py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-bold mb-8 text-center">Contacto</h1>
 
         <div className="grid md:grid-cols-2 gap-8">
+          {/* Información de contacto */}
           <div>
             <h2 className="text-2xl font-bold mb-6">Información de Contacto</h2>
             <div className="space-y-4">
@@ -627,6 +652,7 @@ const ContactoPage = () => {
             </div>
           </div>
 
+          {/* Formulario de contacto */}
           <div>
             <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
 
@@ -656,6 +682,7 @@ const ContactoPage = () => {
                 <input
                   type="tel"
                   name="telefono"
+                  required
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
                 />
               </div>
@@ -673,9 +700,8 @@ const ContactoPage = () => {
               <button
                 type="submit"
                 disabled={sending}
-                className={`w-full bg-orange-600 text-white py-2 px-4 rounded-md font-semibold ${
-                  sending ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-700"
-                }`}
+                className={`w-full bg-orange-600 text-white py-2 px-4 rounded-md font-semibold ${sending ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-700"
+                  }`}
               >
                 {sending ? "Enviando..." : "Enviar Mensaje"}
               </button>
@@ -686,6 +712,8 @@ const ContactoPage = () => {
     </div>
   );
 };
+
+
 
 
 
