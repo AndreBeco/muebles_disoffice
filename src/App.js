@@ -1,15 +1,17 @@
 import React, { useState, useRef } from 'react';
-import { ChevronDown, ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
 import Header from './components/Header.js';
 
-
 const App = () => {
-  <Header />
   const [currentPage, setCurrentPage] = useState('inicio');
-  const [productDropdown, setProductDropdown] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState({ adaptacion: 0, diseno: 0, reparacion: 0 });
+
+  // Función para manejar la navegación
+  const handleNavigation = (pageId) => {
+    setCurrentPage(pageId);
+  };
 
   const Carousel = ({ items, type }) => {
     const currentIndex = carouselIndex[type];
@@ -79,109 +81,13 @@ const App = () => {
             <button
               key={index}
               onClick={() => setCarouselIndex(prev => ({ ...prev, [type]: index }))}
-              className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-orange-500' : 'bg-gray-300'
-                }`}
+              className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-orange-500' : 'bg-gray-300'}`}
             />
           ))}
         </div>
       </div>
     );
   };
-
-  const Navigation = () => (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <div className="flex items-center">
-            <img src="/public/logo.png" alt="Logo" className="w-12 h-12 rounded" />
-            <div className="ml-3">
-              <h1 className="text-xl font-bold text-gray-800">Muebles DisOffice</h1>
-              <p className="text-sm text-orange-600">Diseño e Innovación de Espacios</p>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-8">
-            <button
-              onClick={() => setCurrentPage('inicio')}
-              className={`text-gray-700 hover:text-orange-600 font-medium ${currentPage === 'inicio' ? 'text-orange-600' : ''
-                }`}
-            >
-              Inicio
-            </button>
-
-            <button
-              onClick={() => setCurrentPage('quienes-somos')}
-              className={`text-gray-700 hover:text-orange-600 font-medium ${currentPage === 'quienes-somos' ? 'text-orange-600' : ''
-                }`}
-            >
-              Quiénes Somos
-            </button>
-
-            <div className="relative">
-              <button
-                onClick={() => setProductDropdown(!productDropdown)}
-                className="flex items-center text-gray-700 hover:text-orange-600 font-medium"
-              >
-                Productos
-                <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
-
-              {productDropdown && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-md shadow-lg border z-50">
-                  <button
-                    onClick={() => {
-                      setCurrentPage('adaptacion');
-                      setProductDropdown(false);
-                    }}
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
-                  >
-                    Adaptación y Mejora Ergonómica
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCurrentPage('diseno');
-                      setProductDropdown(false);
-                    }}
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
-                  >
-                    Diseño y Venta de Muebles
-                  </button>
-                  <button
-                    onClick={() => {
-                      setCurrentPage('reparacion');
-                      setProductDropdown(false);
-                    }}
-                    className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
-                  >
-                    Reparación y Mantenimiento
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <button
-              onClick={() => setCurrentPage('contacto')}
-              className={`text-gray-700 hover:text-orange-600 font-medium ${currentPage === 'contacto' ? 'text-orange-600' : ''
-                }`}
-            >
-              Contacto
-            </button>
-
-            <a
-              href="https://wa.me/573177110447" // ← Reemplaza con tu número (57300xxxxxxx)
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 flex items-center">
-                <Phone className="w-4 h-4 mr-2" />
-                WhatsApp
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  );
 
   const Footer = () => (
     <footer className="bg-gray-800 text-white py-8">
@@ -217,7 +123,6 @@ const App = () => {
               Twitter
             </a>
           </div>
-
         </div>
       </div>
     </footer>
@@ -240,9 +145,8 @@ const App = () => {
             </p>
 
             <button
-              onClick={() => setCurrentPage('contacto')}
-              className={`bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 ${currentPage === 'contacto' ? 'text-orange-600' : ''
-                }`}
+              onClick={() => handleNavigation('contacto')}
+              className="bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700"
             >
               Recibe una cotización sin costo
             </button>
@@ -312,9 +216,8 @@ const App = () => {
           <h2 className="text-3xl font-bold mb-4">Listo para mejorar tus muebles</h2>
           <p className="text-xl mb-8">Contáctanos para una cotización sin costo</p>
           <button
-            onClick={() => setCurrentPage('contacto')}
-            className={`bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100 ${currentPage === 'contacto' ? 'text-orange-600' : ''
-              }`}
+            onClick={() => handleNavigation('contacto')}
+            className="bg-white text-orange-600 px-8 py-3 rounded-md text-lg font-semibold hover:bg-gray-100"
           >
             Contactar ahora
           </button>
@@ -367,36 +270,37 @@ const App = () => {
             <h2 className="text-2xl font-bold mb-4">PRESENTACIÓN </h2>
             <p className="text-gray-700">
               Muebles DisOffice es una Empresa Colombiana con sede en Cali, enfocada en la Fabricación, comercialización y asesoría en todo tipo de Muebles para Oficina y hogar, como se puede registrar en mi Rut y Cámara y Comercio, Fabricamos muebles de oficina y otros y hacemos restauración o reparación de los mismos.
-              <ul class="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Contamos con personal de alta experiencia para FABRICAR nuestros productos.</li>
-                <li>Nuestras garantías son de 1 a 3 años.</li>
-                <li>Cuenta con un excelente equipo para diseñar y asesorar sin costo alguno.</li>
-                <li>Diseñamos y fabricamos muebles personalizados.</li>
-                <li>Contamos con transporte e instalación en Cali sin ningún costo.</li>
-                <li>Dependiendo de la cantidad de muebles a comprar en cualquier ciudad podemos llegar a un acuerdo para incluir transporte e instalación.</li>
-              </ul>
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-gray-700 mt-4">
+              <li>Contamos con personal de alta experiencia para FABRICAR nuestros productos.</li>
+              <li>Nuestras garantías son de 1 a 3 años.</li>
+              <li>Cuenta con un excelente equipo para diseñar y asesorar sin costo alguno.</li>
+              <li>Diseñamos y fabricamos muebles personalizados.</li>
+              <li>Contamos con transporte e instalación en Cali sin ningún costo.</li>
+              <li>Dependiendo de la cantidad de muebles a comprar en cualquier ciudad podemos llegar a un acuerdo para incluir transporte e instalación.</li>
+            </ul>
+          </div>
+
+          <div className="bg-orange-50 p-6 rounded-lg mb-8">
+            <h2 className="text-2xl font-bold mb-4">FABRICACIÓN, VENTA E INSTALACION</h2>
+            <p className="text-gray-700">
+              Como son: Puestos de trabajo, islas, divisiones, archivos rodantes, archivos horizontales y verticales de 2-3-4 gavetas, estanterías de peso liviano y pesado, suministro de sillas - ergonómicas (presidente, gerente y secretariales) sillas fijas, tándem de diferentes estilos, sillas y mesas para cafetería y escolar, Muebles especiales, recepción y diseños personalizados dándole al cliente diseñar su propia oficina contando con nuestra asesoría.
             </p>
           </div>
 
           <div className="bg-orange-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">FABRICACIÓN, VENTA E INSTALACION</h2>
-            <ul className="space-y-2 text-gray-700">
-              Como son: Puestos de trabajo, islas, divisiones, archivos rodantes, archivos horizontales y verticales de 2-3-4 gavetas, estanterías de peso liviano y pesado, suministro de sillas - ergonómicas (presidente, gerente y secretariales) sillas fijas, tándem de diferentes estilos, sillas y mesas para cafetería y escolar, Muebles especiales, recepción y diseños personalizados dándole al cliente diseñar su propia oficina contando con nuestra asesoría.
-            </ul>
-          </div>
-
-          <div className="bg-orange-50 p-6 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">SERVICIOS ADICIONALES</h2>
-            <ul className="space-y-2 text-gray-700">
+            <p className="text-gray-700">
               Muchas Empresas son engañadas al creer que las sillas, sofás, y otros muebles de oficina, No tienen arreglo. Se equivocan, MUEBLES DISOFFICE Restaura esos Muebles; en cada revisión analizamos si se puede arreglar o definitivamente cambiarlo.
               Prestamos el servicio de mantenimiento y reparación de sillas en partes y tapizados, en la reubicación y adecuación de oficinas con existentes que la empresa tenga en buen estado.
-
+            </p>
+            <p className="text-gray-700 mt-4">
               Les vendemos las partes de las sillas que necesiten y se le instala sin costo alguno.
-
+            </p>
+            <p className="text-gray-700 mt-4">
               Esperamos poder tener una alianza comercial que nos permita conocerlo y ofrecerle lo mejor de nuestros productos.
-            </ul>
+            </p>
           </div>
-
         </div>
       </div>
     </div>
@@ -487,7 +391,10 @@ const App = () => {
         </div>
 
         <div className="text-center">
-          <button className="bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700">
+          <button 
+            onClick={() => handleNavigation('contacto')}
+            className="bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700"
+          >
             Solicitar Cotización
           </button>
         </div>
@@ -538,8 +445,6 @@ const App = () => {
     </div>
   );
 
-
-
   const ContactoPage = () => {
     const form = useRef(null);
     const [sending, setSending] = useState(false);
@@ -573,26 +478,6 @@ const App = () => {
         )
         .finally(() => setSending(false));
     };
-
-    // emailjs
-    // .sendForm(
-    //   "service_t54zu7g",
-    //   "template_zbtfd4u",
-    //   form.current,
-    //   "KoPBk4x9Jh92ZElz3"
-    // )
-    // .then(
-    //   (result) => {
-    //     console.log("✅ Email enviado:", result.text);
-    //     alert("Mensaje enviado correctamente");
-    //     form.current.reset();
-    //   },
-    //   (error) => {
-    //     console.error("❌ Error al enviar:", error);
-    //     alert("Error al enviar el mensaje");
-    //   }
-    // );
-
 
     return (
       <div className="py-16">
@@ -669,15 +554,14 @@ const App = () => {
                     name="mensaje"
                     rows={4}
                     required
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
                   disabled={sending}
-                  className={`w-full bg-orange-600 text-white py-2 px-4 rounded-md font-semibold ${sending ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-700"
-                    }`}
+                  className={`w-full bg-orange-600 text-white py-2 px-4 rounded-md font-semibold ${sending ? "opacity-50 cursor-not-allowed" : "hover:bg-orange-700"}`}
                 >
                   {sending ? "Enviando..." : "Enviar Mensaje"}
                 </button>
@@ -688,14 +572,6 @@ const App = () => {
       </div>
     );
   };
-
-
-
-
-
-
-
-
 
   const renderCurrentPage = () => {
     switch (currentPage) {
@@ -717,8 +593,11 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navigation />
+    <div className="App">
+      <Header 
+        currentPage={currentPage} 
+        onNavigate={handleNavigation} 
+      />
       <main>
         {renderCurrentPage()}
       </main>
