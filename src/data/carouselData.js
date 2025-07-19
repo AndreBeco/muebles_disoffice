@@ -57,7 +57,7 @@ const carouselData = {
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1622664165271-8f2cf1c59d13?w=400&h=300&fit=crop",
+      image:"https://share.google/vIudvL5W0UJhiGL7F",
       title: "Mesa Redonda",
       description: "Diseño colaborativo para salas de reunión"
     }
