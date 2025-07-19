@@ -2,7 +2,7 @@ const carouselData = {
   adaptacion: [
     {
       id: 1,
-      before: "https://images.unsplash.com/photo-1558002038-5f3cf5e2d2ac?w=400&h=300&fit=crop",
+      before: "/public/logo.png",
       after: "https://images.unsplash.com/photo-1606312619344-54da0c2496b3?w=400&h=300&fit=crop",
       title: "Silla Ergonómica Mejorada",
       description: "Transformamos esta silla antigua en una silla ergonómica moderna"
