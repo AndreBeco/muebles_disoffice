@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 
-const Header = () => {
+const Header = ({ currentPage, onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const menuItems = [
-    { name: 'Inicio', href: '#home' },
-    { name: 'Productos', href: '#productos' },
-    { name: 'Servicios', href: '#servicios' },
-    { name: 'Galería', href: '#galeria' },
-    { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Contacto', href: '#contacto' }
+    { id: 'inicio', name: 'Inicio' },
+    { id: 'servicios', name: 'Productos' }, // si tienes una sección específica
+    { id: 'adaptacion', name: 'Adaptación y Mejora' },
+    { id: 'diseno', name: 'Diseño y Venta' },
+    { id: 'reparacion', name: 'Reparación' },
+    { id: 'galeria', name: 'Galería' },
+    { id: 'quienes-somos', name: 'Nosotros' },
+    { id: 'contacto', name: 'Contacto' },
   ];
+
+  const handleClick = (id) => {
+    onNavigate(id);
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className="w-full bg-white shadow-lg relative z-50">
-      {/* Top Bar - Solo visible en desktop */}
+      {/* Top Bar */}
       <div className="hidden lg:block bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 py-2">
           <div className="flex justify-between items-center text-sm text-gray-600">
@@ -44,7 +47,6 @@ const Header = () => {
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
-          
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <div className="text-2xl lg:text-3xl font-bold text-blue-900">
@@ -54,91 +56,73 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 relative group"
+              <button
+                key={item.id}
+                onClick={() => handleClick(item.id)}
+                className={`text-sm font-medium transition-colors duration-200 relative group px-3 py-2 rounded 
+                  ${currentPage === item.id
+                    ? 'text-orange-600 border-b-2 border-orange-600'
+                    : 'text-gray-700 hover:text-orange-600'
+                  }`}
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </button>
             ))}
           </nav>
 
           {/* CTA Button Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 transform hover:scale-105">
-              Cotizar Ahora
-            </button>
+            <a
+              href="https://wa.me/573177110447"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 flex items-center text-sm"
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              WhatsApp
+            </a>
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
-              onClick={toggleMenu}
-              className="text-gray-700 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 p-2"
-              aria-expanded="false"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-gray-700 hover:text-blue-600 focus:outline-none p-2"
             >
-              {isMenuOpen ? (
-                <X className="block h-6 w-6" />
-              ) : (
-                <Menu className="block h-6 w-6" />
-              )}
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <div
-        className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        } overflow-hidden bg-white border-t border-gray-200`}
-      >
-        <div className="px-4 py-4 space-y-4">
-          {/* Contact Info Mobile */}
-          <div className="pb-4 border-b border-gray-100 space-y-2">
-            <div className="flex items-center space-x-3 text-sm text-gray-600">
-              <Phone className="w-4 h-4" />
-              <span>+57 (2) 123-4567</span>
-            </div>
-            <div className="flex items-center space-x-3 text-sm text-gray-600">
-              <Mail className="w-4 h-4" />
-              <span>info@mueblesDisOffice.com</span>
-            </div>
-            <div className="flex items-center space-x-3 text-sm text-gray-600">
-              <MapPin className="w-4 h-4" />
-              <span>Cali, Valle del Cauca</span>
-            </div>
-          </div>
-
-          {/* Menu Items Mobile */}
-          <nav className="space-y-3">
-            {menuItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg font-medium transition-colors duration-200"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
-          </nav>
-
-          {/* CTA Button Mobile */}
-          <div className="pt-4 border-t border-gray-100">
-            <button 
-              className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200"
-              onClick={() => setIsMenuOpen(false)}
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white border-t px-4 py-4 space-y-2">
+          {menuItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleClick(item.id)}
+              className={`block w-full text-left px-4 py-2 rounded text-sm font-medium 
+                ${currentPage === item.id
+                  ? 'bg-orange-100 text-orange-700'
+                  : 'text-gray-700 hover:bg-gray-100'
+                }`}
             >
-              Cotizar Ahora
+              {item.name}
             </button>
-          </div>
+          ))}
+          <a
+            href="https://wa.me/573177110447"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-green-500 text-white text-center px-4 py-2 rounded hover:bg-green-600 mt-2"
+          >
+            WhatsApp
+          </a>
         </div>
-      </div>
+      )}
     </header>
   );
 };

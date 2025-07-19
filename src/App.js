@@ -5,69 +5,6 @@ import carouselData from "./data/carouselData";
 import Header from './components/Header.js';
 
 
-// Datos del carrusel desde JSON
-// const carouselData = {
-//   adaptacion: [
-//     {
-//       id: 1,
-//       before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-//       title: "Silla Ergonómica Mejorada",
-//       description: "Transformamos esta silla antigua en una silla ergonómica moderna"
-//     },
-//     {
-//       id: 2,
-//       before: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
-//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-//       title: "Escritorio Ajustable",
-//       description: "Mejoramos la altura y funcionalidad de este escritorio"
-//     },
-//     {
-//       id: 3,
-//       before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-//       title: "Mesa de Trabajo",
-//       description: "Reparación completa con mejoras ergonómicas"
-//     }
-//   ],
-//   diseno: [
-//     {
-//       id: 1,
-//       image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-//       title: "Escritorio Ejecutivo",
-//       description: "Diseño personalizado para oficina ejecutiva"
-//     },
-//     {
-//       id: 2,
-//       image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
-//       title: "Estantería Modular",
-//       description: "Solución de almacenamiento a medida"
-//     },
-//     {
-//       id: 3,
-//       image: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-//       title: "Silla Ergonómica",
-//       description: "Diseño ergonómico personalizado"
-//     }
-//   ],
-//   reparacion: [
-//     {
-//       id: 1,
-//       before: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=400&h=300&fit=crop",
-//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-//       title: "Reparación de Silla",
-//       description: "Cambio completo de tapicería y mecanismos"
-//     },
-//     {
-//       id: 2,
-//       before: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=300&fit=crop",
-//       after: "https://images.unsplash.com/photo-1568300091234-8eec10f65874?w=400&h=300&fit=crop",
-//       title: "Restauración de Escritorio",
-//       description: "Reparación integral de escritorio ejecutivo"
-//     }
-//   ]
-// };
-
 const App = () => {
   <Header />
   const [currentPage, setCurrentPage] = useState('inicio');
