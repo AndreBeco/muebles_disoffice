@@ -2,7 +2,7 @@ const carouselData = {
   adaptacion: [
     {
       id: 1,
-      before: "https://images.unsplash.com/photo-1558002038-5f3cf5e2d2ac?w=400&h=300&fit=crop",
+      before: "/public/logo.png",
       after: "https://images.unsplash.com/photo-1606312619344-54da0c2496b3?w=400&h=300&fit=crop",
       title: "Silla Ergonómica Mejorada",
       description: "Transformamos esta silla antigua en una silla ergonómica moderna"
@@ -57,7 +57,7 @@ const carouselData = {
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1622664165271-8f2cf1c59d13?w=400&h=300&fit=crop",
+      image:"https://share.google/vIudvL5W0UJhiGL7F",
       title: "Mesa Redonda",
       description: "Diseño colaborativo para salas de reunión"
     }
