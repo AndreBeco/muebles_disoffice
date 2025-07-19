@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { ChevronDown, ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
+import Header from './components/Header.js';
 
 
 // Datos del carrusel desde JSON
@@ -68,6 +69,7 @@ import carouselData from "./data/carouselData";
 // };
 
 const App = () => {
+  <Header />
   const [currentPage, setCurrentPage] = useState('inicio');
   const [productDropdown, setProductDropdown] = useState(false);
   const [carouselIndex, setCarouselIndex] = useState({ adaptacion: 0, diseno: 0, reparacion: 0 });
