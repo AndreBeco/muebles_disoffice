@@ -10,7 +10,8 @@ import {
   Linkedin,
   Clock,
   Heart,
-  music-2
+  music-2,
+  audio-lines,
 } from 'lucide-react';
 
 const Footer = () => {
@@ -35,7 +36,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: music-2, href: '#', label: 'Tiktok' },
+    { icon: Heart, href: '#', label: 'Tiktok' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' }
   ];
 
