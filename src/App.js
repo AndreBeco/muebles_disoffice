@@ -119,8 +119,8 @@ const App = () => {
               rel="noopener noreferrer"
               className="flex items-center text-gray-300 hover:text-white"
             >
-              <Twitter className="w-6 h-6 mr-2" />
-              Twitter
+              <music-2 className="w-6 h-6 mr-2" />
+              Tiktok
             </a>
           </div>
         </div>
