@@ -2,7 +2,7 @@ const adaptacion = [
 {
       id: 1,
       before: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=400&h=300&fit=crop",
-      after: "https://i.pinimg.com/736x/4d/34/bb/4d34bb27181cffa4d1cbb091fd6beefd.jpg",
+      after: "https://i.pinimg.com/736x/00/bf/ad/00bfad596f9f5dc3c74e1e4403c13624.jpg",
       title: "Silla Ergonómica Mejorada",
       description: "Transformamos esta silla antigua en una silla ergonómica moderna"
     },
