@@ -114,7 +114,7 @@ const App = () => {
               Facebook
             </a>
             <a
-              href="https://x.com"
+              href="https://www.tiktok.com/es/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-gray-300 hover:text-white"
