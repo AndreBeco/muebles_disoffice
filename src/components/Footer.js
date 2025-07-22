@@ -9,7 +9,8 @@ import {
   Twitter, 
   Linkedin,
   Clock,
-  Heart
+  Heart,
+  music-2
 } from 'lucide-react';
 
 const Footer = () => {
@@ -34,7 +35,7 @@ const Footer = () => {
   const socialLinks = [
     { icon: Facebook, href: '#', label: 'Facebook' },
     { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: music-2, href: 'https://www.tiktok.com/es/', label: 'Tiktok' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' }
   ];
 
@@ -134,7 +135,7 @@ const Footer = () => {
               
               <div className="flex items-center space-x-3 group">
                 <Mail className="w-5 h-5 text-blue-400 group-hover:scale-110 transition-transform duration-300" />
-                <p className="text-gray-400">info@mueblosdisoffice.com</p>
+                <p className="text-gray-400">mueblesdisoffice@gmail.com</p>
               </div>
               
               <div className="flex items-center space-x-3 group">
