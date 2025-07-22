@@ -119,7 +119,7 @@ const App = () => {
               rel="noopener noreferrer"
               className="flex items-center text-gray-300 hover:text-white"
             >
-              <music-2 className="w-6 h-6 mr-2" />
+              <Heart className="w-6 h-6 mr-2" />
               Tiktok
             </a>
           </div>
