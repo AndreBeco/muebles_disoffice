@@ -495,7 +495,7 @@ const App = () => {
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-orange-600 mr-3" />
-                  <span>mueblesdisoficce@gmail.com</span>
+                  <span>mueblesdisoffice@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 text-orange-600 mr-3" />
