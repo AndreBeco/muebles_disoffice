@@ -136,12 +136,12 @@ const App = () => {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold mb-6">
-              Más que muebles: creamos espacios cómodos, duraderos y adaptados a ti.
+              Muebles DisOffice transforma tu mobiliario para que trabaje contigo, no contra ti.
             </h1>
             <p className="text-xl mb-8">
-              Diseñamos, vendemos y reparamos mobiliario de oficina en Cali,
-              pero lo que nos hace únicos es que lo mejoramos para que se
-              ajuste a tus necesidades.
+              Diseñamos, adaptamos y reparamos muebles de oficina para extender su vida útil, para mejorar
+              su ergonimía y ajustarlo a las necesidades reales de cada espacio. más que vender muebles,
+              ayudamos a crear entornos funcionales, cómodos y personalizados que impulsan tu bienestar y productividad..
             </p>
 
             <button
