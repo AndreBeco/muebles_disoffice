@@ -491,11 +491,11 @@ const App = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-orange-600 mr-3" />
-                  <span>+57 (2) 123-4567</span>
+                  <span>+57 318 406 3943</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-orange-600 mr-3" />
-                  <span>info@mueblesdisoffice.com</span>
+                  <span>mueblesdisoficce@gmail.com</span>
                 </div>
                 <div className="flex items-center">
                   <MapPin className="w-5 h-5 text-orange-600 mr-3" />
@@ -541,7 +541,7 @@ const App = () => {
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
                   <input
-                    type="tel"
+                    type="number"
                     name="telefono"
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
