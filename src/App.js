@@ -400,29 +400,29 @@ const App = () => {
 
         <div className="mb-12">
           <p className="text-lg text-gray-700 mb-6 text-center">
-            Reparamos todo tipo de mobiliario de oficina. Servicio rápido, profesional y con garantía.
+            entendemos que tu mobiliario no solo es una inversión, sino parte fundamental del bienestar y productividad en tu empresa. Por eso ofrecemos soluciones integrales para devolverle vida, funcionalidad y estética a tus muebles sin necesidad de reemplazarlos.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Servicios de Reparación</h3>
+              <h3 className="text-xl font-bold mb-4">Servicios que Ofrecemos</h3>
               <ul className="space-y-2 text-gray-700">
-                <li>• Cambio de ruedas dañadas</li>
-                <li>• Reparación de mecanismos</li>
-                <li>• Cambio de tapicería</li>
-                <li>• Reparación de estructuras</li>
-                <li>• Mantenimiento preventivo</li>
+                <li>🔧 Reparación y ajuste de sillas secretariales, gerenciales, fijas y tipo tándem</li>
+                <li>🪑 Restauración de escritorios, puestos de trabajo y archivadores de gavetas</li>
+                <li>🛠️ Cambio de cilindros, mecanismos, ruedas, espaldar y tapicería</li>
+                <li>🧼 Limpieza profunda, eliminación de manchas y desinfección de tapizados</li>
+                <li>⚙️ Lubricación de piezas, ajuste de estructuras y mantenimiento preventivo</li>
               </ul>
             </div>
 
             <div className="bg-orange-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Garantía</h3>
+              <h3 className="text-xl font-bold mb-4">Lo que Garantizamos</h3>
               <ul className="space-y-2 text-gray-700">
-                <li>• Garantía en todos los trabajos</li>
-                <li>• Repuestos originales</li>
-                <li>• Servicio técnico especializado</li>
-                <li>• Atención personalizada</li>
-                <li>• Precios competitivos</li>
+                <li>✅ Resultados duraderos y funcionales</li>
+                <li>🔩 Repuestos originales y servicio especializado</li>
+                <li>💰 Ahorro frente a la compra de muebles nuevos</li>
+                <li>🌱 Menor impacto ambiental al recuperar lo existente</li>
+                <li>🤝 Atención cercana, rápida y con garantía</li>
               </ul>
             </div>
           </div>
