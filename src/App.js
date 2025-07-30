@@ -289,15 +289,18 @@ const App = () => {
 
         <div className="mb-12">
           <p className="text-lg text-gray-700 mb-6 text-center">
-            ¿Tu silla ya no te sirve? ¿Te incomoda tu escritorio? En lugar de desechar,
-            nosotros lo transformamos para que se ajuste perfectamente a tus necesidades.
+            Sabemos lo frustrante que puede ser una silla incómoda o un escritorio mal diseñado. Por eso, en lugar de reemplazar, lo transformamos. 
+            Mejoramos lo que ya tienes para que funcione mejor contigo y tu espacio.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Servicios de Adaptación</h3>
+              <h3 className="text-xl font-bold mb-4">Tipos de Adaptación</h3>
               <ul className="space-y-2 text-gray-700">
-                <li>• Ajustes de altura y profundidad</li>
+                <li>
+                   <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
+                   Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
+                </li>
                 <li>• Mejora de mecanismos de regulación</li>
                 <li>• Cambio de tapicería ergonómica</li>
                 <li>• Adaptación de reposabrazos</li>
