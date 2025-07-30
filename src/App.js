@@ -166,15 +166,12 @@ const App = () => {
               <p className="text-gray-600 mb-4">
                 En Muebles DisOffice transformamos tu mobiliario para que se ajuste a ti, no al revés.
               </p>
-              <p className="text-gray-600 mb-4">
-                Reforzamos, ajustamos y rediseñamos sillas, escritorios y archivadores para hacerlos más ergonómicos, 
-    funcionales y duraderos, sin necesidad de comprar nuevos.
-              </p>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li>✓ Reguesa paredes</li>
-                <li>✓ Ajustes ergonómicos</li>
-                <li>✓ Mejora de mecanismo</li>
-                <li>✓ Soluciones duraderas, a menor costos</li>
+                <li>✓ Ajustes ergonómicos personalizados: altura, respaldo, apoyo lumbar y reposabrazos.</li>
+                <li>✓ Mejora de mecanismos: reemplazo de partes desgastadas por opciones más resistentes.</li>
+                <li>✓ Refuerzo de estructuras: prolongamos la vida útil de sillas, escritorios y archivadores.</li>
+                <li>✓ Reacondicionamiento visual y funcional: pintura, tapizado, rodachines y más.</li>
+                <li>✓ Adaptación a nuevos espacios o usos: rediseñamos según tus nuevas necesidades.</li>
               </ul>
             </div>
 
