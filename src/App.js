@@ -344,12 +344,12 @@ const App = () => {
   const DisenoPage = () => (
     <div className="py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold mb-8 text-center">Diseño y Venta de Muebles</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center">Diseño y Ventas</h1>
 
         <div className="mb-12">
           <p className="text-lg text-gray-700 mb-6 text-center">
-            Creamos escritorios, sillas, archivadores y soluciones modulares personalizadas.
-            Ofrecemos diseño profesional adaptado a tu espacio y estilo.
+            Diseñamos y fabricamos muebles de oficina que combinan funcionalidad, confort y estilo. Ofrecemos sillas ergonómicas, escritorios, puestos de trabajo, archivadores metálicos y soluciones a medida.
+            También disponemos de repuestos como ruedas, cilindros, tapicería y mecanismos para renovar tu mobiliario de forma práctica y económica.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
