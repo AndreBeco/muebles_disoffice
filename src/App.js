@@ -231,72 +231,50 @@ const App = () => {
 
         <div className="prose prose-lg max-w-none">
           <p className="text-lg text-gray-700 mb-6">
-            Somos Muebles DisOffice, una empresa especializada en el diseño, venta, reparación y adaptación
-            de mobiliario de oficina en Cali. Nuestro enfoque único se basa en mejorar y adaptar los muebles
-            existentes para que se ajusten perfectamente a las necesidades de cada cliente.
+            Muebles DisOffice es una empresa caleña especializada en diseño, fabricación, venta,
+            reparación y adaptación de mobiliario para oficina y hogar. Nuestra propuesta va más allá de vender muebles: transformamos 
+            los que ya tienes para que se ajusten a tus necesidades reales, creando espacios más cómodos, ergonómicos y funcionales.
           </p>
 
           <div className="bg-gray-50 p-6 rounded-lg mb-8">
             <h2 className="text-2xl font-bold mb-4">Nuestra Misión</h2>
             <p className="text-gray-700">
-              Crear espacios de trabajo cómodos, duraderos y ergonómicos, transformando y mejorando
-              el mobiliario existente para maximizar su funcionalidad y extender su vida útil.
+              Ofrecer soluciones de mobiliario que aumenten el bienestar y la productividad, prolongando la vida útil de los muebles 
+              mediante mejoras, restauraciones y rediseños, con un enfoque sostenible.
             </p>
           </div>
 
           <div className="bg-gray-50 p-6 rounded-lg mb-8">
             <h2 className="text-2xl font-bold mb-4">Nuestra Visión</h2>
             <p className="text-gray-700">
-              Ser la empresa líder en Cali en soluciones integrales de mobiliario de oficina,
-              reconocida por nuestro compromiso con la sostenibilidad y la innovación en el
-              diseño ergonómico.
+              Ser la empresa líder en Cali en soluciones integrales de mobiliario, reconocida por la innovación ergonómica,
+              la personalización y el compromiso ambiental a través de la reutilización.
             </p>
           </div>
 
           <div className="bg-orange-50 p-6 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">¿Por qué elegirnos?</h2>
             <ul className="space-y-2 text-gray-700">
-              <li>• Experiencia especializada en mobiliario de oficina</li>
-              <li>• Soluciones personalizadas y adaptadas a cada cliente</li>
-              <li>• Compromiso con la sostenibilidad y reutilización</li>
-              <li>• Servicio integral: desde el diseño hasta el mantenimiento</li>
-              <li>• Garantía en todos nuestros trabajos</li>
-            </ul>
-          </div>
-
-          <div className="bg-gray-50 p-6 rounded-lg mb-8">
-            <h2 className="text-2xl font-bold mb-4">PRESENTACIÓN </h2>
-            <p className="text-gray-700">
-              Muebles DisOffice es una Empresa Colombiana con sede en Cali, enfocada en la Fabricación, comercialización y asesoría en todo tipo de Muebles para Oficina y hogar, como se puede registrar en mi Rut y Cámara y Comercio, Fabricamos muebles de oficina y otros y hacemos restauración o reparación de los mismos.
-            </p>
-            <ul className="list-disc pl-6 space-y-2 text-gray-700 mt-4">
-              <li>Contamos con personal de alta experiencia para FABRICAR nuestros productos.</li>
-              <li>Nuestras garantías son de 1 a 3 años.</li>
-              <li>Cuenta con un excelente equipo para diseñar y asesorar sin costo alguno.</li>
-              <li>Diseñamos y fabricamos muebles personalizados.</li>
-              <li>Contamos con transporte e instalación en Cali sin ningún costo.</li>
-              <li>Dependiendo de la cantidad de muebles a comprar en cualquier ciudad podemos llegar a un acuerdo para incluir transporte e instalación.</li>
+              <li>• No solo vendemos: restauramos, adaptamos y mejoramos.</li>
+              <li>• Especialistas en escritorios, archivadores, puestos de trabajo y sillas ergonómicas.</li>
+              <li>• Ahorro para empresas mediante reparación y mantenimiento profesional.</li>
+              <li>• Asesoría personalizada sin costo.</li>
+              <li>• Garantías de hasta 3 años.</li>
+              <li>Transporte e instalación incluidos en Cali.</li>
+              <li>Servicio en otras ciudades según acuerdo.</li>
             </ul>
           </div>
 
           <div className="bg-orange-50 p-6 rounded-lg mb-8">
-            <h2 className="text-2xl font-bold mb-4">FABRICACIÓN, VENTA E INSTALACION</h2>
+            <h2 className="text-2xl font-bold mb-4">Nuestro Valor Diferencial</h2>
+            <p className="text-gray-700 mb-4">
+              En Muebles DisOffice no solo diseñamos y fabricamos mobiliario nuevo, también recuperamos y transformamos el que ya tienes. Restauramos sillas, escritorios, archivadores y otros muebles de oficina que muchas empresas creen irrecuperables, extendiendo su vida útil y reduciendo costos.
+            </p>
+            <p className="text-gray-700 mb-4">
+              Ofrecemos un portafolio completo: desde puestos de trabajo, divisiones y sillas ergonómicas, hasta muebles personalizados para cafetería, recepción y más. Además, brindamos mantenimiento, repuestos, reubicación y asesoría sin costo, con instalación incluida en Cali.
+            </p>
             <p className="text-gray-700">
-              Como son: Puestos de trabajo, islas, divisiones, archivos rodantes, archivos horizontales y verticales de 2-3-4 gavetas, estanterías de peso liviano y pesado, suministro de sillas - ergonómicas (presidente, gerente y secretariales) sillas fijas, tándem de diferentes estilos, sillas y mesas para cafetería y escolar, Muebles especiales, recepción y diseños personalizados dándole al cliente diseñar su propia oficina contando con nuestra asesoría.
-            </p>
-          </div>
-
-          <div className="bg-orange-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-bold mb-4">SERVICIOS ADICIONALES</h2>
-            <p className="text-gray-700">
-              Muchas Empresas son engañadas al creer que las sillas, sofás, y otros muebles de oficina, No tienen arreglo. Se equivocan, MUEBLES DISOFFICE Restaura esos Muebles; en cada revisión analizamos si se puede arreglar o definitivamente cambiarlo.
-              Prestamos el servicio de mantenimiento y reparación de sillas en partes y tapizados, en la reubicación y adecuación de oficinas con existentes que la empresa tenga en buen estado.
-            </p>
-            <p className="text-gray-700 mt-4">
-              Les vendemos las partes de las sillas que necesiten y se le instala sin costo alguno.
-            </p>
-            <p className="text-gray-700 mt-4">
-              Esperamos poder tener una alianza comercial que nos permita conocerlo y ofrecerle lo mejor de nuestros productos.
+              Nos especializamos en soluciones reales, sostenibles y centradas en el cliente.
             </p>
           </div>
         </div>
