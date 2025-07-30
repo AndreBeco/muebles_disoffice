@@ -366,7 +366,7 @@ const App = () => {
                 Sillas ergonómicas diseñadas para brindar máximo confort y soporte durante largas jornadas.
               </p>
             </div>
-
+//aceptar no se 
             <div className="bg-gray-50 p-6 rounded-lg text-center">
               <h3 className="text-xl font-bold mb-4">Archivadores</h3>
               <p className="text-gray-700">
