@@ -180,11 +180,11 @@ const App = () => {
                 <span className="text-orange-600 text-2xl">🛠️</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Diseño y Venta de Muebles</h3>
-              <p className="text-gray-600 mb-4">
-                Creando escritorios, sillas, archivadores soluciones modulares.
+               <p className="text-gray-600 mb-6">
+                Creamos muebles que se adaptan a tu espacio, estilo y forma de trabajar. Diseñamos y fabricamos mobiliario de oficina funcional, ergonómico y a medida, con materiales de alta calidad y enfoque en la durabilidad.
               </p>
-              <p className="text-gray-600 mb-4">
-                Ofrecemos uamueño pro espacio y estilo.
+               <p className="text-gray-600">
+                Ofrecemos desde escritorios, archivadores y sillas, hasta soluciones personalizadas para oficinas completas. Te asesoramos sin costo, entregamos e instalamos en Cali, y garantizamos cada producto que sale de nuestro taller.
               </p>
             </div>
 
