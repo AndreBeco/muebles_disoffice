@@ -1,4 +1,4 @@
-ue import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
@@ -288,7 +288,7 @@ const App = () => {
         <h1 className="text-4xl font-bold mb-8 text-center">Adaptación y Mejora Ergonómica</h1>
 
         <div className="mb-12">
-          <p className="text-lg text-gray-700 mb-6 text-center"">
+          <p className="text-lg text-gray-700 mb-6 text-center">
             Sabemos lo frustrante que puede ser una silla incómoda o un escritorio mal diseñado. Por eso, en lugar de reemplazar, lo transformamos. 
             Mejoramos lo que ya tienes para que funcione mejor contigo y tu espacio.
           </p>
