@@ -140,7 +140,7 @@ const App = () => {
             </h1>
             <p className="text-xl mb-8">
               Diseñamos, adaptamos y reparamos muebles de oficina para extender su vida útil, para mejorar
-              su ergonimía y ajustarlo a las necesidades reales de cada espacio. más que vender muebles,
+              su ergonomía y ajustarlo a las necesidades reales de cada espacio. más que vender muebles,
               ayudamos a crear entornos funcionales, cómodos y personalizados que impulsan tu bienestar y productividad..
             </p>
 
