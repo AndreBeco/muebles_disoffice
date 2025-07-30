@@ -301,10 +301,22 @@ const App = () => {
                    <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
                    Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
                 </li>
-                <li>• Mejora de mecanismos de regulación</li>
-                <li>• Cambio de tapicería ergonómica</li>
-                <li>• Adaptación de reposabrazos</li>
-                <li>• Mejora de soporte lumbar</li>
+                <li>
+                   <span className="font-semibold">🪑 Modificación estructural de muebles:</span><br />
+                   Ajuste de alturas o formas de escritorios y sillas para mejorar la postura.
+               </li>
+               <li>
+                   <span className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento:</span><br />
+                   Rediseño de compartimientos, ruedas o cerraduras de seguridad.
+               </li>
+               <li>
+                  <span className="font-semibold">🎨 Personalización estética:</span><br />
+                  Cambio de colores o acabados para armonizar con tu marca o entorno.
+               </li>
+               <li>
+                  <span className="font-semibold">🔄 Conversión y reutilización:</span><br />
+                  Transformamos muebles antiguos en soluciones nuevas sin desecharlos.
+               </li>
               </ul>
             </div>
 
