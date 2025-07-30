@@ -160,7 +160,7 @@ const App = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-orange-600 text-2xl">🛠️🔄</span>
+                <span className="text-orange-600 text-2xl">🛠️</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Adaptación y Mejora Ergonómica</h3>
               <p className="text-gray-600 mb-4">
@@ -177,7 +177,7 @@ const App = () => {
 
             <div className="text-center">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-orange-600 text-2xl">🪑🛒</span>
+                <span className="text-orange-600 text-2xl">🛒</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Diseño y Ventas</h3>
                <p className="text-gray-600 mb-6">
@@ -190,7 +190,7 @@ const App = () => {
 
             <div className="text-center">
               <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-orange-600 text-2xl">🧰🔧</span>
+                <span className="text-orange-600 text-2xl">🧰</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Reparación y Mantenimiento</h3>
               <p className="text-gray-600 mb-4">
