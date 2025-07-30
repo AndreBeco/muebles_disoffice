@@ -260,9 +260,9 @@ const App = () => {
               <li>• Ahorro para empresas mediante reparación y mantenimiento profesional.</li>
               <li>• Asesoría personalizada sin costo.</li>
               <li>• Garantías de hasta 3 años.</li>
-              <li>Transporte e instalación incluidos en Cali.</li>
-              <li>Servicio en otras ciudades según acuerdo.</li>
-            </ul>
+              <li>• Transporte e instalación incluidos en Cali.</li>
+              <li>• Servicio en otras ciudades según acuerdo.</li>
+            </p>
           </div>
 
           <div className="bg-orange-50 p-6 rounded-lg mb-8">
