@@ -194,14 +194,14 @@ const App = () => {
               </div>
               <h3 className="text-xl font-bold mb-4">Reparación y Mantenimiento</h3>
               <p className="text-gray-600 mb-4">
-                Reparamos todo tipo de mobiliario de oficina.
-                Servicio rápido, profesional y con garantía.
+                Reparamos y restauramos sillas, escritorios y archivadores, dejándolos como nuevos sin necesidad de reemplazo.
               </p>
               <ul className="text-sm text-gray-600 space-y-2">
-                <li>✓ Sillas ya notan o ya javan</li>
-                <li>✓ Estremos inteciales</li>
-                <li>✓ Ruedas dañagadas</li>
-                <li>✓ Cambio de partes</li>
+                <li>✓ Reparación de mecanismos y estructuras: Arreglamos bases, pistones, brazos, gavetas y más.</li>
+                <li>✓ Reemplazo de partes dañadas: Rodachines, espumas, tornillos, rieles y componentes técnicos.</li>
+                <li>✓ Retapizado profesional: Renovamos el aspecto con telas y acabados resistentes y modernos.</li>
+                <li>✓ Corrección de fallas funcionales: Solucionamos problemas de estabilidad, movimiento o ajuste</li>
+                <li>✓ Revisión técnica preventiva: Evaluamos el estado del mobiliario para evitar daños futuros.</li>
               </ul>
             </div>
           </div>
