@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+ue import React, { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
 import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
@@ -407,7 +407,7 @@ const App = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-4">Servicios que Ofrecemos</h3>
               <ul className="space-y-2 text-gray-700">
-                <li>🔧 Reparación y ajuste de sillas secretariales, gerenciales, fijas y tipo tándem.</li>
+                <li>🔧  que pasa aqui? Reparación y ajuste de sillas secretariales, gerenciales, fijas y tipo tándem.</li>
                 <li>🪑 Restauración de escritorios, puestos de trabajo y archivadores de gavetas.</li>
                 <li>🛠️ Cambio de cilindros, mecanismos, ruedas, espaldar y tapicería.</li>
                 <li>🧼 Limpieza profunda, eliminación de manchas y desinfección de tapizados.</li>
