@@ -164,10 +164,11 @@ const App = () => {
               </div>
               <h3 className="text-xl font-bold mb-4">Adaptación y Mejora Ergonómica</h3>
               <p className="text-gray-600 mb-4">
-                ¿Tu silla ya no te sirve? ¿Te incomoda tu escritorio?
+                En Muebles DisOffice transformamos tu mobiliario para que se ajuste a ti, no al revés.
               </p>
               <p className="text-gray-600 mb-4">
-                En lugar de desechar, nosotros lo transformamos.
+                Reforzamos, ajustamos y rediseñamos sillas, escritorios y archivadores para hacerlos más ergonómicos, 
+    funcionales y duraderos, sin necesidad de comprar nuevos.
               </p>
               <ul className="text-sm text-gray-600 space-y-2">
                 <li>✓ Reguesa paredes</li>
