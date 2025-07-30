@@ -262,7 +262,7 @@ const App = () => {
               <li>• Garantías de hasta 3 años.</li>
               <li>• Transporte e instalación incluidos en Cali.</li>
               <li>• Servicio en otras ciudades según acuerdo.</li>
-            </p>
+            </ul>
           </div>
 
           <div className="bg-orange-50 p-6 rounded-lg mb-8">
