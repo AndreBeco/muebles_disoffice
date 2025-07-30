@@ -293,41 +293,38 @@ const App = () => {
             Mejoramos lo que ya tienes para que funcione mejor contigo y tu espacio.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Tipos de Adaptación</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>
-                   <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
-                   Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
-                </li>
-                <li>
-                   <span className="font-semibold">🪑 Modificación estructural de muebles:</span><br />
-                   Ajuste de alturas o formas de escritorios y sillas para mejorar la postura.
-               </li>
-               <li>
-                   <span className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento:</span><br />
-                   Rediseño de compartimientos, ruedas o cerraduras de seguridad.
-               </li>
-               <li>
-                  <span className="font-semibold">🎨 Personalización estética:</span><br />
-                  Cambio de colores o acabados para armonizar con tu marca o entorno.
-               </li>
-               <li>
-                  <span className="font-semibold">🔄 Conversión y reutilización:</span><br />
-                  Transformamos muebles antiguos en soluciones nuevas sin desecharlos.
-               </li>
-              </ul>
-            </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+              <h2 className="text-2xl font-bold mb-6 text-center">Tipos de Adaptación y sus Beneficios</h2>
+             
+              <div className="space-y-6 text-gray-700">
+               <div>
+                 <h3 className="font-semibold">🔧 Cambio de mecanismos en sillas</h3>
+                 <p>Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.</p>
+                 <p className="text-green-600 font-medium">🟢 Beneficio: Mayor comodidad, ergonomía y durabilidad.</p>
+               </div>
 
-            <div className="bg-orange-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Beneficios</h3>
-              <ul className="space-y-4 text-gray-700">
-                <li>🟢 Mayor comodidad, ergonomía y durabilidad.</li>
-                <li>🟢 Reducción de fatiga y adaptación a necesidades especiales.</li>
-                <li>🟢 Mejor organización y funcionalidad del espacio.</li>
-                <li>🟢 Ambientes más agradables y coherentes con tu identidad visual.</li>
-                <li>🟢 Ahorro económico y menor generación de residuos.</li>
+               <div>
+                 <h3 className="font-semibold">🪑 Modificación estructural de muebles</h3>
+                 <p>Ajuste de alturas, cambios en la forma o tamaño de escritorios y sillas para mejorar la postura del usuario.</p>
+                 <p className="text-green-600 font-medium">🟢 Beneficio: Reducción de fatiga, adaptación a usuarios con necesidades especiales.</p>
+               </div>
+
+               <div>
+                 <h3 className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento</h3>
+                 <p>Rediseño de compartimientos, incorporación de ruedas o cerraduras de seguridad.</p>
+                 <p className="text-green-600 font-medium">🟢 Beneficio: Mayor funcionalidad y mejor organización del espacio.</p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold">🎨 Personalización estética</h3>
+                <p>Cambio de colores, materiales o acabados para armonizar con la identidad visual del cliente.</p>
+                <p className="text-green-600 font-medium">🟢 Beneficio: Ambientes más agradables y coherentes con la marca.</p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold">🔄 Conversión y reutilización</h3>
+                <p>Transformamos muebles antiguos en soluciones nuevas sin desecharlos.</p>
+                <p className="text-green-600 font-medium">🟢 Beneficio: Ahorro económico y reducción de desperdicios.</p>
               </ul>
             </div>
           </div>
