@@ -88,7 +88,7 @@ const Header = ({ currentPage, onNavigate }) => {
           <div className="flex items-center space-x-3">
             {/* Logo */}
             <img
-              src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-furniture-interior-design-flaticons-lineal-color-flat-icons.png"
+              src="https://i.pinimg.com/1200x/50/3f/00/503f007ef9f3f4b3e143ada5a5152975.jpg"
               alt="Logo Muebles DisOffice"
               className="w-10 h-10 sm:w-12 sm:h-12"
             />
