@@ -3,6 +3,8 @@ import { ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Tw
 import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
 import Header from './components/Header.js';
+import Carousel from './components/Carousel.js';
+
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('inicio');
@@ -13,80 +15,11 @@ const App = () => {
     setCurrentPage(pageId);
   };
 
-  const Carousel = ({ items, type }) => {
-    const currentIndex = carouselIndex[type];
-
-    const nextSlide = () => {
-      setCarouselIndex(prev => ({
-        ...prev,
-        [type]: (prev[type] + 1) % items.length
-      }));
-    };
-
-    const prevSlide = () => {
-      setCarouselIndex(prev => ({
-        ...prev,
-        [type]: prev[type] === 0 ? items.length - 1 : prev[type] - 1
-      }));
-    };
-
-    const currentItem = items[currentIndex];
-
-    return (
-      <div className="relative max-w-2xl mx-auto">
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative h-64">
-            {currentItem.before ? (
-              <div className="grid grid-cols-2 h-full">
-                <div className="relative">
-                  <img src={currentItem.before} alt="Antes" className="w-full h-full object-cover" />
-                  <div className="absolute bottom-2 left-2 bg-red-500 text-white px-2 py-1 rounded text-sm">
-                    Antes
-                  </div>
-                </div>
-                <div className="relative">
-                  <img src={currentItem.after} alt="Después" className="w-full h-full object-cover" />
-                  <div className="absolute bottom-2 right-2 bg-green-500 text-white px-2 py-1 rounded text-sm">
-                    Después
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <img src={currentItem.image} alt={currentItem.title} className="w-full h-full object-cover" />
-            )}
-
-            <button
-              onClick={prevSlide}
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
-            >
-              <ChevronLeft size={20} />
-            </button>
-
-            <button
-              onClick={nextSlide}
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
-
-          <div className="p-4">
-            <h3 className="text-lg font-semibold mb-2">{currentItem.title}</h3>
-            <p className="text-gray-600">{currentItem.description}</p>
-          </div>
-        </div>
-
-        <div className="flex justify-center mt-4 space-x-2">
-          {items.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCarouselIndex(prev => ({ ...prev, [type]: index }))}
-              className={`w-3 h-3 rounded-full ${index === currentIndex ? 'bg-orange-500' : 'bg-gray-300'}`}
-            />
-          ))}
-        </div>
-      </div>
-    );
+  const updateCarouselIndex = (type, newIndex) => {
+    setCarouselIndex(prev => ({
+      ...prev,
+      [type]: newIndex
+    }));
   };
 
   const Footer = () => (
@@ -180,10 +113,10 @@ const App = () => {
                 <span className="text-orange-600 text-2xl">🛒</span>
               </div>
               <h3 className="text-xl font-bold mb-4">Diseño y Ventas</h3>
-               <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6">
                 Creamos muebles que se adaptan a tu espacio, estilo y forma de trabajar. Diseñamos y fabricamos mobiliario de oficina funcional, ergonómico y a medida, con materiales de alta calidad y enfoque en la durabilidad.
               </p>
-               <p className="text-gray-600">
+              <p className="text-gray-600">
                 Ofrecemos desde escritorios, archivadores y sillas, hasta soluciones personalizadas para oficinas completas. Te asesoramos sin costo, entregamos e instalamos en Cali, y garantizamos cada producto que sale de nuestro taller.
               </p>
             </div>
@@ -232,14 +165,14 @@ const App = () => {
         <div className="prose prose-lg max-w-none">
           <p className="text-lg text-gray-700 mb-6">
             Muebles DisOffice es una empresa caleña especializada en diseño, fabricación, venta,
-            reparación y adaptación de mobiliario para oficina y hogar. Nuestra propuesta va más allá de vender muebles: transformamos 
+            reparación y adaptación de mobiliario para oficina y hogar. Nuestra propuesta va más allá de vender muebles: transformamos
             los que ya tienes para que se ajusten a tus necesidades reales, creando espacios más cómodos, ergonómicos y funcionales.
           </p>
 
           <div className="bg-gray-50 p-6 rounded-lg mb-8">
             <h2 className="text-2xl font-bold mb-4">Nuestra Misión</h2>
             <p className="text-gray-700">
-              Ofrecer soluciones de mobiliario que aumenten el bienestar y la productividad, prolongando la vida útil de los muebles 
+              Ofrecer soluciones de mobiliario que aumenten el bienestar y la productividad, prolongando la vida útil de los muebles
               mediante mejoras, restauraciones y rediseños, con un enfoque sostenible.
             </p>
           </div>
@@ -289,7 +222,7 @@ const App = () => {
 
         <div className="mb-12">
           <p className="text-lg text-gray-700 mb-6 text-center">
-            Sabemos lo frustrante que puede ser una silla incómoda o un escritorio mal diseñado. Por eso, en lugar de reemplazar, lo transformamos. 
+            Sabemos lo frustrante que puede ser una silla incómoda o un escritorio mal diseñado. Por eso, en lugar de reemplazar, lo transformamos.
             Mejoramos lo que ya tienes para que funcione mejor contigo y tu espacio.
           </p>
 
@@ -297,37 +230,37 @@ const App = () => {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-4">Tipos de Adaptación</h3>
               <ul className="space-y-4 text-gray-700">
-               <li>
-                 <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
-                 Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
-               </li>
-               <li>
-                 <span className="font-semibold">🪑 Modificación estructural de muebles:</span><br />
-                 Ajuste de alturas o formas de escritorios y sillas para mejorar la postura.
-               </li>
-               <li>
-                 <span className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento:</span><br />
-                 Rediseño de compartimientos, ruedas o cerraduras de seguridad.
-               </li>
-               <li>
-                 <span className="font-semibold">🎨 Personalización estética:</span><br />
-                 Cambio de colores o acabados para armonizar con tu marca o entorno.
-               </li>
-               <li>
-                 <span className="font-semibold">🔄 Conversión y reutilización:</span><br />
-                 Transformamos muebles antiguos en soluciones nuevas sin desecharlos.
-               </li>
+                <li>
+                  <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
+                  Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
+                </li>
+                <li>
+                  <span className="font-semibold">🪑 Modificación estructural de muebles:</span><br />
+                  Ajuste de alturas o formas de escritorios y sillas para mejorar la postura.
+                </li>
+                <li>
+                  <span className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento:</span><br />
+                  Rediseño de compartimientos, ruedas o cerraduras de seguridad.
+                </li>
+                <li>
+                  <span className="font-semibold">🎨 Personalización estética:</span><br />
+                  Cambio de colores o acabados para armonizar con tu marca o entorno.
+                </li>
+                <li>
+                  <span className="font-semibold">🔄 Conversión y reutilización:</span><br />
+                  Transformamos muebles antiguos en soluciones nuevas sin desecharlos.
+                </li>
               </ul>
-             </div>
+            </div>
 
-    <div className="bg-orange-50 p-6 rounded-lg">
-      <h3 className="text-xl font-bold mb-4">Beneficios</h3>
-      <ul className="space-y-6 text-gray-700">
-        <li>🟢 Mayor comodidad, ergonomía y durabilidad.</li>
-        <li>🟢 Reducción de fatiga y adaptación a necesidades especiales.</li>
-        <li>🟢 Mejor organización y funcionalidad del espacio.</li>
-        <li>🟢 Ambientes más agradables y coherentes con tu identidad visual.</li>
-        <li>🟢 Ahorro económico y menor generación de residuos.</li>
+            <div className="bg-orange-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-4">Beneficios</h3>
+              <ul className="space-y-6 text-gray-700">
+                <li>🟢 Mayor comodidad, ergonomía y durabilidad.</li>
+                <li>🟢 Reducción de fatiga y adaptación a necesidades especiales.</li>
+                <li>🟢 Mejor organización y funcionalidad del espacio.</li>
+                <li>🟢 Ambientes más agradables y coherentes con tu identidad visual.</li>
+                <li>🟢 Ahorro económico y menor generación de residuos.</li>
               </ul>
             </div>
           </div>
@@ -335,7 +268,11 @@ const App = () => {
 
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Galería de Transformaciones</h2>
-          <Carousel items={carouselData.adaptacion} type="adaptacion" />
+          <Carousel
+            items={carouselData.adaptacion}
+            type="adaptacion"
+            currentIndex={carouselIndex.adaptacion}
+            onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, adaptacion: newIndex }))} />
         </div>
       </div>
     </div>
@@ -378,11 +315,16 @@ const App = () => {
 
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Nuestros Diseños</h2>
-          <Carousel items={carouselData.diseno} type="diseno" />
+          <Carousel
+            items={carouselData.diseno}
+            type="diseno"
+            currentIndex={carouselIndex.diseno}
+            onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, diseno: newIndex }))}
+          />
         </div>
 
         <div className="text-center">
-          <button 
+          <button
             onClick={() => handleNavigation('contacto')}
             className="bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700"
           >
@@ -430,7 +372,12 @@ const App = () => {
 
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Trabajos de Reparación</h2>
-          <Carousel items={carouselData.reparacion} type="reparacion" />
+          <Carousel
+            items={carouselData.reparacion}
+            type="reparacion"
+            currentIndex={carouselIndex.reparacion}
+            onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, reparacion: newIndex }))}
+          />
         </div>
       </div>
     </div>
@@ -545,7 +492,7 @@ const App = () => {
                     name="mensaje"
                     rows={4}
                     required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-orange-500"
                   ></textarea>
                 </div>
 
@@ -585,9 +532,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header 
-        currentPage={currentPage} 
-        onNavigate={handleNavigation} 
+      <Header
+        currentPage={currentPage}
+        onNavigate={handleNavigation}
       />
       <main>
         {renderCurrentPage()}
