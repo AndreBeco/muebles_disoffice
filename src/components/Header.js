@@ -70,7 +70,7 @@ const Header = ({ currentPage, onNavigate }) => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>mueblesDisOffice@gmail.com</span>
+                <span>mueblesdisoffice@gmail.com</span>
               </div>
             </div>
             <div className="flex items-center space-x-2">
