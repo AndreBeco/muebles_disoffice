@@ -66,11 +66,11 @@ const Header = ({ currentPage, onNavigate }) => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+57 (2) 123-4567</span>
+                <span>+57 318 406 3943</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>info@mueblesDisOffice.com</span>
+                <span>mueblesDisOffice@gmail.com</span>
               </div>
             </div>
             <div className="flex items-center space-x-2">
