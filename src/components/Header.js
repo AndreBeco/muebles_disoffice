@@ -66,11 +66,11 @@ const Header = ({ currentPage, onNavigate }) => {
             <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>+57 318 406 3943</span>
+                <span>+57 (2) 123-4567</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>mueblesdisoffice@gmail.com</span>
+                <span>info@mueblesDisOffice.com</span>
               </div>
             </div>
             <div className="flex items-center space-x-2">
@@ -84,13 +84,20 @@ const Header = ({ currentPage, onNavigate }) => {
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <div className="text-2xl lg:text-3xl font-bold text-blue-900">
+          
+          <div className="flex items-center space-x-3">
+            {/* Logo */}
+            <img
+              src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-furniture-interior-design-flaticons-lineal-color-flat-icons.png"
+              alt="Logo Muebles DisOffice"
+              className="w-10 h-10 sm:w-12 sm:h-12"
+            />
+            <div className="text-2xl lg:text-3xl font-bold text-blue-900 leading-tight">
               <span className="text-blue-600">Muebles</span>
               <span className="text-gray-800">DisOffice</span>
             </div>
           </div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
@@ -106,10 +113,9 @@ const Header = ({ currentPage, onNavigate }) => {
                 >
                   {item.name}
                   {item.hasSubmenu && (
-                    <ChevronDown 
-                      className={`ml-1 w-4 h-4 transition-transform duration-200 ${
-                        isServicesOpen ? 'rotate-180' : ''
-                      }`} 
+                    <ChevronDown
+                      className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''
+                        }`}
                     />
                   )}
                 </button>
@@ -137,7 +143,7 @@ const Header = ({ currentPage, onNavigate }) => {
           {/* CTA Button Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="https://wa.me/573184063943"
+              href="https://wa.me/573177110447"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 flex items-center text-sm transition-colors duration-200"
@@ -174,10 +180,9 @@ const Header = ({ currentPage, onNavigate }) => {
               >
                 <span>{item.name}</span>
                 {item.hasSubmenu && (
-                  <ChevronDown 
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      isMobileServicesOpen ? 'rotate-180' : ''
-                    }`} 
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''
+                      }`}
                   />
                 )}
               </button>
@@ -202,9 +207,9 @@ const Header = ({ currentPage, onNavigate }) => {
               )}
             </div>
           ))}
-          
+
           <a
-            href="https://wa.me/573184063943"
+            href="https://wa.me/573177110447"
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full bg-green-500 text-white text-center px-4 py-2 rounded hover:bg-green-600 mt-4 transition-colors duration-200"
