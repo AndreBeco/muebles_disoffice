@@ -88,7 +88,7 @@ const Header = ({ currentPage, onNavigate }) => {
           <div className="flex items-center space-x-3">
             {/* Logo */}
             <img
-              src="https://pin.it/370i1OUif"
+              src="https://i.pinimg.com/736x/e2/49/35/e249354ff510380de28e94b4763e60ec.jpg"
               alt="Logo Muebles DisOffice"
               className="w-10 h-10 sm:w-12 sm:h-12"
             />
