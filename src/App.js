@@ -64,28 +64,43 @@ const App = () => {
   const HomePage = () => (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-gray-900 to-gray-700 text-white py-20">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold mb-6">
-              Muebles DisOffice transforma tu mobiliario para que trabaje contigo, no contra ti.
-            </h1>
-            <p className="text-xl mb-8">
-              Diseñamos, adaptamos y reparamos muebles de oficina para extender su vida útil, para mejorar
-              su ergonomía y ajustarlo a las necesidades reales de cada espacio. más que vender muebles,
-              ayudamos a crear entornos funcionales, cómodos y personalizados que impulsan tu bienestar y productividad..
-            </p>
+      <section className="relative bg-gradient-to-r from-gray-900 to-gray-700 text-white py-20 overflow-hidden">
+  <div className="absolute inset-0 bg-black opacity-50"></div>
 
-            <button
-              onClick={() => handleNavigation('contacto')}
-              className="bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700"
-            >
-              Recibe una cotización sin costo
-            </button>
-          </div>
-        </div>
-      </section>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid md:grid-cols-2 gap-8 items-center">
+      
+      {/* TEXTO */}
+      <div className="max-w-3xl">
+        <h1 className="text-4xl font-bold mb-6">
+          Muebles DisOffice transforma tu mobiliario para que trabaje contigo, no contra ti.
+        </h1>
+        <p className="text-xl mb-8">
+          Diseñamos, adaptamos y reparamos muebles de oficina para extender su vida útil, para mejorar
+          su ergonomía y ajustarlo a las necesidades reales de cada espacio. Más que vender muebles,
+          ayudamos a crear entornos funcionales, cómodos y personalizados que impulsan tu bienestar y productividad.
+        </p>
+        <button
+          onClick={() => handleNavigation('contacto')}
+          className="bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700"
+        >
+          Recibe una cotización sin costo
+        </button>
+      </div>
+
+      {/* IMAGEN */}
+      <div className="w-full">
+        <img
+          src="https://i.pinimg.com/736x/37/b8/dc/37b8dc7d09da2a13850861cc2d50002a.jpg"
+          alt="Muebles DisOffice"
+          className="rounded-lg shadow-lg w-full h-auto object-cover"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Services Section */}
       <section className="py-16 bg-gray-50">
