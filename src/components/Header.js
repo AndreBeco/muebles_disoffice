@@ -85,17 +85,12 @@ const Header = ({ currentPage, onNavigate }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
           
-          <div className="flex items-center space-x-3">
-            {/* Logo */}
+          <div className="flex items-center">
             <img
               src="https://i.pinimg.com/736x/3d/38/ff/3d38ffcf52e1099041cb291617ae55ea.jpg"
               alt="Logo Muebles DisOffice"
-              className="w-10 h-10 sm:w-12 sm:h-12"
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
             />
-            <div className="text-2xl lg:text-3xl font-bold text-blue-900 leading-tight">
-              <span className="text-blue-600">Muebles</span>
-              <span className="text-gray-800">DisOffice</span>
-            </div>
           </div>
 
 
