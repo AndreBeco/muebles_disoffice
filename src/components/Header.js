@@ -87,7 +87,7 @@ const Header = ({ currentPage, onNavigate }) => {
           
           <div className="flex items-center">
             <img
-              src="blob:https://co.pinterest.com/d2377aff-f5c3-4375-9038-396a87ca3769"
+              src="https://i.pinimg.com/736x/7f/30/50/7f30500c36f08f8302d5928053145ab7.jpg"
               alt="Logo Muebles DisOffice"
               className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
             />
