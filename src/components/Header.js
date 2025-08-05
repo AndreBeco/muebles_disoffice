@@ -89,7 +89,7 @@ const Header = ({ currentPage, onNavigate }) => {
             <img
               src="https://i.pinimg.com/736x/7f/30/50/7f30500c36f08f8302d5928053145ab7.jpg"
               alt="Logo Muebles DisOffice"
-              className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
+              className="h-24 sm:h-28 w-auto object-contain"
             />
           </div>
 
