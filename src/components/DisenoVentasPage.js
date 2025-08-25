@@ -71,12 +71,16 @@ export default function DisenoVentasPage() {
             onClick={() => { setCategoryId(cat.id); setView("category"); }}
             className="text-left bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-orange-500"
           >
-            <img
-              src={cat.cover}
-              alt={cat.title}
-              className="w-full h-48 object-cover"
-              referrerPolicy="no-referrer"
-            />
+            {/* Imagen 3:2 para portada de categoría */}
+      <div className="relative w-full" style={{ paddingTop: '66.6667%' }}>
+        <img
+          src={cat.cover}
+          alt={cat.title}
+          className="absolute inset-0 w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+         />
+      </div>
+
             <div className="p-5">
               <h3 className="text-xl font-semibold mb-1">{cat.title}</h3>
               <p className="text-gray-600 text-sm">{cat.description}</p>
