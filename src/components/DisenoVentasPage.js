@@ -21,12 +21,16 @@ export default function DisenoVentasPage() {
 
   const ProductCard = ({ p }) => (
     <article className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-      <img
-        src={p.img}
-        alt={p.name}
-        className="w-full h-48 object-cover"
-        referrerPolicy="no-referrer"
-      />
+   {/* Imagen cuadrada 1:1 */}
+<div className="relative w-full" style={{ paddingTop: '100%' }}>
+  <img
+    src={p.img}
+    alt={p.name}
+    className="absolute inset-0 w-full h-full object-cover"
+    referrerPolicy="no-referrer"
+  />
+</div>
+
       <div className="p-5">
         <h3 className="text-lg font-semibold">{p.name}</h3>
         {p.features?.length > 0 && (
