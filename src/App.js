@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
 import Header from './components/Header.js';
 import Carousel from './components/Carousel.js';
+import DisenoVentasPage from './components/DisenoVentasPage.js';
 
 
 const App = () => {
@@ -529,7 +530,7 @@ const App = () => {
       case 'adaptacion':
         return <AdaptacionPage />;
       case 'diseno':
-        return <DisenoPage />;
+        return <DisenoVentasPage />;
       case 'reparacion':
         return <ReparacionPage />;
       case 'contacto':
