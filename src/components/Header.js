@@ -180,7 +180,21 @@ const Header = ({ currentPage, onNavigate }) => {
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t px-4 py-4 space-y-2">
           {menuItems.map((item) => (
-            <div key={item.id}>
+            {/* Beneficio destacado (solo móvil) */}
+            <div className="lg:hidden px-2 mb-4">
+              <div
+                className="flex items-center gap-2 rounded-full
+                bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500
+                text-white pl-3 pr-3 py-1.5 text-xs
+                shadow-md shadow-orange-500/20 ring-1 ring-black/10"
+               >
+                <Truck className="w-4 h-4 opacity-95" aria-hidden="true" />
+                <span className="font-semibold tracking-wide">
+                  Entrega e instalación gratis en Cali
+                </span>
+              </div>
+            </div>
+
               <button
                 onClick={() => item.id === 'servicios' ? handleMobileServicesToggle() : handleClick(item.id)}
                 className={`block w-full text-left px-4 py-2 rounded text-sm font-medium flex items-center justify-between
