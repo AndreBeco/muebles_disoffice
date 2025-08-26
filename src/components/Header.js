@@ -83,17 +83,16 @@ const Header = ({ currentPage, onNavigate }) => {
 
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24 lg:h-32">
-          
+        <div className="flex justify-between items-center h-20 lg:h-24">
+          {/* Logo */}
           <div className="flex items-center">
             <img
-              src="https://i.pinimg.com/736x/74/f7/62/74f7627d0cdab08531fa9b4ba542e05e.jpg"
+              src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
               alt="Logo Muebles DisOffice"
-              className="h-24 sm:h-28 lg:h-28 w-auto object-contain"
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
               referrerPolicy="no-referrer"
             />
           </div>
-
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
@@ -110,8 +109,7 @@ const Header = ({ currentPage, onNavigate }) => {
                   {item.name}
                   {item.hasSubmenu && (
                     <ChevronDown
-                      className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''
-                        }`}
+                      className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
                     />
                   )}
                 </button>
@@ -136,39 +134,31 @@ const Header = ({ currentPage, onNavigate }) => {
             ))}
           </nav>
 
-               {/* Beneficio destacado (desktop) */}
-               <div className="hidden lg:flex items-center">
-                <div
-                 className="group relative select-none"
-                 aria-label="Beneficio: Entrega e instalación gratis en Cali"
-                >
-                 <div className="
-                   flex items-center gap-2 rounded-full
-                   bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500
-                   text-white pl-3 pr-4 py-2
-                   shadow-lg shadow-orange-500/20 ring-1 ring-black/10
-                   transition hover:shadow-orange-500/30
-                 ">
-                   <Truck className="w-5 h-5 opacity-95" aria-hidden="true" />
-                   <span className="text-sm font-semibold tracking-wide">
-                     Entrega e instalación gratis en Cali
-                   </span>
-                   </div>
-
-                   {/* Brillo sutil al hover */}
-                   <span className="
-                     pointer-events-none absolute inset-0 rounded-full
-                     opacity-0 group-hover:opacity-100 transition
-                     ring-2 ring-white/10
-                   " />
-                 </div>
-               </div>
+          {/* Beneficio destacado (desktop) - REEMPLAZA el antiguo botón de WhatsApp */}
+          <div className="hidden lg:flex items-center">
+            <div className="group relative select-none" aria-label="Beneficio: Entrega e instalación gratis en Cali">
+              <div className="
+                flex items-center gap-2 rounded-full
+                bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500
+                text-white pl-3 pr-4 py-2
+                shadow-lg shadow-orange-500/20 ring-1 ring-black/10
+                transition hover:shadow-orange-500/30
+              ">
+                <Truck className="w-5 h-5 opacity-95" aria-hidden="true" />
+                <span className="text-sm font-semibold tracking-wide">
+                  Entrega e instalación gratis en Cali
+                </span>
+              </div>
+              <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition ring-2 ring-white/10" />
+            </div>
+          </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-blue-600 focus:outline-none p-2"
+              aria-label="Abrir menú"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -179,22 +169,23 @@ const Header = ({ currentPage, onNavigate }) => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t px-4 py-4 space-y-2">
-          {menuItems.map((item) => (
-            {/* Beneficio destacado (solo móvil) */}
-            <div className="lg:hidden px-2 mb-4">
-              <div
-                className="flex items-center gap-2 rounded-full
-                bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500
-                text-white pl-3 pr-3 py-1.5 text-xs
-                shadow-md shadow-orange-500/20 ring-1 ring-black/10"
-               >
-                <Truck className="w-4 h-4 opacity-95" aria-hidden="true" />
-                <span className="font-semibold tracking-wide">
-                  Entrega e instalación gratis en Cali
-                </span>
-              </div>
+          {/* Beneficio destacado (solo móvil) */}
+          <div className="px-2 mb-3">
+            <div className="
+              flex items-center gap-2 rounded-full
+              bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500
+              text-white pl-3 pr-3 py-1.5 text-xs
+              shadow-md shadow-orange-500/20 ring-1 ring-black/10
+            ">
+              <Truck className="w-4 h-4 opacity-95" aria-hidden="true" />
+              <span className="font-semibold tracking-wide">
+                Entrega e instalación gratis en Cali
+              </span>
             </div>
+          </div>
 
+          {menuItems.map((item) => (
+            <div key={item.id}>
               <button
                 onClick={() => item.id === 'servicios' ? handleMobileServicesToggle() : handleClick(item.id)}
                 className={`block w-full text-left px-4 py-2 rounded text-sm font-medium flex items-center justify-between
@@ -206,8 +197,7 @@ const Header = ({ currentPage, onNavigate }) => {
                 <span>{item.name}</span>
                 {item.hasSubmenu && (
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''
-                      }`}
+                    className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
                   />
                 )}
               </button>
@@ -233,15 +223,7 @@ const Header = ({ currentPage, onNavigate }) => {
             </div>
           ))}
 
-          <a
-            href="https://wa.me/573177110447"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-green-500 text-white text-center px-4 py-2 rounded hover:bg-green-600 mt-4 transition-colors duration-200"
-          >
-            <Phone className="inline w-4 h-4 mr-2" />
-            WhatsApp
-          </a>
+          
         </div>
       )}
     </header>
@@ -249,3 +231,4 @@ const Header = ({ currentPage, onNavigate }) => {
 };
 
 export default Header;
+
