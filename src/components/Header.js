@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, ChevronDown, Truck } from 'lucide-react';
 
 const Header = ({ currentPage, onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -136,18 +136,33 @@ const Header = ({ currentPage, onNavigate }) => {
             ))}
           </nav>
 
-          {/* CTA Button Desktop */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <a
-              href="https://wa.me/573177110447"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 flex items-center text-sm transition-colors duration-200"
-            >
-              <Phone className="w-4 h-4 mr-2" />
-              WhatsApp
-            </a>
-          </div>
+               {/* Beneficio destacado (desktop) */}
+               <div className="hidden lg:flex items-center">
+                <div
+                 className="group relative select-none"
+                 aria-label="Beneficio: Entrega e instalación gratis en Cali"
+                >
+                 <div className="
+                   flex items-center gap-2 rounded-full
+                   bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500
+                   text-white pl-3 pr-4 py-2
+                   shadow-lg shadow-orange-500/20 ring-1 ring-black/10
+                   transition hover:shadow-orange-500/30
+                 ">
+                   <Truck className="w-5 h-5 opacity-95" aria-hidden="true" />
+                   <span className="text-sm font-semibold tracking-wide">
+                     Entrega e instalación gratis en Cali
+                   </span>
+                   </div>
+
+                   {/* Brillo sutil al hover */}
+                   <span className="
+                     pointer-events-none absolute inset-0 rounded-full
+                     opacity-0 group-hover:opacity-100 transition
+                     ring-2 ring-white/10
+                   " />
+                 </div>
+               </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
