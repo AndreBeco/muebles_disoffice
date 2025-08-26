@@ -41,14 +41,12 @@ const Header = ({ currentPage, onNavigate }) => {
     setIsMobileServicesOpen(!isMobileServicesOpen);
   };
 
-  // Close services dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (servicesRef.current && !servicesRef.current.contains(event.target)) {
         setIsServicesOpen(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
@@ -83,16 +81,15 @@ const Header = ({ currentPage, onNavigate }) => {
 
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 lg:h-24">
+        <div className="flex justify-between items-center h-28 lg:h-32">
           {/* Logo */}
           <div className="flex items-center">
             <img
-             src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
-             alt="Logo Muebles DisOffice"
-             className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
-             referrerPolicy="no-referrer"
-           />
-    
+              src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
+              alt="Logo Muebles DisOffice"
+              className="w-28 h-28 sm:w-32 sm:h-32 object-contain"
+              referrerPolicy="no-referrer"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -135,7 +132,7 @@ const Header = ({ currentPage, onNavigate }) => {
             ))}
           </nav>
 
-          {/* Beneficio destacado (desktop) - REEMPLAZA el antiguo botón de WhatsApp */}
+          {/* Beneficio destacado (desktop) */}
           <div className="hidden lg:flex items-center">
             <div className="group relative select-none" aria-label="Beneficio: Entrega e instalación gratis en Cali">
               <div className="
@@ -150,7 +147,6 @@ const Header = ({ currentPage, onNavigate }) => {
                   Entrega e instalación gratis en Cali
                 </span>
               </div>
-              <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition ring-2 ring-white/10" />
             </div>
           </div>
 
@@ -223,8 +219,6 @@ const Header = ({ currentPage, onNavigate }) => {
               )}
             </div>
           ))}
-
-          
         </div>
       )}
     </header>
@@ -232,4 +226,3 @@ const Header = ({ currentPage, onNavigate }) => {
 };
 
 export default Header;
-
