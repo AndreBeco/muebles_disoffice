@@ -81,13 +81,13 @@ const Header = ({ currentPage, onNavigate }) => {
 
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-28 lg:h-32">
+        <div className="flex justify-between items-center h-36 lg:h-40">
           {/* Logo */}
           <div className="flex items-center">
             <img
               src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
               alt="Logo Muebles DisOffice"
-              className="w-28 h-28 sm:w-32 sm:h-32 object-contain"
+              className="w-36 h-36 sm:w-40 sm:h-40 object-contain"
               referrerPolicy="no-referrer"
             />
           </div>
