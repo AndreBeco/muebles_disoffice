@@ -22,7 +22,7 @@ const Header = ({ currentPage, onNavigate }) => {
 
   const handleClick = (id) => {
     if (id === 'servicios') {
-      setIsServicesOpen(!isServicesOpen);
+      setIsServicesOpen((v) => !v);
       return;
     }
     onNavigate(id);
@@ -38,9 +38,10 @@ const Header = ({ currentPage, onNavigate }) => {
   };
 
   const handleMobileServicesToggle = () => {
-    setIsMobileServicesOpen(!isMobileServicesOpen);
+    setIsMobileServicesOpen((v) => !v);
   };
 
+  // Cerrar dropdown Servicios al hacer click fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (servicesRef.current && !servicesRef.current.contains(event.target)) {
@@ -48,12 +49,10 @@ const Header = ({ currentPage, onNavigate }) => {
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const isServiceActive = serviciosItems.some(service => currentPage === service.id);
+  const isServiceActive = serviciosItems.some(s => currentPage === s.id);
 
   return (
     <header className="w-full bg-white shadow-lg relative z-50">
@@ -81,22 +80,23 @@ const Header = ({ currentPage, onNavigate }) => {
 
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20 lg:h-24">
-
-          {/* IZQUIERDA: Logo (tu bloque original) */}
+        <div className="flex justify-between items-center h-24 lg:h-28">
+          {/* IZQUIERDA: Logo (como lo tenías) */}
           <div className="flex items-center space-x-3">
             <img
               src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
               alt="Logo Muebles DisOffice"
               className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
               referrerPolicy="no-referrer"
-             />
-         </div>
-       </div>
+            />
+            {/* Si no quieres el texto al lado, borra este bloque */}
+            <div className="text-2xl lg:text-3xl font-bold text-blue-900 leading-tight">
+              <span className="text-blue-600">Muebles</span>
+              <span className="text-gray-800">DisOffice</span>
+            </div>
+          </div>
 
-
-
-          {/* Desktop Navigation */}
+          {/* CENTRO: Navegación desktop */}
           <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => (
               <div key={item.id} className="relative" ref={item.id === 'servicios' ? servicesRef : null}>
@@ -116,7 +116,7 @@ const Header = ({ currentPage, onNavigate }) => {
                   )}
                 </button>
 
-                {/* Desktop Dropdown */}
+                {/* Dropdown Servicios desktop */}
                 {item.id === 'servicios' && isServicesOpen && (
                   <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
                     {serviciosItems.map((service) => (
@@ -136,7 +136,7 @@ const Header = ({ currentPage, onNavigate }) => {
             ))}
           </nav>
 
-          {/* Beneficio destacado (desktop) */}
+          {/* DERECHA: Beneficio destacado (solo desktop) */}
           <div className="hidden lg:flex items-center">
             <div className="group relative select-none" aria-label="Beneficio: Entrega e instalación gratis en Cali">
               <div className="
@@ -154,7 +154,7 @@ const Header = ({ currentPage, onNavigate }) => {
             </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Botón menú móvil */}
           <div className="lg:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -170,7 +170,7 @@ const Header = ({ currentPage, onNavigate }) => {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t px-4 py-4 space-y-2">
-          {/* Beneficio destacado (solo móvil) */}
+          {/* Beneficio destacado móvil */}
           <div className="px-2 mb-3">
             <div className="
               flex items-center gap-2 rounded-full
@@ -203,7 +203,7 @@ const Header = ({ currentPage, onNavigate }) => {
                 )}
               </button>
 
-              {/* Mobile Services Submenu */}
+              {/* Submenú Servicios móvil */}
               {item.id === 'servicios' && isMobileServicesOpen && (
                 <div className="ml-4 mt-2 space-y-1">
                   {serviciosItems.map((service) => (
