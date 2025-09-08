@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Menu, X, Phone, Mail, MapPin, ChevronDown, Truck } from 'lucide-react';
+import { Menu, X, Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
 
 const Header = ({ currentPage, onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ const Header = ({ currentPage, onNavigate }) => {
 
   const handleClick = (id) => {
     if (id === 'servicios') {
-      setIsServicesOpen((v) => !v);
+      setIsServicesOpen(!isServicesOpen);
       return;
     }
     onNavigate(id);
@@ -38,21 +38,24 @@ const Header = ({ currentPage, onNavigate }) => {
   };
 
   const handleMobileServicesToggle = () => {
-    setIsMobileServicesOpen((v) => !v);
+    setIsMobileServicesOpen(!isMobileServicesOpen);
   };
 
-  // Cerrar dropdown Servicios al hacer click fuera
+  // Cerrar menú de servicios al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (servicesRef.current && !servicesRef.current.contains(event.target)) {
         setIsServicesOpen(false);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
-  const isServiceActive = serviciosItems.some(s => currentPage === s.id);
+  const isServiceActive = serviciosItems.some(service => currentPage === service.id);
 
   return (
     <header className="w-full bg-white shadow-lg relative z-50">
@@ -79,15 +82,18 @@ const Header = ({ currentPage, onNavigate }) => {
       </div>
 
       {/* Main Header */}
-      <div className="flex items-center">
-        <img
-          src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
-          alt="Logo Muebles DisOffice"
-          className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
-        />
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20 lg:h-24">
+          {/* Solo Logo */}
+          <div className="flex items-center">
+            <img
+              src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
+              alt="Logo Muebles DisOffice"
+              className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+            />
+          </div>
 
-          {/* CENTRO: Navegación desktop */}
+          {/* Navegación Desktop */}
           <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => (
               <div key={item.id} className="relative" ref={item.id === 'servicios' ? servicesRef : null}>
@@ -102,12 +108,13 @@ const Header = ({ currentPage, onNavigate }) => {
                   {item.name}
                   {item.hasSubmenu && (
                     <ChevronDown
-                      className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
+                      className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''
+                        }`}
                     />
                   )}
                 </button>
 
-                {/* Dropdown Servicios desktop */}
+                {/* Dropdown Desktop */}
                 {item.id === 'servicios' && isServicesOpen && (
                   <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
                     {serviciosItems.map((service) => (
@@ -127,22 +134,17 @@ const Header = ({ currentPage, onNavigate }) => {
             ))}
           </nav>
 
-          {/* DERECHA: Beneficio destacado (solo desktop) */}
-          <div className="hidden lg:flex items-center">
-            <div className="group relative select-none" aria-label="Beneficio: Entrega e instalación gratis en Cali">
-              <div className="
-                flex items-center gap-2 rounded-full
-                bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500
-                text-white pl-3 pr-4 py-2
-                shadow-lg shadow-orange-500/20 ring-1 ring-black/10
-                transition hover:shadow-orange-500/30
-              ">
-                <Truck className="w-5 h-5 opacity-95" aria-hidden="true" />
-                <span className="text-sm font-semibold tracking-wide">
-                  Entrega e instalación gratis en Cali
-                </span>
-              </div>
-            </div>
+          {/* Botón CTA Desktop */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <a
+              href="https://wa.me/573177110447"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 flex items-center text-sm transition-colors duration-200"
+            >
+              <Phone className="w-4 h-4 mr-2" />
+              WhatsApp
+            </a>
           </div>
 
           {/* Botón menú móvil */}
@@ -150,7 +152,6 @@ const Header = ({ currentPage, onNavigate }) => {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-blue-600 focus:outline-none p-2"
-              aria-label="Abrir menú"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -158,24 +159,9 @@ const Header = ({ currentPage, onNavigate }) => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Menú Mobile */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t px-4 py-4 space-y-2">
-          {/* Beneficio destacado móvil */}
-          <div className="px-2 mb-3">
-            <div className="
-              flex items-center gap-2 rounded-full
-              bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500
-              text-white pl-3 pr-3 py-1.5 text-xs
-              shadow-md shadow-orange-500/20 ring-1 ring-black/10
-            ">
-              <Truck className="w-4 h-4 opacity-95" aria-hidden="true" />
-              <span className="font-semibold tracking-wide">
-                Entrega e instalación gratis en Cali
-              </span>
-            </div>
-          </div>
-
           {menuItems.map((item) => (
             <div key={item.id}>
               <button
@@ -189,12 +175,13 @@ const Header = ({ currentPage, onNavigate }) => {
                 <span>{item.name}</span>
                 {item.hasSubmenu && (
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''}`}
+                    className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''
+                      }`}
                   />
                 )}
               </button>
 
-              {/* Submenú Servicios móvil */}
+              {/* Submenú Mobile */}
               {item.id === 'servicios' && isMobileServicesOpen && (
                 <div className="ml-4 mt-2 space-y-1">
                   {serviciosItems.map((service) => (
@@ -214,6 +201,16 @@ const Header = ({ currentPage, onNavigate }) => {
               )}
             </div>
           ))}
+
+          <a
+            href="https://wa.me/573177110447"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-green-500 text-white text-center px-4 py-2 rounded hover:bg-green-600 mt-4 transition-colors duration-200"
+          >
+            <Phone className="inline w-4 h-4 mr-2" />
+            WhatsApp
+          </a>
         </div>
       )}
     </header>
