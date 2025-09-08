@@ -79,22 +79,13 @@ const Header = ({ currentPage, onNavigate }) => {
       </div>
 
       {/* Main Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-24 lg:h-28">
-          {/* IZQUIERDA: Logo (como lo tenías) */}
-          <div className="flex items-center space-x-3">
-            <img
-              src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
-              alt="Logo Muebles DisOffice"
-              className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
-              referrerPolicy="no-referrer"
-            />
-            {/* Si no quieres el texto al lado, borra este bloque */}
-            <div className="text-2xl lg:text-3xl font-bold text-blue-900 leading-tight">
-              <span className="text-blue-600">Muebles</span>
-              <span className="text-gray-800">DisOffice</span>
-            </div>
-          </div>
+      <div className="flex items-center">
+        <img
+          src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
+          alt="Logo Muebles DisOffice"
+          className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+        />
+      </div>
 
           {/* CENTRO: Navegación desktop */}
           <nav className="hidden lg:flex items-center space-x-6">
