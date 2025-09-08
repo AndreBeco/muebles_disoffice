@@ -83,14 +83,15 @@ const Header = ({ currentPage, onNavigate }) => {
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 lg:h-24">
-          {/* Logo grande */}
-          <div className="flex items-center">
+          {/* Logo grande con recorte */}
+          <div className="flex items-center overflow-hidden rounded-md">
             <img
               src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
               alt="Logo Muebles DisOffice"
-              className="w-40 h-40 sm:w-48 sm:h-48 object-contain"
+              className="w-40 h-40 sm:w-48 sm:h-48 object-cover"
             />
           </div>
+
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
