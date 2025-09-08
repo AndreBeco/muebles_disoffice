@@ -89,6 +89,10 @@ const Header = ({ currentPage, onNavigate }) => {
               className="w-24 h-24 sm:w-28 sm:h-28 object-contain"
               referrerPolicy="no-referrer"
             />
+            {/* Si no quieres el texto al lado, borra este bloque */}
+            <div className="text-2xl lg:text-3xl font-bold text-blue-900 leading-tight">
+              <span className="text-blue-600">Muebles</span>
+              <span className="text-gray-800">DisOffice</span>
             </div>
           </div>
 
