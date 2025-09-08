@@ -41,7 +41,6 @@ const Header = ({ currentPage, onNavigate }) => {
     setIsMobileServicesOpen(!isMobileServicesOpen);
   };
 
-  // Cerrar menú de servicios al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (servicesRef.current && !servicesRef.current.contains(event.target)) {
@@ -84,16 +83,16 @@ const Header = ({ currentPage, onNavigate }) => {
       {/* Main Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 lg:h-24">
-          {/* Solo Logo */}
+          {/* Logo grande */}
           <div className="flex items-center">
             <img
               src="https://i.pinimg.com/736x/3b/be/bf/3bbebfccff85353ee6d91a28083ffbc9.jpg"
               alt="Logo Muebles DisOffice"
-              className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+              className="w-40 h-40 sm:w-48 sm:h-48 object-contain"
             />
           </div>
 
-          {/* Navegación Desktop */}
+          {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item) => (
               <div key={item.id} className="relative" ref={item.id === 'servicios' ? servicesRef : null}>
@@ -108,13 +107,12 @@ const Header = ({ currentPage, onNavigate }) => {
                   {item.name}
                   {item.hasSubmenu && (
                     <ChevronDown
-                      className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''
-                        }`}
+                      className={`ml-1 w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`}
                     />
                   )}
                 </button>
 
-                {/* Dropdown Desktop */}
+                {/* Desktop Dropdown */}
                 {item.id === 'servicios' && isServicesOpen && (
                   <div className="absolute top-full left-0 mt-1 w-56 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
                     {serviciosItems.map((service) => (
@@ -134,7 +132,7 @@ const Header = ({ currentPage, onNavigate }) => {
             ))}
           </nav>
 
-          {/* Botón CTA Desktop */}
+          {/* Botón WhatsApp Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
               href="https://wa.me/573177110447"
@@ -158,61 +156,6 @@ const Header = ({ currentPage, onNavigate }) => {
           </div>
         </div>
       </div>
-
-      {/* Menú Mobile */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t px-4 py-4 space-y-2">
-          {menuItems.map((item) => (
-            <div key={item.id}>
-              <button
-                onClick={() => item.id === 'servicios' ? handleMobileServicesToggle() : handleClick(item.id)}
-                className={`block w-full text-left px-4 py-2 rounded text-sm font-medium flex items-center justify-between
-                  ${(currentPage === item.id || (item.id === 'servicios' && isServiceActive))
-                    ? 'bg-orange-100 text-orange-700'
-                    : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-              >
-                <span>{item.name}</span>
-                {item.hasSubmenu && (
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${isMobileServicesOpen ? 'rotate-180' : ''
-                      }`}
-                  />
-                )}
-              </button>
-
-              {/* Submenú Mobile */}
-              {item.id === 'servicios' && isMobileServicesOpen && (
-                <div className="ml-4 mt-2 space-y-1">
-                  {serviciosItems.map((service) => (
-                    <button
-                      key={service.id}
-                      onClick={() => handleServiceClick(service.id)}
-                      className={`block w-full text-left px-4 py-2 rounded text-sm border-l-2 transition-colors duration-200
-                        ${currentPage === service.id
-                          ? 'bg-orange-50 text-orange-700 border-orange-300 font-medium'
-                          : 'text-gray-600 hover:bg-gray-50 border-gray-200 hover:border-orange-200'
-                        }`}
-                    >
-                      {service.name}
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-
-          <a
-            href="https://wa.me/573177110447"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full bg-green-500 text-white text-center px-4 py-2 rounded hover:bg-green-600 mt-4 transition-colors duration-200"
-          >
-            <Phone className="inline w-4 h-4 mr-2" />
-            WhatsApp
-          </a>
-        </div>
-      )}
     </header>
   );
 };
