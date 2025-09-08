@@ -439,7 +439,7 @@ const App = () => {
               <div className="space-y-4">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-orange-600 mr-3" />
-                  <span>+57 318 406 3943</span>+57 317 711 0447</span>
+                  <span>+57 318 406 3943 +57 317 711 0447</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-orange-600 mr-3" />
