@@ -241,79 +241,84 @@ const App = () => {
     </div>
   );
 
-  const AdaptacionPage = () => (
-    <div className="py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl font-bold mb-8 text-center">Adaptación y Mejora Ergonómica</h1>
+ const AdaptacionPage = () => (
+  <div className="py-16">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 className="text-4xl font-bold mb-8 text-center">Adaptación y Mejora Ergonómica</h1>
 
-        <div className="mb-12">
-          <p className="text-lg text-gray-700 mb-6 text-center">
-            Sabemos lo frustrante que puede ser una silla incómoda o un escritorio mal diseñado. Por eso, en lugar de reemplazar, lo transformamos.
-            Mejoramos lo que ya tienes para que funcione mejor contigo y tu espacio.
-          </p>
+      {/* Intro */}
+      <div className="mb-12">
+        <p className="text-lg text-gray-700 mb-6 text-center">
+          Sabemos lo frustrante que puede ser una silla incómoda o un escritorio mal diseñado. Por eso, en lugar de reemplazar, lo transformamos.
+          Mejoramos lo que ya tienes para que funcione mejor contigo y tu espacio.
+        </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-gray-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Tipos de Adaptación</h3>
-              <ul className="space-y-4 text-gray-700">
-                <li>
-                  <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
-                  Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
-                </li>
-                <li>
-                  <span className="font-semibold">🪑 Modificación estructural de muebles:</span><br />
-                  Ajuste de alturas o formas de escritorios y sillas para mejorar la postura.
-                </li>
-                <li>
-                  <span className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento:</span><br />
-                  Rediseño de compartimientos, ruedas o cerraduras de seguridad.
-                </li>
-                <li>
-                  <span className="font-semibold">🎨 Personalización estética:</span><br />
-                  Cambio de colores o acabados para armonizar con tu marca o entorno.
-                </li>
-                <li>
-                  <span className="font-semibold">🔄 Conversión y reutilización:</span><br />
-                  Transformamos muebles antiguos en soluciones nuevas sin desecharlos.
-                </li>
-              </ul>
-            </div>
+        {/* Grid SOLO para Tipos y Beneficios */}
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">Tipos de Adaptación</h3>
+            <ul className="space-y-4 text-gray-700">
+              <li>
+                <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
+                Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
+              </li>
+              <li>
+                <span className="font-semibold">🪑 Modificación estructural de muebles:</span><br />
+                Ajuste de alturas o formas de escritorios y sillas para mejorar la postura.
+              </li>
+              <li>
+                <span className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento:</span><br />
+                Rediseño de compartimientos, ruedas o cerraduras de seguridad.
+              </li>
+              <li>
+                <span className="font-semibold">🎨 Personalización estética:</span><br />
+                Cambio de colores o acabados para armonizar con tu marca o entorno.
+              </li>
+              <li>
+                <span className="font-semibold">🔄 Conversión y reutilización:</span><br />
+                Transformamos muebles antiguos en soluciones nuevas sin desecharlos.
+              </li>
+            </ul>
+          </div>
 
-            <div className="bg-orange-50 p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-4">Beneficios</h3>
-              <ul className="space-y-6 text-gray-700">
-                <li>🟢 Mayor comodidad, ergonomía y durabilidad.</li>
-                <li>🟢 Reducción de fatiga y adaptación a necesidades especiales.</li>
-                <li>🟢 Mejor organización y funcionalidad del espacio.</li>
-                <li>🟢 Ambientes más agradables y coherentes con tu identidad visual.</li>
-                <li>🟢 Ahorro económico y menor generación de residuos.</li>
-              </ul>
-            </div>
-
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-center">Galería de Transformaciones</h2>
-          <Carousel
-            items={carouselData.adaptacion}
-            type="adaptacion"
-            currentIndex={carouselIndex.adaptacion}
-            onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, adaptacion: newIndex }))} />
-                 />
-              </div>
-
-              {/* CTA final de Adaptación */}
-            <div className="text-center mt-12 md:col-span-2">
-              <a
-                href="https://wa.me/573177110447?text=Hola,%20quisiera%20cotizar%20una%20adaptación/mejora%20ergonómica%20para%20mi%20mobiliario."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 transition"
-              >
-                Solicitar visita técnica
-              </a>
-            </div>
+          <div className="bg-orange-50 p-6 rounded-lg">
+            <h3 className="text-xl font-bold mb-4">Beneficios</h3>
+            <ul className="space-y-6 text-gray-700">
+              <li>🟢 Mayor comodidad, ergonomía y durabilidad.</li>
+              <li>🟢 Reducción de fatiga y adaptación a necesidades especiales.</li>
+              <li>🟢 Mejor organización y funcionalidad del espacio.</li>
+              <li>🟢 Ambientes más agradables y coherentes con tu identidad visual.</li>
+              <li>🟢 Ahorro económico y menor generación de residuos.</li>
+            </ul>
           </div>
         </div>
-  );
+      </div>
+
+      {/* Galería — FUERA del grid */}
+      <div className="mb-8">
+        <h2 className="text-2xl font-bold mb-6 text-center">Galería de Transformaciones</h2>
+        <Carousel
+          items={carouselData.adaptacion}
+          type="adaptacion"
+          currentIndex={carouselIndex.adaptacion}
+          onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, adaptacion: newIndex }))}
+        />
+      </div>
+
+      {/* CTA FINAL — FUERA del grid y de la galería */}
+      <div className="text-center mt-12">
+        <a
+          href="https://wa.me/573177110447?text=Hola,%20quisiera%20cotizar%20una%20adaptación/mejora%20ergonómica%20para%20mi%20mobiliario."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 transition"
+        >
+          Solicitar visita técnica
+        </a>
+      </div>
+    </div>
+  </div>
+);
 
   const DisenoPage = () => (
     <div className="py-16">
