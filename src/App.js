@@ -292,6 +292,17 @@ const App = () => {
                 <li>🟢 Ahorro económico y menor generación de residuos.</li>
               </ul>
             </div>
+    {/* CTA final de Adaptación */}
+<div className="text-center mt-12">
+  <a
+    href="https://wa.me/573177110447?text=Hola,%20quisiera%20cotizar%20una%20adaptación/mejora%20ergonómica%20para%20mi%20mobiliario."
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 transition"
+  >
+    Solicitar visita técnica
+  </a>
+</div>
           </div>
         </div>
 
@@ -408,6 +419,17 @@ const App = () => {
             onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, reparacion: newIndex }))}
           />
         </div>
+              {/* CTA final de Reparación */}
+<div className="text-center mt-12">
+  <a
+    href="https://wa.me/573177110447?text=Hola,%20necesito%20reparación/mantenimiento%20de%20muebles%20de%20oficina.%20¿Pueden%20agendar%20una%20visita%20técnica?"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 transition"
+  >
+    Solicitar visita técnica
+  </a>
+</div>
       </div>
     </div>
   );
