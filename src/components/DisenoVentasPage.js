@@ -50,15 +50,6 @@ export default function DisenoVentasPage() {
           >
             Cotizar ahora
           </a>
-
-          <a
-            href={`https://wa.me/${WP}?text=Hola,%20quisiera%20solicitar%20una%20visita%20técnica%20para:%20${encodeURIComponent(p.name)}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full block text-center border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 transition"
-          >
-            Solicitar visita técnica
-          </a>
         </div>
       </div>
     </article>
