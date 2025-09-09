@@ -290,7 +290,17 @@ const App = () => {
               </ul>
             </div>
 
-            {/* CTA final de Adaptación */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">Galería de Transformaciones</h2>
+          <Carousel
+            items={carouselData.adaptacion}
+            type="adaptacion"
+            currentIndex={carouselIndex.adaptacion}
+            onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, adaptacion: newIndex }))} />
+                 />
+              </div>
+
+              {/* CTA final de Adaptación */}
             <div className="text-center mt-12 md:col-span-2">
               <a
                 href="https://wa.me/573177110447?text=Hola,%20quisiera%20cotizar%20una%20adaptación/mejora%20ergonómica%20para%20mi%20mobiliario."
@@ -303,17 +313,6 @@ const App = () => {
             </div>
           </div>
         </div>
-
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-6 text-center">Galería de Transformaciones</h2>
-          <Carousel
-            items={carouselData.adaptacion}
-            type="adaptacion"
-            currentIndex={carouselIndex.adaptacion}
-            onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, adaptacion: newIndex }))} />
-        </div>
-      </div>
-    </div>
   );
 
   const DisenoPage = () => (
