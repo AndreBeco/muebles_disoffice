@@ -24,43 +24,70 @@ const App = () => {
   };
 
   const Footer = () => (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h3 className="text-xl font-bold mb-4">Síguenos en redes sociales</h3>
-          <div className="flex justify-center space-x-6">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-gray-300 hover:text-white"
+  <footer className="bg-gray-800 text-white py-8">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center">
+        <h3 className="text-xl font-bold mb-4">Síguenos en redes sociales</h3>
+        <div className="flex justify-center space-x-6">
+          
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-gray-300 hover:text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-6 h-6 mr-2"
             >
-              <Instagram className="w-6 h-6 mr-2" />
-              Instagram
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-gray-300 hover:text-white"
+              <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM12 9a3 3 0 100 6 3 3 0 000-6z" />
+            </svg>
+            Instagram
+          </a>
+
+          <a
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-gray-300 hover:text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-6 h-6 mr-2"
             >
-              <Facebook className="w-6 h-6 mr-2" />
-              Facebook
-            </a>
-            <a
-              href="https://www.tiktok.com/es/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center text-gray-300 hover:text-white"
+              <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.6l-.4 3h-2.2v7A10 10 0 0022 12z" />
+            </svg>
+            Facebook
+          </a>
+
+          <a
+            href="https://www.tiktok.com/@mueblesdisoffice"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center text-gray-300 hover:text-white"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-6 h-6 mr-2"
             >
-              <Phone className="w-6 h-6 mr-2" />
-              Tiktok
-            </a>
-          </div>
+              <path d="M12 2c1.5 0 2.9.5 4.1 1.3a6.3 6.3 0 0 0 2.6 1.1v3.4a9.7 9.7 0 0 1-3-.7v7.6a6.7 6.7 0 1 1-6.7-6.7c.4 0 .8 0 1.2.1V12a3.3 3.3 0 1 0 2.3 3.1V2z" />
+            </svg>
+            TikTok
+          </a>
+
         </div>
       </div>
-    </footer>
-  );
+    </div>
+  </footer>
+);
+
+export default Footer;
 
   const HomePage = () => (
     <div>
