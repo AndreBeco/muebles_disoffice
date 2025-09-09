@@ -21,38 +21,44 @@ export default function DisenoVentasPage() {
 
   const ProductCard = ({ p }) => (
     <article className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-   {/* Imagen cuadrada 1:1 */}
-<div className="relative w-full" style={{ paddingTop: '100%' }}>
-  <img
-    src={p.img}
-    alt={p.name}
-    className="absolute inset-0 w-full h-full object-cover"
-    referrerPolicy="no-referrer"
-  />
-</div>
+      {/* Imagen cuadrada 1:1 */}
+      <div className="relative w-full" style={{ paddingTop: '100%' }}>
+        <img
+          src={p.img}
+          alt={p.name}
+          className="absolute inset-0 w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
 
       <div className="p-5">
         <h3 className="text-lg font-semibold">{p.name}</h3>
+
         {p.features?.length > 0 && (
           <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
             {p.features.slice(0, 3).map((f, i) => <li key={i}>{f}</li>)}
           </ul>
         )}
-        <div className="mt-4 flex items-center justify-between">
+
+        {/* CTAs de producto */}
+        <div className="mt-5 space-y-2">
           <a
-            href={`https://wa.me/${WP}?text=Hola,%20me%20interesa%20${encodeURIComponent(p.name)}`}
+            href={`https://wa.me/${WP}?text=Hola,%20me%20interesa:%20${encodeURIComponent(p.name)}.%20¿Me%20pueden%20cotizar?`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-orange-600 font-medium hover:underline"
+            className="w-full block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition"
           >
-            Cotizar por WhatsApp
+            Cotizar ahora
           </a>
-          <button
-            className="text-sm px-3 py-2 border rounded hover:bg-gray-50"
-            onClick={() => alert("Aquí puedes abrir un modal con más fotos o ficha técnica.")}
+
+          <a
+            href={`https://wa.me/${WP}?text=Hola,%20quisiera%20solicitar%20una%20visita%20técnica%20para:%20${encodeURIComponent(p.name)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full block text-center border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 transition"
           >
-            Ver más
-          </button>
+            Solicitar visita técnica
+          </a>
         </div>
       </div>
     </article>
@@ -64,31 +70,51 @@ export default function DisenoVentasPage() {
       <p className="text-gray-600 text-center max-w-3xl mx-auto mb-10">
         Explora nuestras categorías y descubre subtipos y modelos.
       </p>
+
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {CATEGORIES.map(cat => (
-          <button
+          <div
             key={cat.id}
-            onClick={() => { setCategoryId(cat.id); setView("category"); }}
-            className="text-left bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="text-left bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition"
           >
             {/* Imagen 3:2 para portada de categoría */}
-      <div className="relative w-full" style={{ paddingTop: '66.6667%' }}>
-        <img
-          src={cat.cover}
-          alt={cat.title}
-          className="absolute inset-0 w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-         />
-      </div>
+            <button
+              onClick={() => { setCategoryId(cat.id); setView("category"); }}
+              className="block w-full text-left focus:outline-none"
+            >
+              <div className="relative w-full" style={{ paddingTop: '66.6667%' }}>
+                <img
+                  src={cat.cover}
+                  alt={cat.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+            </button>
 
             <div className="p-5">
               <h3 className="text-xl font-semibold mb-1">{cat.title}</h3>
               <p className="text-gray-600 text-sm">{cat.description}</p>
-              <span className="inline-block mt-3 text-orange-600 font-medium">
-                Ver {cat.title} →
-              </span>
+
+              {/* CTA de categoría */}
+              <div className="mt-4 flex gap-2">
+                <button
+                  onClick={() => { setCategoryId(cat.id); setView("category"); }}
+                  className="flex-1 bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition"
+                >
+                  Ver {cat.title}
+                </button>
+                <a
+                  href={`https://wa.me/${WP}?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(cat.title)}%20para%20mi%20oficina.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-center hover:bg-gray-50 transition"
+                >
+                  Cotizar {cat.title}
+                </a>
+              </div>
             </div>
-          </button>
+          </div>
         ))}
       </div>
     </section>
@@ -132,6 +158,18 @@ export default function DisenoVentasPage() {
           {filtered.map(p => <ProductCard key={p.id} p={p} />)}
         </div>
       )}
+
+      {/* CTA general para la categoría activa */}
+      <div className="text-center mt-10">
+        <a
+          href={`https://wa.me/${WP}?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(category?.title || 'una categoría')}%20para%20mi%20oficina.`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 transition"
+        >
+          Cotizar esta categoría
+        </a>
+      </div>
     </section>
   );
 
