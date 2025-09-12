@@ -1,49 +1,54 @@
-// components/DisenoVentasPage.jsx
+// src/components/DisenoVentasPage.jsx
 import React from "react";
 import { CATEGORIES, PRODUCTS } from "../data/catalogData";
+import AspectImage from "./AspectImage";
 
 const WP = "573177110447";
 
 export default function DisenoVentasPage() {
   const [view, setView] = React.useState("grid");
   const [categoryId, setCategoryId] = React.useState(CATEGORIES[0]?.id);
-  const category = CATEGORIES.find(c => c.id === categoryId);
+  const category = CATEGORIES.find((c) => c.id === categoryId);
   const [activeSubtype, setActiveSubtype] = React.useState(category?.subtypes?.[0]?.id || "");
 
   React.useEffect(() => {
-    const c = CATEGORIES.find(c => c.id === categoryId);
+    const c = CATEGORIES.find((c) => c.id === categoryId);
     if (c?.subtypes?.length) setActiveSubtype(c.subtypes[0].id);
   }, [categoryId]);
 
   const filtered = PRODUCTS.filter(
-    p => p.category === categoryId && (!activeSubtype || p.subtype === activeSubtype)
+    (p) => p.category === categoryId && (!activeSubtype || p.subtype === activeSubtype)
   );
 
   const ProductCard = ({ p }) => (
     <article className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-      {/* Imagen cuadrada 1:1 */}
-      <div className="relative w-full" style={{ paddingTop: '100%' }}>
-        <img
-          src={p.img}
-          alt={p.name}
-          className="absolute inset-0 w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
-      </div>
+      {/* Imagen cuadrada 1:1 sin recorte */}
+      <AspectImage
+        src={p.img}
+        alt={p.name}
+        ratio="1:1"
+        fit="contain"
+        className="bg-gray-50"
+        imgClassName="p-2"
+      />
 
       <div className="p-5">
         <h3 className="text-lg font-semibold">{p.name}</h3>
 
         {p.features?.length > 0 && (
           <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
-            {p.features.slice(0, 3).map((f, i) => <li key={i}>{f}</li>)}
+            {p.features.slice(0, 3).map((f, i) => (
+              <li key={i}>{f}</li>
+            ))}
           </ul>
         )}
 
-        {/* CTAs de producto */}
+        {/* CTA de producto */}
         <div className="mt-5 space-y-2">
           <a
-            href={`https://wa.me/${WP}?text=Hola,%20me%20interesa:%20${encodeURIComponent(p.name)}.%20¿Me%20pueden%20cotizar?`}
+            href={`https://wa.me/${WP}?text=Hola,%20me%20interesa:%20${encodeURIComponent(
+              p.name
+            )}.%20¿Me%20pueden%20cotizar?`}
             target="_blank"
             rel="noopener noreferrer"
             className="w-full block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition"
@@ -63,24 +68,27 @@ export default function DisenoVentasPage() {
       </p>
 
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {CATEGORIES.map(cat => (
+        {CATEGORIES.map((cat) => (
           <div
             key={cat.id}
             className="text-left bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition"
           >
-            {/* Imagen 3:2 para portada de categoría */}
+            {/* Portada 3:2 sin recorte */}
             <button
-              onClick={() => { setCategoryId(cat.id); setView("category"); }}
+              onClick={() => {
+                setCategoryId(cat.id);
+                setView("category");
+              }}
               className="block w-full text-left focus:outline-none"
             >
-              <div className="relative w-full" style={{ paddingTop: '66.6667%' }}>
-                <img
-                  src={cat.cover}
-                  alt={cat.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
+              <AspectImage
+                src={cat.cover}
+                alt={cat.title}
+                ratio="3:2"
+                fit="contain"
+                className="bg-gray-50"
+                imgClassName="p-2"
+              />
             </button>
 
             <div className="p-5">
@@ -90,13 +98,18 @@ export default function DisenoVentasPage() {
               {/* CTA de categoría */}
               <div className="mt-4 flex gap-2">
                 <button
-                  onClick={() => { setCategoryId(cat.id); setView("category"); }}
+                  onClick={() => {
+                    setCategoryId(cat.id);
+                    setView("category");
+                  }}
                   className="flex-1 bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition"
                 >
                   Ver {cat.title}
                 </button>
                 <a
-                  href={`https://wa.me/${WP}?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(cat.title)}%20para%20mi%20oficina.`}
+                  href={`https://wa.me/${WP}?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(
+                    cat.title
+                  )}%20para%20mi%20oficina.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 border border-gray-300 text-gray-700 px-4 py-2 rounded-md text-center hover:bg-gray-50 transition"
@@ -123,7 +136,7 @@ export default function DisenoVentasPage() {
 
       {category?.subtypes?.length > 0 && (
         <div className="flex gap-2 flex-wrap mb-8">
-          {category.subtypes.map(st => {
+          {category.subtypes.map((st) => {
             const active = st.id === activeSubtype;
             return (
               <button
@@ -146,14 +159,18 @@ export default function DisenoVentasPage() {
         <p className="text-gray-600">Pronto añadiremos más productos de esta categoría.</p>
       ) : (
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {filtered.map(p => <ProductCard key={p.id} p={p} />)}
+          {filtered.map((p) => (
+            <ProductCard key={p.id} p={p} />
+          ))}
         </div>
       )}
 
       {/* CTA general para la categoría activa */}
       <div className="text-center mt-10">
         <a
-          href={`https://wa.me/${WP}?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(category?.title || 'una categoría')}%20para%20mi%20oficina.`}
+          href={`https://wa.me/${WP}?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(
+            category?.title || "una categoría"
+          )}%20para%20mi%20oficina.`}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 transition"
