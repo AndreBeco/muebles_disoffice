@@ -1,16 +1,15 @@
 import React, { useState, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Phone, Mail, MapPin, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
 import Header from './components/Header.js';
 import Carousel from './components/Carousel.js';
-import DisenoVentasPage from './components/DisenoVentasPage.js'; // <-- ajusta a .js si tu archivo es .js
+import DisenoVentasPage from './components/DisenoVentasPage.js';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState('inicio');
   const [carouselIndex, setCarouselIndex] = useState({ adaptacion: 0, diseno: 0, reparacion: 0 });
 
-  // Función para manejar la navegación
   const handleNavigation = (pageId) => {
     setCurrentPage(pageId);
   };
@@ -20,7 +19,7 @@ const App = () => {
       ...prev,
       [type]: newIndex
     }));
-  }; // <-- CERRAR ESTA FUNCIÓN ERA EL ERROR
+  };
 
   const Footer = () => (
     <footer className="bg-gray-800 text-white py-8">
@@ -28,7 +27,6 @@ const App = () => {
         <div className="text-center">
           <h3 className="text-xl font-bold mb-4">Síguenos en redes sociales</h3>
           <div className="flex justify-center space-x-6">
-
             {/* Instagram */}
             <a
               href="https://instagram.com"
@@ -36,7 +34,6 @@ const App = () => {
               rel="noopener noreferrer"
               className="flex items-center text-gray-300 hover:text-white"
             >
-              {/* Ícono Instagram */}
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 24 24" className="w-6 h-6 mr-2">
                 <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM12 9a3 3 0 100 6 3 3 0 000-6z" />
@@ -51,7 +48,6 @@ const App = () => {
               rel="noopener noreferrer"
               className="flex items-center text-gray-300 hover:text-white"
             >
-              {/* Ícono Facebook */}
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 24 24" className="w-6 h-6 mr-2">
                 <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.6l-.4 3h-2.2v7A10 10 0 0022 12z" />
@@ -66,14 +62,12 @@ const App = () => {
               rel="noopener noreferrer"
               className="flex items-center text-gray-300 hover:text-white"
             >
-              {/* Ícono TikTok */}
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                 viewBox="0 0 24 24" className="w-6 h-6 mr-2">
                 <path d="M12 2c1.5 0 2.9.5 4.1 1.3a6.3 6.3 0 0 0 2.6 1.1v3.4a9.7 9.7 0 0 1-3-.7v7.6a6.7 6.7 0 1 1-6.7-6.7c.4 0 .8 0 1.2.1V12a3.3 3.3 0 1 0 2.3 3.1V2z" />
               </svg>
               TikTok
             </a>
-
           </div>
         </div>
       </div>
@@ -82,17 +76,14 @@ const App = () => {
 
   const HomePage = () => (
     <div>
-      {/* Hero Section */}
+      {/* Hero */}
       <section
         className="relative bg-cover bg-center bg-no-repeat text-white py-24"
         style={{
           backgroundImage: `url('https://i.pinimg.com/736x/37/b8/dc/37b8dc7d09da2a13850861cc2d50002a.jpg')`,
         }}
       >
-        {/* Capa de oscurecimiento */}
         <div className="absolute inset-0 bg-black opacity-60"></div>
-
-        {/* Contenido encima */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h1 className="text-4xl font-bold mb-6">
@@ -113,7 +104,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* Servicios */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
@@ -167,7 +158,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="bg-orange-600 text-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-4">¿Necesitas renovar o mejorar tu mobiliario de oficina?</h2>
@@ -211,7 +202,7 @@ const App = () => {
             </p>
           </div>
 
-          <div className="bg-orange-50 p-6 rounded-lg">
+          <div className="bg-orange-50 p-6 rounded-lg mb-8">
             <h2 className="text-2xl font-bold mb-4">¿Por qué elegirnos?</h2>
             <ul className="space-y-2 text-gray-700">
               <li>• No solo vendemos: restauramos, adaptamos y mejoramos.</li>
@@ -224,7 +215,7 @@ const App = () => {
             </ul>
           </div>
 
-          <div className="bg-orange-50 p-6 rounded-lg mb-8">
+          <div className="bg-orange-50 p-6 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Nuestro Valor Diferencial</h2>
             <p className="text-gray-700 mb-4">
               En Muebles DisOffice no solo diseñamos y fabricamos mobiliario nuevo, también recuperamos y transformamos el que ya tienes. Restauramos sillas, escritorios, archivadores y otros muebles de oficina que muchas empresas creen irrecuperables, extendiendo su vida útil y reduciendo costos.
@@ -241,84 +232,87 @@ const App = () => {
     </div>
   );
 
- const AdaptacionPage = () => (
-  <div className="py-16">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">Adaptación y Mejora Ergonómica</h1>
+  const AdaptacionPage = () => (
+    <div className="py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-bold mb-8 text-center">Adaptación y Mejora Ergonómica</h1>
 
-      {/* Intro */}
-      <div className="mb-12">
-        <p className="text-lg text-gray-700 mb-6 text-center">
-          Sabemos lo frustrante que puede ser una silla incómoda o un escritorio mal diseñado. Por eso, en lugar de reemplazar, lo transformamos.
-          Mejoramos lo que ya tienes para que funcione mejor contigo y tu espacio.
-        </p>
+        {/* Intro */}
+        <div className="mb-12">
+          <p className="text-lg text-gray-700 mb-6 text-center">
+            Sabemos lo frustrante que puede ser una silla incómoda o un escritorio mal diseñado. Por eso, en lugar de reemplazar, lo transformamos.
+            Mejoramos lo que ya tienes para que funcione mejor contigo y tu espacio.
+          </p>
 
-        {/* Grid SOLO para Tipos y Beneficios */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-4">Tipos de Adaptación</h3>
-            <ul className="space-y-4 text-gray-700">
-              <li>
-                <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
-                Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
-              </li>
-              <li>
-                <span className="font-semibold">🪑 Modificación estructural de muebles:</span><br />
-                Ajuste de alturas o formas de escritorios y sillas para mejorar la postura.
-              </li>
-              <li>
-                <span className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento:</span><br />
-                Rediseño de compartimientos, ruedas o cerraduras de seguridad.
-              </li>
-              <li>
-                <span className="font-semibold">🎨 Personalización estética:</span><br />
-                Cambio de colores o acabados para armonizar con tu marca o entorno.
-              </li>
-              <li>
-                <span className="font-semibold">🔄 Conversión y reutilización:</span><br />
-                Transformamos muebles antiguos en soluciones nuevas sin desecharlos.
-              </li>
-            </ul>
-          </div>
+          {/* Grid Tipos y Beneficios */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-4">Tipos de Adaptación</h3>
+              <ul className="space-y-4 text-gray-700">
+                <li>
+                  <span className="font-semibold">🔧 Cambio de mecanismos en sillas:</span><br />
+                  Reemplazo de sistemas reclinables, hidráulicos y giratorios por versiones más modernas y resistentes.
+                </li>
+                <li>
+                  <span className="font-semibold">🪑 Modificación estructural de muebles:</span><br />
+                  Ajuste de alturas o formas de escritorios y sillas para mejorar la postura.
+                </li>
+                <li>
+                  <span className="font-semibold">🗄️ Adaptación de archivadores y almacenamiento:</span><br />
+                  Rediseño de compartimientos, ruedas o cerraduras de seguridad.
+                </li>
+                <li>
+                  <span className="font-semibold">🎨 Personalización estética:</span><br />
+                  Cambio de colores o acabados para armonizar con tu marca o entorno.
+                </li>
+                <li>
+                  <span className="font-semibold">🔄 Conversión y reutilización:</span><br />
+                  Transformamos muebles antiguos en soluciones nuevas sin desecharlos.
+                </li>
+              </ul>
+            </div>
 
-          <div className="bg-orange-50 p-6 rounded-lg">
-            <h3 className="text-xl font-bold mb-4">Beneficios</h3>
-            <ul className="space-y-6 text-gray-700">
-              <li>🟢 Mayor comodidad, ergonomía y durabilidad.</li>
-              <li>🟢 Reducción de fatiga y adaptación a necesidades especiales.</li>
-              <li>🟢 Mejor organización y funcionalidad del espacio.</li>
-              <li>🟢 Ambientes más agradables y coherentes con tu identidad visual.</li>
-              <li>🟢 Ahorro económico y menor generación de residuos.</li>
-            </ul>
+            <div className="bg-orange-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-4">Beneficios</h3>
+              <ul className="space-y-6 text-gray-700">
+                <li>🟢 Mayor comodidad, ergonomía y durabilidad.</li>
+                <li>🟢 Reducción de fatiga y adaptación a necesidades especiales.</li>
+                <li>🟢 Mejor organización y funcionalidad del espacio.</li>
+                <li>🟢 Ambientes más agradables y coherentes con tu identidad visual.</li>
+                <li>🟢 Ahorro económico y menor generación de residuos.</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Galería — FUERA del grid */}
-      <div className="mb-8">
-        <h2 className="text-2xl font-bold mb-6 text-center">Galería de Transformaciones</h2>
-        <Carousel
-          items={carouselData.adaptacion}
-          type="adaptacion"
-          currentIndex={carouselIndex.adaptacion}
-          onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, adaptacion: newIndex }))}
-        />
-      </div>
+        {/* Galería con proporción fija y sin recortes */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold mb-6 text-center">Galería de Transformaciones</h2>
+          <Carousel
+            items={carouselData.adaptacion}
+            type="adaptacion"
+            currentIndex={carouselIndex.adaptacion}
+            onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, adaptacion: newIndex }))}
+            aspectRatio="4:3"
+            fit="contain"
+            showCaptions={true}
+          />
+        </div>
 
-      {/* CTA FINAL — FUERA del grid y de la galería */}
-      <div className="text-center mt-12">
-        <a
-          href="https://wa.me/573177110447?text=Hola,%20quisiera%20cotizar%20una%20adaptación/mejora%20ergonómica%20para%20mi%20mobiliario."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 transition"
-        >
-          Solicitar visita técnica
-        </a>
+        {/* CTA final */}
+        <div className="text-center mt-12">
+          <a
+            href="https://wa.me/573177110447?text=Hola,%20quisiera%20cotizar%20una%20adaptación/mejora%20ergonómica%20para%20mi%20mobiliario."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-orange-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-orange-700 transition"
+          >
+            Solicitar visita técnica
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 
   const DisenoPage = () => (
     <div className="py-16">
@@ -412,6 +406,7 @@ const App = () => {
           </div>
         </div>
 
+        {/* Galería con proporción fija y sin recortes */}
         <div className="mb-8">
           <h2 className="text-2xl font-bold mb-6 text-center">Trabajos de Reparación</h2>
           <Carousel
@@ -419,10 +414,13 @@ const App = () => {
             type="reparacion"
             currentIndex={carouselIndex.reparacion}
             onIndexChange={(newIndex) => setCarouselIndex(prev => ({ ...prev, reparacion: newIndex }))}
+            aspectRatio="4:3"
+            fit="contain"
+            showCaptions={true}
           />
         </div>
 
-        {/* CTA final de Reparación */}
+        {/* CTA final */}
         <div className="text-center mt-12">
           <a
             href="https://wa.me/573177110447?text=Hola,%20necesito%20reparación/mantenimiento%20de%20muebles%20de%20oficina.%20¿Pueden%20agendar%20una%20visita%20técnica?"
@@ -447,7 +445,6 @@ const App = () => {
 
       const formData = new FormData(form.current);
       const debugData = Object.fromEntries(formData.entries());
-
       console.log("📤 Enviando formulario con los siguientes datos:", debugData);
 
       emailjs
@@ -505,10 +502,9 @@ const App = () => {
               </div>
             </div>
 
-            {/* Formulario de contacto */}
+            {/* Formulario */}
             <div>
               <h2 className="text-2xl font-bold mb-6">Envíanos un mensaje</h2>
-
               <form ref={form} onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
@@ -574,7 +570,7 @@ const App = () => {
       case 'adaptacion':
         return <AdaptacionPage />;
       case 'diseno':
-        return <DisenoVentasPage />; // usa la página avanzada de catálogo
+        return <DisenoVentasPage />; // catálogo avanzado
       case 'reparacion':
         return <ReparacionPage />;
       case 'contacto':
@@ -584,7 +580,7 @@ const App = () => {
     }
   };
 
-  // ===== WhatsApp FAB (flotante) =====
+  // ===== WhatsApp FAB =====
   const WA_CONFIG = {
     number: "573177110447",
     message: "Hola, quisiera una cotización de mobiliario de oficina.",
