@@ -1,4 +1,4 @@
-// src/components/DisenoVentasPage.jsx
+// src/components/DisenoVentasPage.js
 import React from "react";
 import { CATEGORIES, PRODUCTS } from "../data/catalogData";
 import AspectImage from "./AspectImage";
