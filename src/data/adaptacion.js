@@ -8,7 +8,7 @@ const adaptacion = [
   // --- Comparativos (ANTES / DESPUÉS) ---
   {
     id: "ad-01",
-    before: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1200&h=900&fit=crop",
+    before: "https://i.pinimg.com/736x/74/f7/62/74f7627d0cdab08531fa9b4ba542e05e.jpg",
     after:  "https://i.pinimg.com/736x/00/bf/ad/00bfad596f9f5dc3c74e1e4403c13624.jpg",
     title: "Silla ergonómica mejorada",
     description: "Reemplazo de mecanismo, pistón y tapizado; soporte lumbar optimizado."
