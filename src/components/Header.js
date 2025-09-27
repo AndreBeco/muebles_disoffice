@@ -55,7 +55,7 @@ const Header = ({ currentPage, onNavigate }) => {
   const isServiceActive = serviciosItems.some(s => currentPage === s.id);
 
   return (
-    <header className="w-full bg-white shadow-lg relative z-50">
+    <header className="w-full bg-white shadow-lg sticky top-0 z-50">
       {/* Top Bar */}
       <div className="hidden lg:block bg-gray-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 py-2">
@@ -80,7 +80,7 @@ const Header = ({ currentPage, onNavigate }) => {
       </div>
 
       {/* Main Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
         <div className="flex justify-between items-center h-20 lg:h-24">
           {/* Logo grande */}
           <div className="flex items-center">
@@ -225,4 +225,3 @@ const Header = ({ currentPage, onNavigate }) => {
 };
 
 export default Header;
-
