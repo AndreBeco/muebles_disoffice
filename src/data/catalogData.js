@@ -47,6 +47,14 @@ export const PRODUCTS = [
     features: ["Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Piso duro", "Asi: Cuero sintetico", "Esp: Cuerro sintetico"],
   },
   {
+    id: "S-GER-002",
+    category: "sillas",
+    subtype: "gerenciales",
+    name: "Silla Alemania 2",
+    img: "https://i.pinimg.com/736x/6c/9d/1e/6c9d1e38df9dcb2453622b7a9c12ff78.jpg",
+    features: ["Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Piso duro", "Asi: Cuero sintetico", "Esp: Cuerro sintetico"],
+  },
+  {
     id: "S-SEC-010",
     category: "sillas",
     subtype: "secretariales",
