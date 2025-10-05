@@ -79,7 +79,7 @@ export const PRODUCTS = [
     img: "https://i.pinimg.com/736x/fd/ce/38/fdce3880d3200b5d742262e431ca8cfb.jpg",
     images: [
       "https://i.pinimg.com/736x/fd/ce/38/fdce3880d3200b5d742262e431ca8cfb.jpg",
-      "https://i.pinimg.com/736x/88/5d/4d/885d4d3a8d3c2e8d1e70b8e5fb7a9a0b.jpg",
+      "https://i.pinimg.com/736x/46/ff/d0/46ffd0e37a8d93eb2298a1826c170daf.jpg",
       "https://i.pinimg.com/736x/86/38/dc/8638dc57d678e20ba75c66fb70b3d3dd.jpg",
       "https://i.pinimg.com/736x/e8/48/2a/e8482a564648d133fbfa3e565c6b8221.jpg",
     ],
