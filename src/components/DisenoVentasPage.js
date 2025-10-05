@@ -19,59 +19,42 @@ export default function DisenoVentasPage() {
     p => p.category === categoryId && (!activeSubtype || p.subtype === activeSubtype)
   );
 
-  const ProductCard = ({ p }) => {
-    const [expanded, setExpanded] = React.useState(false);
-    const VISIBLE = 4; // cuántas características se ven inicialmente
-    const hasMore = (p.features?.length || 0) > VISIBLE;
+  const ProductCard = ({ p }) => (
+    <article className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+      {/* Imagen cuadrada 1:1 que NO recorta (contain) */}
+      <div className="relative w-full" style={{ paddingTop: '100%' }}>
+        <img
+          src={p.img}
+          alt={p.name}
+          className="absolute inset-0 w-full h-full object-contain bg-white p-2"
+          referrerPolicy="no-referrer"
+          loading="lazy"
+        />
+      </div>
 
-    return (
-      <article className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-        {/* Imagen 1:1 */}
-        <div className="relative w-full" style={{ paddingTop: '100%' }}>
-          <img
-            src={p.img}
-            alt={p.name}
-            className="absolute inset-0 w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
+      <div className="p-5">
+        <h3 className="text-lg font-semibold">{p.name}</h3>
+
+        {p.features?.length > 0 && (
+          <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
+            {p.features.slice(0, 6).map((f, i) => <li key={i}>{f}</li>)}
+          </ul>
+        )}
+
+        {/* CTAs de producto */}
+        <div className="mt-5 space-y-2">
+          <a
+            href={`https://wa.me/${WP}?text=Hola,%20me%20interesa:%20${encodeURIComponent(p.name)}.%20¿Me%20pueden%20cotizar?`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition"
+          >
+            Cotizar ahora
+          </a>
         </div>
-
-        <div className="p-5">
-          <h3 className="text-lg font-semibold">{p.name}</h3>
-
-          {p.features?.length > 0 && (
-            <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
-              {(expanded ? p.features : p.features.slice(0, VISIBLE)).map((f, i) => (
-                <li key={i}>{f}</li>
-              ))}
-            </ul>
-          )}
-
-          {/* Toggle Ver más / menos */}
-          {hasMore && (
-            <button
-              onClick={() => setExpanded(v => !v)}
-              className="mt-2 text-sm font-medium text-orange-600 hover:text-orange-700"
-            >
-              {expanded ? "Ver menos" : `Ver más (${p.features.length - VISIBLE} más)`}
-            </button>
-          )}
-
-          {/* CTAs de producto */}
-          <div className="mt-5 space-y-2">
-            <a
-              href={`https://wa.me/${WP}?text=Hola,%20me%20interesa:%20${encodeURIComponent(p.name)}.%20¿Me%20pueden%20cotizar?`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition"
-            >
-              Cotizar ahora
-            </a>
-          </div>
-        </div>
-      </article>
-    );
-  };
+      </div>
+    </article>
+  );
 
   const CategoriesGrid = () => (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -86,7 +69,7 @@ export default function DisenoVentasPage() {
             key={cat.id}
             className="text-left bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition"
           >
-            {/* Imagen 3:2 para portada de categoría */}
+            {/* Portada 3:2 */}
             <button
               onClick={() => { setCategoryId(cat.id); setView("category"); }}
               className="block w-full text-left focus:outline-none"
@@ -97,6 +80,7 @@ export default function DisenoVentasPage() {
                   alt={cat.title}
                   className="absolute inset-0 w-full h-full object-cover"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
               </div>
             </button>
@@ -168,7 +152,7 @@ export default function DisenoVentasPage() {
         </div>
       )}
 
-      {/* CTA general para la categoría activa */}
+      {/* CTA general categoría */}
       <div className="text-center mt-10">
         <a
           href={`https://wa.me/${WP}?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(category?.title || 'una categoría')}%20para%20mi%20oficina.`}
