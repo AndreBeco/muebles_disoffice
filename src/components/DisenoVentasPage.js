@@ -21,9 +21,10 @@ export default function DisenoVentasPage() {
     (p) => p.category === categoryId && (!activeSubtype || p.subtype === activeSubtype)
   );
 
+  // ---------- CARD DE PRODUCTO ----------
   const ProductCard = ({ p }) => (
     <article className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-      {/* Imagen cuadrada 1:1 que NO recorta (contain) + hover suave */}
+      {/* Imagen producto 1:1, NO recorta */}
       <div className="relative w-full" style={{ paddingTop: "100%" }}>
         <img
           src={p.img}
@@ -45,7 +46,6 @@ export default function DisenoVentasPage() {
           </ul>
         )}
 
-        {/* CTA producto */}
         <div className="mt-5">
           <a
             href={`https://wa.me/${WP}?text=Hola,%20me%20interesa:%20${encodeURIComponent(
@@ -62,6 +62,7 @@ export default function DisenoVentasPage() {
     </article>
   );
 
+  // ---------- GRID DE CATEGORÍAS ----------
   const CategoriesGrid = () => (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-3xl font-bold text-center mb-6">Diseño y Ventas</h1>
@@ -75,7 +76,7 @@ export default function DisenoVentasPage() {
             key={cat.id}
             className="text-left bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition"
           >
-            {/* Portada 3:2 */}
+            {/* Portada: wrapper con recorte + contain */}
             <button
               onClick={() => {
                 setCategoryId(cat.id);
@@ -83,13 +84,14 @@ export default function DisenoVentasPage() {
               }}
               className="block w-full text-left focus:outline-none"
             >
-              <div className="relative w-full" style={{ paddingTop: "66.6667%" }}>
+              {/* Mantiene 3:2 y recorta bordes superiores */}
+              <div className="relative w-full overflow-hidden bg-white" style={{ paddingTop: "66.6667%" }}>
                 <img
                   src={cat.cover}
                   alt={cat.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
                   loading="lazy"
+                  referrerPolicy="no-referrer"
+                  className="absolute inset-0 w-full h-full object-contain p-3 pointer-events-none select-none"
                 />
               </div>
             </button>
@@ -98,7 +100,6 @@ export default function DisenoVentasPage() {
               <h3 className="text-xl font-semibold mb-1">{cat.title}</h3>
               <p className="text-gray-600 text-sm">{cat.description}</p>
 
-              {/* CTA de categoría */}
               <div className="mt-4 flex gap-2">
                 <button
                   onClick={() => {
@@ -127,6 +128,7 @@ export default function DisenoVentasPage() {
     </section>
   );
 
+  // ---------- VISTA DE CATEGORÍA ----------
   const CategoryView = () => (
     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <div className="flex items-center justify-between mb-6">
@@ -168,7 +170,6 @@ export default function DisenoVentasPage() {
         </div>
       )}
 
-      {/* CTA general categoría */}
       <div className="text-center mt-10">
         <a
           href={`https://wa.me/${WP}?text=Hola,%20quiero%20cotizar%20${encodeURIComponent(
