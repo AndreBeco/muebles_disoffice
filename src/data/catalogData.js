@@ -71,6 +71,22 @@ export const PRODUCTS = [
     features: ["GARANTIA DE 1 AÑO", "Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Goma", "Asiento: Cuero sintetico", "Espaldar: Cuero sintetico"],
   },
   {
+    id: "S-GER-005",
+    category: "sillas",
+    subtype: "gerenciales",
+    name: "Silla Lion 1",
+    img: "https://i.pinimg.com/736x/e3/ad/60/e3ad600ee0d64d262668014e96f1525c.jpg",
+    features: ["GARANTIA DE 1 AÑO", "Basculante", "Mecanismo: Sincro 4bloqueos", "Brazos: Fijos", "Base: Aluminio pulido", "Ruedas: Nylon", "Asiento: Cuero sintetico", "Espaldar: Cuero sintetico"],
+  },
+  {
+    id: "S-GER-006",
+    category: "sillas",
+    subtype: "gerenciales",
+    name: "Silla Lion 2",
+    img: "https://i.pinimg.com/736x/e2/7b/f4/e27bf4389cac79f1a4be436f6dccbf62.jpg",
+    features: ["GARANTIA DE 1 AÑO", "Basculante", "Mecanismo: Sincro 4bloqueos", "Brazos: Fijos", "Base: Aluminio pulido", "Ruedas: Nylon", "Asiento: Cuero sintetico", "Espaldar: Cuero sintetico"],
+  },
+  {
     id: "S-SEC-010",
     category: "sillas",
     subtype: "secretariales",
