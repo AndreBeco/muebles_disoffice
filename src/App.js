@@ -268,11 +268,11 @@ const App = () => {
             <div className="bg-orange-50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-4">Beneficios</h3>
               <ul className="space-y-6 text-gray-700">
-                <li>🟢 Mayor comodidad, ergonomía y durabilidad.</li>
-                <li>🟢 Reducción de fatiga y adaptación a necesidades especiales.</li>
-                <li>🟢 Mejor organización y funcionalidad del espacio.</li>
-                <li>🟢 Ambientes más agradables y coherentes con tu identidad visual.</li>
-                <li>🟢 Ahorro económico y menor generación de residuos.</li>
+                <li>💺 Mayor comodidad, ergonomía y durabilidad.</li>
+                <li>🧍‍♂️ Reducción de fatiga y adaptación a necesidades especiales.</li>
+                <li>🗂️ Mejor organización y funcionalidad del espacio.</li>
+                <li>🎨 Ambientes más agradables y coherentes con tu identidad visual.</li>
+                <li>💰 Ahorro económico y menor generación de residuos.</li>
               </ul>
             </div>
           </div>
