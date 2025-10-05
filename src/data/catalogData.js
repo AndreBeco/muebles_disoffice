@@ -2,11 +2,11 @@
 export const CATEGORIES = [
   {
     id: "sillas",
-    title: "Sillas",
-    description: "Gerenciales, secretariales, fijas y tándem.",
+    title: "SILLAS",
+    description: "Presidenciales, secretariales, fijas y tándem.",
     cover: "https://i.pinimg.com/1200x/63/12/85/631285f85c8660638343ee69113a0deb.jpg",
     subtypes: [
-      { id: "gerenciales", name: "Gerenciales" },
+      { id: "presidenciales", name: "PRESIDENCIALES" },
       { id: "secretariales", name: "Secretariales" },
       { id: "fijas", name: "Fijas" },
       { id: "tandem", name: "Tándem" },
@@ -14,7 +14,7 @@ export const CATEGORIES = [
   },
   {
     id: "archivadores",
-    title: "Archivadores",
+    title: "ARCHIVADORES",
     description: "Verticales, horizontales y rodantes.",
     cover: "https://i.pinimg.com/736x/67/ce/61/67ce613a8439e0d589a72a42f26f0110.jpg",
     subtypes: [
@@ -25,7 +25,7 @@ export const CATEGORIES = [
   },
   {
     id: "puestos",
-    title: "Puestos de trabajo",
+    title: "PUESTOS DE TRABAJO",
     description: "Islas y estaciones modulares.",
     cover: "https://i.pinimg.com/736x/4c/91/0c/4c910c6e8cbd388ef11b4f5eccdd7a74.jpg",
     subtypes: [
@@ -48,8 +48,8 @@ export const PRODUCTS = [
   {
     id: "S-GER-001",
     category: "sillas",
-    subtype: "gerenciales",
-    name: "Silla Hawai",
+    subtype: "presidenciales",
+    name: "HAWAI",
     img: "https://i.pinimg.com/736x/ea/33/cc/ea33ccbec2c84a1986888c0cffb7c0ef.jpg",
     images: [
       "https://i.pinimg.com/736x/ea/33/cc/ea33ccbec2c84a1986888c0cffb7c0ef.jpg", // frente
@@ -74,8 +74,8 @@ export const PRODUCTS = [
   {
     id: "S-GER-002",
     category: "sillas",
-    subtype: "gerenciales",
-    name: "Silla Dinamarca",
+    subtype: "presidenciales",
+    name: "DINAMARCA",
     img: "https://i.pinimg.com/736x/fd/ce/38/fdce3880d3200b5d742262e431ca8cfb.jpg",
     images: [
       "https://i.pinimg.com/736x/fd/ce/38/fdce3880d3200b5d742262e431ca8cfb.jpg",
@@ -97,27 +97,30 @@ export const PRODUCTS = [
   {
     id: "S-GER-003",
     category: "sillas",
-    subtype: "gerenciales",
-    name: "Silla Bruselas 1",
-    img: "https://i.pinimg.com/736x/dd/c7/92/ddc792951a3dfd7196388540a4af3a42.jpg",
+    subtype: "presidenciales",
+    name: "KABUL MCO NEGRO MALLA GRIS",
+    img: "https://i.pinimg.com/736x/2b/41/29/2b412906295e8cb8071eb0c954f039d2.jpg",
     images: [
-      "https://i.pinimg.com/736x/dd/c7/92/ddc792951a3dfd7196388540a4af3a42.jpg",
-      "https://i.pinimg.com/736x/0a/4e/1f/0a4e1f6a0a3b4c5d6e7f8090a1b2c3d4.jpg",
+      "https://i.pinimg.com/736x/2b/41/29/2b412906295e8cb8071eb0c954f039d2.jpg",
+      "https://i.pinimg.com/736x/94/f3/f9/94f3f9b1f3870d3dc011df576f285f83.jpg",
+      "https://i.pinimg.com/736x/a5/65/3c/a5653c2c3bca8f226b4ea5645e796a9f.jpg",
+      "https://i.pinimg.com/736x/31/bc/8f/31bc8f7f0e1aeb53729fc5b2bd5862a2.jpg",
     ],
     features: [
       "GARANTIA DE 1 AÑO",
       "Mecanismo: Basculante",
-      "Brazos: Fijos",
-      "Base: Cromo",
-      "Ruedas: Goma",
-      "Asiento: Cuero sintetico",
-      "Espaldar: Cuero sintetico",
+      "Cabecero: Opcional Graduable Altura y basculante 2D",
+      "Asiento: Paño negro. Graduable en altura",
+      "Espaldar: Graduable en Altura y profundidad 2D",
+      "Brazos: Graduable en Altura o gira y desliza (3D)",
+      "Base: Aluminio, Cromo o Nylon",
+      "Ruedas: Nylon",
     ],
   },
   {
     id: "S-GER-004",
     category: "sillas",
-    subtype: "gerenciales",
+    subtype: "presidenciales",
     name: "Silla Bruselas 2",
     img: "https://i.pinimg.com/736x/cb/85/a7/cb85a7eb89f0164824dfd2d78e56457f.jpg",
     images: [
@@ -136,7 +139,7 @@ export const PRODUCTS = [
   {
     id: "S-GER-005",
     category: "sillas",
-    subtype: "gerenciales",
+    subtype: "presidenciales",
     name: "Silla Lion 1",
     img: "https://i.pinimg.com/736x/e3/ad/60/e3ad600ee0d64d262668014e96f1525c.jpg",
     images: [
@@ -158,7 +161,7 @@ export const PRODUCTS = [
   {
     id: "S-GER-006",
     category: "sillas",
-    subtype: "gerenciales",
+    subtype: "presidenciales",
     name: "Silla Lion 2",
     img: "https://i.pinimg.com/736x/e2/7b/f4/e27bf4389cac79f1a4be436f6dccbf62.jpg",
     images: [
