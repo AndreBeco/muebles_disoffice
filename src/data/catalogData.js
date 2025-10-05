@@ -60,7 +60,7 @@ export const PRODUCTS = [
       "https://i.pinimg.com/736x/9c/6e/b5/9c6eb5699b0aaa96c2b45029c80b0d9d.jpg",
     ],
     features: [
-      "GARANTIA DE 1 AÑO",
+      "GARANTIA DE 3 AÑOs",
       "Mecanismo: Sincro 4 posiciones con Slider o Basculante",
       "Cabecero: Opcional Graduable Altura y basculante 2D",
       "Asiento: Paño negro. Graduable en altura y profundidad",
@@ -83,7 +83,7 @@ export const PRODUCTS = [
       "https://i.pinimg.com/736x/e8/48/2a/e8482a564648d133fbfa3e565c6b8221.jpg",
     ],
     features: [
-      "GARANTIA DE 1 AÑO",
+      "GARANTIA DE 3 AÑOS",
       "Mecanismo: Sincro 4 posiciones con Slider",
       "Cabecero: Opcional Graduable Altura. Malla",
       "Asiento: Paño negro. Graduable en altura",
@@ -106,7 +106,7 @@ export const PRODUCTS = [
       "https://i.pinimg.com/736x/31/bc/8f/31bc8f7f0e1aeb53729fc5b2bd5862a2.jpg",
     ],
     features: [
-      "GARANTIA DE 1 AÑO",
+      "GARANTIA DE 3 AÑOS",
       "Mecanismo: Basculante",
       "Cabecero: Opcional Graduable Altura y basculante 2D",
       "Asiento: Paño negro. Graduable en altura",
@@ -129,7 +129,7 @@ export const PRODUCTS = [
       "https://i.pinimg.com/736x/a9/d3/52/a9d352342939a16687f19f5c76f3d609.jpg",
     ],
     features: [
-      "GARANTIA DE 1 AÑO",
+      "GARANTIA DE 3 AÑOS",
       "Mecanismo: Sincro 5 posiciones",
       "Cabecero: Opcional Graduable Altura y basculante 2D",
       "Asiento: Paño negro. Graduable en altura",
@@ -154,7 +154,7 @@ export const PRODUCTS = [
       "https://i.pinimg.com/736x/97/3c/b0/973cb0cb148f3e015349f13f71698667.jpg",
     ],
     features: [
-      "GARANTIA DE 1 AÑO",
+      "GARANTIA DE 3 AÑOS",
       "Mecanismo: Sincro 4 posiciones con Slider",
       "Cabecero: Opcional Graduable Altura y basculante 2D",
       "Asiento: Paño negro. Graduable en altura y profundidad",
@@ -177,7 +177,7 @@ export const PRODUCTS = [
       "https://i.pinimg.com/736x/ab/03/13/ab0313ec0b12f7aeaa4f7b18d5dc00e3.jpg",
     ],
     features: [
-      "GARANTIA DE 1 AÑO",
+      "GARANTIA DE 3 AÑOS",
       "Mecanismo: Sincro 4 posiciones con Slider",
       "Cabecero: Opcional Graduable Altura y basculante 2D",
       "Asiento: Malla. Graduable en altura y profundidad",
