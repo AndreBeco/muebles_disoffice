@@ -616,11 +616,14 @@ const App = () => {
 
   return (
     <div className="App">
+      {/* Header fijo (en tu componente Header ya está sticky con blur) */}
       <Header currentPage={currentPage} onNavigate={handleNavigation} />
-      {/* Compensación por header fijo */}
-      <main className="pt-40 lg:pt-48">
+
+      {/* Compensación por header fijo: ajustado */}
+      <main className="pt-[7rem] sm:pt-[8rem]">
         {renderCurrentPage()}
       </main>
+
       <WhatsAppFAB />
       <Footer />
     </div>
