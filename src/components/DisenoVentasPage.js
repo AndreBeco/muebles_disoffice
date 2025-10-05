@@ -4,6 +4,107 @@ import { CATEGORIES, PRODUCTS } from "../data/catalogData";
 
 const WP = "573177110447";
 
+/* ========= MINI CARRUSEL 1:1 POR PRODUCTO =========
+   - Usa p.images (array). Si no hay, cae a p.img (string).
+   - object-contain para NO recortar imágenes.
+   - Flechas, bullets y swipe (móvil).
+*/
+function MiniCarousel({ images = [], alt = "" }) {
+  const imgs = Array.isArray(images) && images.length > 0 ? images : [];
+  const [index, setIndex] = React.useState(0);
+  const hasMany = imgs.length > 1;
+
+  if (imgs.length === 0) {
+    return (
+      <div className="relative w-full" style={{ paddingTop: "100%" }}>
+        <div className="absolute inset-0 flex items-center justify-center bg-white text-gray-400 text-sm">
+          Sin imágenes
+        </div>
+      </div>
+    );
+  }
+
+  const go = (dir) => {
+    setIndex((prev) => (prev + dir + imgs.length) % imgs.length);
+  };
+
+  // Soporte de swipe en móvil
+  const startX = React.useRef(0);
+  const deltaX = React.useRef(0);
+  const onTouchStart = (e) => (startX.current = e.touches[0].clientX);
+  const onTouchMove = (e) => (deltaX.current = e.touches[0].clientX - startX.current);
+  const onTouchEnd = () => {
+    if (Math.abs(deltaX.current) > 40) go(deltaX.current > 0 ? -1 : 1);
+    deltaX.current = 0;
+  };
+
+  return (
+    <div className="relative">
+      {/* Lienzo cuadrado 1:1 */}
+      <div
+        className="relative w-full bg-white overflow-hidden"
+        style={{ paddingTop: "100%" }}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        <img
+          key={index}
+          src={imgs[index]}
+          alt={alt}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          className="absolute inset-0 w-full h-full object-contain bg-white p-2 transition-opacity duration-300"
+        />
+
+        {/* Contador */}
+        {hasMany && (
+          <div className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded-full">
+            {index + 1} / {imgs.length}
+          </div>
+        )}
+
+        {/* Flechas */}
+        {hasMany && (
+          <>
+            <button
+              onClick={() => go(-1)}
+              aria-label="Anterior"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-8 h-8 rounded-full shadow"
+            >
+              ‹
+            </button>
+            <button
+              onClick={() => go(1)}
+              aria-label="Siguiente"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 w-8 h-8 rounded-full shadow"
+            >
+              ›
+            </button>
+          </>
+        )}
+      </div>
+
+      {/* Bullets */}
+      {hasMany && (
+        <div className="flex items-center justify-center gap-2 py-3">
+          {imgs.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setIndex(i)}
+              aria-label={`Ir a imagen ${i + 1}`}
+              className={`w-2.5 h-2.5 rounded-full transition-all ${
+                i === index ? "bg-orange-500 scale-110" : "bg-gray-300 hover:bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* ============ PÁGINA DE CATÁLOGO ============ */
 export default function DisenoVentasPage() {
   const [view, setView] = React.useState("grid");
   const [categoryId, setCategoryId] = React.useState(CATEGORIES[0]?.id);
@@ -22,45 +123,43 @@ export default function DisenoVentasPage() {
   );
 
   // ---------- CARD DE PRODUCTO ----------
-  const ProductCard = ({ p }) => (
-    <article className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
-      {/* Imagen producto 1:1, NO recorta */}
-      <div className="relative w-full" style={{ paddingTop: "100%" }}>
-        <img
-          src={p.img}
-          alt={p.name}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-contain bg-white p-2 transition-transform duration-300 ease-out hover:scale-105"
-        />
-      </div>
+  const ProductCard = ({ p }) => {
+    // Acepta p.images (array) o p.img (string como respaldo)
+    const images =
+      Array.isArray(p.images) && p.images.length > 0 ? p.images : p.img ? [p.img] : [];
 
-      <div className="p-5">
-        <h3 className="text-lg font-semibold">{p.name}</h3>
+    return (
+      <article className="bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition">
+        {/* Mini carrusel de ángulos */}
+        <MiniCarousel images={images} alt={p.name} />
 
-        {p.features?.length > 0 && (
-          <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
-            {p.features.map((f, i) => (
-              <li key={i}>{f}</li>
-            ))}
-          </ul>
-        )}
+        <div className="px-5 pb-5">
+          <h3 className="text-lg font-semibold">{p.name}</h3>
 
-        <div className="mt-5">
-          <a
-            href={`https://wa.me/${WP}?text=Hola,%20me%20interesa:%20${encodeURIComponent(
-              p.name
-            )}.%20¿Me%20pueden%20cotizar?`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-full block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition"
-          >
-            Cotizar ahora
-          </a>
+          {p.features?.length > 0 && (
+            <ul className="mt-2 text-sm text-gray-600 list-disc pl-5 space-y-1">
+              {p.features.map((f, i) => (
+                <li key={i}>{f}</li>
+              ))}
+            </ul>
+          )}
+
+          <div className="mt-5">
+            <a
+              href={`https://wa.me/${WP}?text=Hola,%20me%20interesa:%20${encodeURIComponent(
+                p.name
+              )}.%20¿Me%20pueden%20cotizar?`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full block text-center bg-orange-600 text-white px-4 py-2 rounded-md font-semibold hover:bg-orange-700 transition"
+            >
+              Cotizar ahora
+            </a>
+          </div>
         </div>
-      </div>
-    </article>
-  );
+      </article>
+    );
+  };
 
   // ---------- GRID DE CATEGORÍAS ----------
   const CategoriesGrid = () => (
@@ -76,7 +175,7 @@ export default function DisenoVentasPage() {
             key={cat.id}
             className="text-left bg-white rounded-xl overflow-hidden shadow hover:shadow-lg transition"
           >
-            {/* Portada: wrapper con recorte + contain */}
+            {/* Portada 3:2 con contain (para que no se corte) */}
             <button
               onClick={() => {
                 setCategoryId(cat.id);
@@ -84,7 +183,6 @@ export default function DisenoVentasPage() {
               }}
               className="block w-full text-left focus:outline-none"
             >
-              {/* Mantiene 3:2 y recorta bordes superiores */}
               <div className="relative w-full overflow-hidden bg-white" style={{ paddingTop: "66.6667%" }}>
                 <img
                   src={cat.cover}
