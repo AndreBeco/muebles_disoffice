@@ -42,9 +42,9 @@ export const PRODUCTS = [
     id: "S-GER-001",
     category: "sillas",
     subtype: "gerenciales",
-    name: "Silla Gerencial A1",
-    img: "https://i.pinimg.com/736x/cf/c0/bb/cfc0bbc8c30a1b479eee0c3e85ca1b43.jpg",
-    features: ["Mecanismo reclinable", "Soporte lumbar", "Tapizado premium"],
+    name: "Silla Alemania 1",
+    img: "https://i.pinimg.com/736x/58/25/a9/5825a9760a7f9abad4a81c5fb26acc97.jpg",
+    features: ["Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Piso duro", "Asi: Cuero sintetico", "Esp: Cuerro sintetico"],
   },
   {
     id: "S-SEC-010",
