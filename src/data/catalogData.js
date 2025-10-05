@@ -97,7 +97,7 @@ export const PRODUCTS = [
     id: "S-GER-003",
     category: "sillas",
     subtype: "presidenciales",
-    name: "KABUL MCO NEGRO MALLA GRIS",
+    name: "KABUL",
     img: "https://i.pinimg.com/736x/2b/41/29/2b412906295e8cb8071eb0c954f039d2.jpg",
     images: [
       "https://i.pinimg.com/736x/2b/41/29/2b412906295e8cb8071eb0c954f039d2.jpg",
@@ -110,7 +110,7 @@ export const PRODUCTS = [
       "Mecanismo: Basculante",
       "Cabecero: Opcional Graduable Altura y basculante 2D",
       "Asiento: Paño negro. Graduable en altura",
-      "Espaldar: Graduable en Altura y profundidad 2D",
+      "Espaldar: Graduable en Altura y profundidad 2D. Malla gris",
       "Brazos: Graduable en Altura o gira y desliza (3D)",
       "Base: Aluminio, Cromo o Nylon",
       "Ruedas: Nylon",
