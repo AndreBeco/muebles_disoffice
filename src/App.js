@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useRef, useLayoutEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
@@ -10,28 +10,6 @@ import DisenoVentasPage from './components/DisenoVentasPage.js';
 const App = () => {
   const [currentPage, setCurrentPage] = useState('inicio');
   const [carouselIndex, setCarouselIndex] = useState({ adaptacion: 0, diseno: 0, reparacion: 0 });
-
-  // === Ajuste automático según la altura real del header (sticky o fixed)
-  const [headerH, setHeaderH] = useState(0);
-  useLayoutEffect(() => {
-    const updateHeaderHeight = () => {
-      const headerEl = document.querySelector('header'); // tu Header principal
-      if (headerEl) {
-        const h = headerEl.getBoundingClientRect().height || 0;
-        setHeaderH(h);
-      } else {
-        setHeaderH(0);
-      }
-    };
-    updateHeaderHeight();
-    window.addEventListener('resize', updateHeaderHeight);
-    window.addEventListener('scroll', updateHeaderHeight, { passive: true });
-    return () => {
-      window.removeEventListener('resize', updateHeaderHeight);
-      window.removeEventListener('scroll', updateHeaderHeight);
-    };
-  }, []);
-  // === fin ajuste automático
 
   const handleNavigation = (pageId) => setCurrentPage(pageId);
 
@@ -638,11 +616,11 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* Header normal (no wrapper especial) */}
+      {/* Header pegado (sticky) */}
       <Header currentPage={currentPage} onNavigate={handleNavigation} />
 
-      {/* El padding-top se ajusta solo según la altura del header */}
-      <main style={{ paddingTop: headerH || 120 }}>
+      {/* IMPORTANTE: sin padding extra; con header sticky no se necesita */}
+      <main>
         {renderCurrentPage()}
       </main>
 
