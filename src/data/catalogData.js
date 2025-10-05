@@ -55,6 +55,22 @@ export const PRODUCTS = [
     features: ["GARANTIA DE 1 AÑO", "Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Piso duro", "Asiento: Cuero sintetico", "Espaldar: Cuero sintetico"],
   },
   {
+    id: "S-GER-003",
+    category: "sillas",
+    subtype: "gerenciales",
+    name: "Silla Bruselas 1",
+    img: "https://i.pinimg.com/736x/dd/c7/92/ddc792951a3dfd7196388540a4af3a42.jpg",
+    features: ["GARANTIA DE 1 AÑO", "Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Goma", "Asiento: Cuero sintetico", "Espaldar: Cuero sintetico"],
+  },
+  {
+    id: "S-GER-004",
+    category: "sillas",
+    subtype: "gerenciales",
+    name: "Silla Bruselas 2",
+    img: "https://i.pinimg.com/736x/cb/85/a7/cb85a7eb89f0164824dfd2d78e56457f.jpg",
+    features: ["GARANTIA DE 1 AÑO", "Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Goma", "Asiento: Cuero sintetico", "Espaldar: Cuero sintetico"],
+  },
+  {
     id: "S-SEC-010",
     category: "sillas",
     subtype: "secretariales",
