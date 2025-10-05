@@ -1,5 +1,5 @@
 // src/App.js
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useLayoutEffect } from 'react';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import emailjs from "@emailjs/browser";
 import carouselData from "./data/carouselData";
@@ -10,6 +10,27 @@ import DisenoVentasPage from './components/DisenoVentasPage.js';
 const App = () => {
   const [currentPage, setCurrentPage] = useState('inicio');
   const [carouselIndex, setCarouselIndex] = useState({ adaptacion: 0, diseno: 0, reparacion: 0 });
+
+  // === NUEVO: medir alto real del header y aplicarlo al main
+  const headerWrapRef = useRef(null);
+  const [headerH, setHeaderH] = useState(0);
+
+  useLayoutEffect(() => {
+    const updateHeaderHeight = () => {
+      if (headerWrapRef.current) {
+        const h = headerWrapRef.current.offsetHeight || 0;
+        setHeaderH(h);
+      }
+    };
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+    window.addEventListener('scroll', updateHeaderHeight, { passive: true });
+    return () => {
+      window.removeEventListener('resize', updateHeaderHeight);
+      window.removeEventListener('scroll', updateHeaderHeight);
+    };
+  }, []);
+  // === fin NUEVO
 
   const handleNavigation = (pageId) => setCurrentPage(pageId);
 
@@ -369,7 +390,7 @@ const App = () => {
             entendemos que tu mobiliario no solo es una inversión, sino parte fundamental del bienestar y productividad en tu empresa. Por eso ofrecemos soluciones integrales para devolverle vida, funcionalidad y estética a tus muebles sin necesidad de reemplazarlos.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 gap-8 mb-12">
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-4">Servicios que Ofrecemos</h3>
               <ul className="space-y-2 text-gray-700">
@@ -616,11 +637,13 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* Header fijo (en tu componente Header ya está sticky con blur) */}
-      <Header currentPage={currentPage} onNavigate={handleNavigation} />
+      {/* WRAPPER con ref para medir el alto del header */}
+      <div ref={headerWrapRef}>
+        <Header currentPage={currentPage} onNavigate={handleNavigation} />
+      </div>
 
-      {/* Compensación por header fijo: ajustado */}
-      <main className="pt-[7rem] sm:pt-[8rem]">
+      {/* Aplicamos padding-top dinámico igual al alto del header */}
+      <main style={{ paddingTop: headerH }}>
         {renderCurrentPage()}
       </main>
 
