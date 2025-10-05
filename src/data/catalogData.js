@@ -49,12 +49,12 @@ export const PRODUCTS = [
     id: "S-GER-001",
     category: "sillas",
     subtype: "gerenciales",
-    name: "Silla Alemania 1",
-    img: "https://i.pinimg.com/736x/58/25/a9/5825a9760a7f9abad4a81c5fb26acc97.jpg",
+    name: "Silla Hawai",
+    img: "https://i.pinimg.com/736x/ea/33/cc/ea33ccbec2c84a1986888c0cffb7c0ef.jpg",
     images: [
-      "https://i.pinimg.com/736x/58/25/a9/5825a9760a7f9abad4a81c5fb26acc97.jpg", // frente
-      "https://i.pinimg.com/736x/4e/8a/7c/4e8a7c3b8c1d4c2e8b8f5d3dd0a2c9cf.jpg", // lateral (ejemplo)
-      "https://i.pinimg.com/736x/1d/7c/3a/1d7c3a5b7b1ff4c1c9f1c2b2a6c3e0d1.jpg", // espalda (ejemplo)
+      "https://i.pinimg.com/736x/ea/33/cc/ea33ccbec2c84a1986888c0cffb7c0ef.jpg", // frente
+      "https://i.pinimg.com/736x/0c/4e/6c/0c4e6ca9b1eee539599cd7119d539d1b.jpg", // lateral (ejemplo)
+      "https://i.pinimg.com/736x/ad/cf/cc/adcfcc111fb8a281976b4cd612fff1b6.jpg", // espalda (ejemplo)
     ],
     features: [
       "GARANTIA DE 1 AÑO",
