@@ -11,15 +11,16 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState('inicio');
   const [carouselIndex, setCarouselIndex] = useState({ adaptacion: 0, diseno: 0, reparacion: 0 });
 
-  // === NUEVO: medir alto real del header y aplicarlo al main
-  const headerWrapRef = useRef(null);
+  // === Ajuste automático según la altura real del header (sticky o fixed)
   const [headerH, setHeaderH] = useState(0);
-
   useLayoutEffect(() => {
     const updateHeaderHeight = () => {
-      if (headerWrapRef.current) {
-        const h = headerWrapRef.current.offsetHeight || 0;
+      const headerEl = document.querySelector('header'); // tu Header principal
+      if (headerEl) {
+        const h = headerEl.getBoundingClientRect().height || 0;
         setHeaderH(h);
+      } else {
+        setHeaderH(0);
       }
     };
     updateHeaderHeight();
@@ -30,7 +31,7 @@ const App = () => {
       window.removeEventListener('scroll', updateHeaderHeight);
     };
   }, []);
-  // === fin NUEVO
+  // === fin ajuste automático
 
   const handleNavigation = (pageId) => setCurrentPage(pageId);
 
@@ -637,13 +638,11 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* WRAPPER con ref para medir el alto del header */}
-      <div ref={headerWrapRef}>
-        <Header currentPage={currentPage} onNavigate={handleNavigation} />
-      </div>
+      {/* Header normal (no wrapper especial) */}
+      <Header currentPage={currentPage} onNavigate={handleNavigation} />
 
-      {/* Aplicamos padding-top dinámico igual al alto del header */}
-      <main style={{ paddingTop: headerH }}>
+      {/* El padding-top se ajusta solo según la altura del header */}
+      <main style={{ paddingTop: headerH || 120 }}>
         {renderCurrentPage()}
       </main>
 
