@@ -44,7 +44,7 @@ export const PRODUCTS = [
     subtype: "gerenciales",
     name: "Silla Alemania 1",
     img: "https://i.pinimg.com/736x/58/25/a9/5825a9760a7f9abad4a81c5fb26acc97.jpg",
-    features: ["GARANTIA DE 1 AÑO", "Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Piso duro", "Asi: Cuero sintetico", "Esp: Cuerro sintetico"],
+    features: ["GARANTIA DE 1 AÑO", "Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Piso duro", "Asiento: Cuero sintetico", "Espaldar: Cuero sintetico"],
   },
   {
     id: "S-GER-002",
@@ -52,7 +52,7 @@ export const PRODUCTS = [
     subtype: "gerenciales",
     name: "Silla Alemania 2",
     img: "https://i.pinimg.com/736x/6c/9d/1e/6c9d1e38df9dcb2453622b7a9c12ff78.jpg",
-    features: ["GARANTIA DE 1 AÑO", "Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Piso duro", "Asi: Cuero sintetico", "Esp: Cuerro sintetico"],
+    features: ["GARANTIA DE 1 AÑO", "Mecanismo: Basculante", "Brazos: Fijos", "Base: Cromo", "Ruedas: Piso duro", "Asiento: Cuero sintetico", "Espaldar: Cuero sintetico"],
   },
   {
     id: "S-SEC-010",
