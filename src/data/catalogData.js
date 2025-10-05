@@ -55,15 +55,20 @@ export const PRODUCTS = [
       "https://i.pinimg.com/736x/ea/33/cc/ea33ccbec2c84a1986888c0cffb7c0ef.jpg", // frente
       "https://i.pinimg.com/736x/0c/4e/6c/0c4e6ca9b1eee539599cd7119d539d1b.jpg", // lateral (ejemplo)
       "https://i.pinimg.com/736x/ad/cf/cc/adcfcc111fb8a281976b4cd612fff1b6.jpg", // espalda (ejemplo)
+      "https://i.pinimg.com/736x/ab/e7/ce/abe7cef926b9cc673de188d64808002d.jpg",
+      "https://i.pinimg.com/736x/f5/07/74/f5077407521c1c8fda98b6df67e77f20.jpg",
+      "https://i.pinimg.com/736x/9c/6e/b5/9c6eb5699b0aaa96c2b45029c80b0d9d.jpg",
     ],
     features: [
       "GARANTIA DE 1 AÑO",
-      "Mecanismo: Basculante",
-      "Brazos: Fijos",
-      "Base: Cromo",
-      "Ruedas: Piso duro",
-      "Asiento: Cuero sintetico",
-      "Espaldar: Cuero sintetico",
+      "Mecanismo: Sincro 4 posiciones con Slider o Basculante",
+      "Cabecero: Opcional Grad. Altura y basculante 2D",
+      "Asiento: Paño negro. Graduable en altura y profundidad",
+      "Espaldar: Malla translucida. Graduable en altura",
+      "Brazos: Grad. Altura o gira y desliza (3D)",
+      "Base: Aluminio o cromo",
+      "Ruedas: Nylo o piso duro",
+      
     ],
   },
   {
