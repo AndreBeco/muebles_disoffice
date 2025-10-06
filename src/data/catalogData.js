@@ -4,7 +4,7 @@ export const CATEGORIES = [
     id: "sillas",
     title: "SILLAS",
     description: "Presidenciales, secretariales, fijas y tándem.",
-    cover: "https://i.pinimg.com/1200x/63/12/85/631285f85c8660638343ee69113a0deb.jpg",
+    cover: "https://i.pinimg.com/736x/72/00/17/72001776d4ec1e5b3a873c9b5cd4941e.jpg",
     subtypes: [
       { id: "presidenciales", name: "PRESIDENCIALES" },
       { id: "secretariales", name: "Secretariales" },
