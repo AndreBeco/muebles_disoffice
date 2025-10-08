@@ -1174,9 +1174,9 @@ export const PRODUCTS = [
     category: "sillas",
     subtype: "ejecutivas",
     name: "ESLOVENIA",
-    img: "https://i.pinimg.com/736x/ed/a8/72/eda8728b07c98ab8d8df86c0b36ce433.jpg",
+    img: "https://i.pinimg.com/736x/d3/9c/84/d39c84ea242a4fe9d474a83db6592d6b.jpg",
     images: [
-      "https://i.pinimg.com/736x/ed/a8/72/eda8728b07c98ab8d8df86c0b36ce433.jpg",
+      "https://i.pinimg.com/736x/d3/9c/84/d39c84ea242a4fe9d474a83db6592d6b.jpg",
       "https://i.pinimg.com/736x/e8/3c/26/e83c26527eb096d70411596fc44f65b1.jpg",
       "https://i.pinimg.com/736x/de/06/15/de06150ab1c0277c09f3f5694dd0fc08.jpg",
     ],
