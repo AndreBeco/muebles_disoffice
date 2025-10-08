@@ -1,6 +1,7 @@
 // src/components/DisenoVentasPage.js
 import React from "react";
 import { CATEGORIES, PRODUCTS } from "../data/catalogData";
+import ScrollTopButton from "./ScrollTopButton";
 
 const WP = "573177110447";
 
@@ -223,6 +224,9 @@ export default function DisenoVentasPage() {
           </div>
         ))}
       </div>
+
+      {/* Botón subir solo en esta página */}
+      <ScrollTopButton />
     </section>
   );
 
@@ -280,6 +284,9 @@ export default function DisenoVentasPage() {
           Cotizar esta categoría
         </a>
       </div>
+
+      {/* Botón subir también en vista de categoría */}
+      <ScrollTopButton />
     </section>
   );
 
