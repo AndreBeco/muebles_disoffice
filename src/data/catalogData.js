@@ -12,8 +12,8 @@ export const CATEGORIES = [
       { id: "ejecutivas", name: "EJECUTIVAS" },
       { id: "operativas", name: "OPERATIVAS" },
       { id: "cajero", name: "CAJERO" },
-      { id: "tándem", name: "TÁNDEM" },
       { id: "interlocutoras", name: "INTERLOCUTORAS" },
+      { id: "tándem", name: "TÁNDEM" },
       { id: "universitarias", name: "UNIVERSITARIAS" },
     ],
   },
@@ -1855,6 +1855,69 @@ export const PRODUCTS = [
       "Ruedas: Nylon",
     ],
   },
+
+   // ========= SILLAS INTERLOCUTORAS =========
+  {
+    id: "S-INT-001",
+    category: "sillas",
+    subtype: "interlocutoras",
+    name: "INT. ATLANTA",
+    img: "https://i.pinimg.com/736x/64/d0/d0/64d0d049042ded1e55bc46e665b769f8.jpg",
+    images: [
+      "https://i.pinimg.com/736x/64/d0/d0/64d0d049042ded1e55bc46e665b769f8.jpg",
+      "https://i.pinimg.com/736x/99/9d/5c/999d5cac188265024d09d271798a9423.jpg",
+      "https://i.pinimg.com/736x/fd/1b/f6/fd1bf6b04885a8b808fb39af6e1c1038.jpg",
+      "https://i.pinimg.com/736x/64/42/3c/64423cdb6a70ba31014a4a19ee7a9088.jpg",
+      "https://i.pinimg.com/736x/73/98/99/739899e9ba9089ef81cd29dbd7e8ec9c.jpg",
+      "https://i.pinimg.com/736x/8b/73/ac/8b73ac817f4da53dd94c2be885bd0b0e.jpg",
+      "https://i.pinimg.com/736x/34/41/15/34411569050405f70f21548cc721c5ab.jpg",
+      "https://i.pinimg.com/736x/fa/f9/11/faf91139a05770b007bfc9260281f9df.jpg",
+    ],
+    features: [
+      "GARANTIA DE 3 AÑOS",
+      "Asiento: Paño negro o gris",
+      "Espaldar: Malla negra o gris. Marco negro o blanco. Soporte fijo",
+      "Brazos: Fijos",
+      "Estructura: Cromo",
+    ],
+  },
+  {
+    id: "S-INT-002",
+    category: "sillas",
+    subtype: "interlocutoras",
+    name: "INT. AUSTRIA",
+    img: "https://i.pinimg.com/736x/1e/c9/84/1ec9840028f0421a8354dbec28ddac32.jpg",
+    images: [
+      "https://i.pinimg.com/736x/1e/c9/84/1ec9840028f0421a8354dbec28ddac32.jpg",
+      "https://i.pinimg.com/736x/04/fa/61/04fa616a97d5ab9c8c9ff8476a26f2b8.jpg",
+    ],
+    features: [
+        "GARANTIA DE 3 AÑOS",
+      "Asiento: Paño negro o gris",
+      "Espaldar: Malla negra o gris",
+      "Brazos: Fijos",
+      "Estructura: Cromo o negra",
+    ],
+  },
+  {
+    id: "S-INT-003",
+    category: "sillas",
+    subtype: "interlocutoras",
+    name: "INT. BELICE",
+    img: "https://i.pinimg.com/736x/6e/ea/24/6eea2466eb696cb31d5469bf9d883adc.jpg",
+    images: [
+      "https://i.pinimg.com/736x/6e/ea/24/6eea2466eb696cb31d5469bf9d883adc.jpg",
+      "https://i.pinimg.com/736x/87/df/49/87df492d66d529c66c3cd10e3c29eab3.jpg",
+    ],
+    features: [
+        "GARANTIA DE 3 AÑOS",
+      "Asiento: Paño negro",
+      "Espaldar: Malla. Soporte fijo",
+      "Brazos: Fijos",
+      "Estructura: Cromo",
+    ],
+  },
+
   
   // ========= ARCHIVADORES =========
   {
