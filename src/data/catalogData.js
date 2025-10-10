@@ -1789,7 +1789,7 @@ export const PRODUCTS = [
       "Mecanismo: 5 Bloqueos",
       "Asiento: Tapizado. Graduable en altura",
       "Espaldar: Tapizado. Sistema cremallera con bastidor. Graduable en altura",
-      "Brazos: Fijos. Graduable en altura o gira y desliza 3D"",
+      "Brazos: Fijos. Graduable en altura o gira y desliza 3D",
       "Base: Nylon",
       "Ruedas: Piso duro",
     ],
