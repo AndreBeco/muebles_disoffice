@@ -2096,6 +2096,48 @@ export const PRODUCTS = [
       "Estructura: Cromo",
     ],
   },
+
+  // ========= SILLAS TÁNDEM =========
+  {
+    id: "S-TAN-001",
+    category: "sillas",
+    subtype: "tándem",
+    name: "BUTTERFLY",
+    img: "https://i.pinimg.com/736x/7b/c2/cc/7bc2cc442ea3bcf801a49585aced39e2.jpg",
+    images: [
+      "https://i.pinimg.com/736x/7b/c2/cc/7bc2cc442ea3bcf801a49585aced39e2.jpg",
+      "https://i.pinimg.com/736x/0e/14/b6/0e14b624364d5470dd8f0fc3489a4a7b.jpg",
+      "https://i.pinimg.com/736x/20/7e/54/207e5496cba6ab071036d98f118e0fae.jpg",
+      "https://i.pinimg.com/736x/64/4b/6f/644b6ff22d229318025eba97aad3befc.jpg",
+      "https://i.pinimg.com/736x/da/fb/c9/dafbc9e9e4fc536b73959a9de22c1687.jpg",
+      "https://i.pinimg.com/736x/04/bd/a6/04bda6b2109321d97c21e62e8837946a.jpg",
+    ],
+    features: [
+      "GARANTIA DE 3 AÑOS",
+      "Asiento: Tapizado o plástico",
+      "Espaldar: Plástico",
+      "Estructura: Metalica",
+      "Puestos: 4 puestos, 3 puestos, 2 puestos",
+    ],
+  },
+  {
+    id: "S-INT-007",
+    category: "sillas",
+    subtype: "tándem",
+    name: "INT. ESPARTA",
+    img: "https://i.pinimg.com/736x/af/ca/8c/afca8ce81d95cd54db1f7d62e221e872.jpg",
+    images: [
+      "https://i.pinimg.com/736x/af/ca/8c/afca8ce81d95cd54db1f7d62e221e872.jpg",
+      "https://i.pinimg.com/736x/5a/36/c8/5a36c88cecbec241127a502556951e11.jpg",
+    ],
+    features: [
+      "GARANTIA DE 3 AÑOS",
+      "Asiento: Tapizado o plástico",
+      "Espaldar: Plástico",
+      "Estructura: Metalica",
+      "Puestos: 4 puestos, 3 puestos, 2 puestos",
+    ],
+  },
   
   // ========= ARCHIVADORES =========
   {
