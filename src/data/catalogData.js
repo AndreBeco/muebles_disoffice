@@ -1794,6 +1794,67 @@ export const PRODUCTS = [
       "Ruedas: Piso duro",
     ],
   },
+
+  // ========= SILLAS CAJERO =========
+  {
+    id: "S-CJR-001",
+    category: "sillas",
+    subtype: "cajero",
+    name: "NIZA CAJERO",
+    img: "https://i.pinimg.com/736x/c1/53/08/c15308364e6a740a21b1ab0eabc57bba.jpg",
+    images: [
+      "https://i.pinimg.com/736x/c1/53/08/c15308364e6a740a21b1ab0eabc57bba.jpg",
+      "https://i.pinimg.com/736x/28/a0/d4/28a0d48df5e038cd96d387c477c301b0.jpg",
+    ],
+    features: [
+      "GARANTIA DE 3 AÑOS",
+      "Mecanismo: Syncro 2 palancas",
+      "Asiento: Tapizado. Graduable en altura",
+      "Espaldar: Tapizado. Graduable",
+      "Base: Cromo o Nylon",
+      "Ruedas: Nylon o Piso duro",
+    ],
+  },
+  {
+    id: "S-CJR-002",
+    category: "sillas",
+    subtype: "cajero",
+    name: "RISMA CAJERO",
+    img: "https://i.pinimg.com/736x/01/79/3a/01793a20b0021b033b64ef583ee0af74.jpg",
+    images: [
+      "https://i.pinimg.com/736x/01/79/3a/01793a20b0021b033b64ef583ee0af74.jpg",
+      "https://i.pinimg.com/736x/43/b3/05/43b3059ec3261b44fedfc72c76eb15c5.jpg",
+      "https://i.pinimg.com/736x/31/4c/d4/314cd49b47a082d1f0b19b75ee2319a0.jpg",
+    ],
+    features: [
+      "GARANTIA DE 3 AÑOS",
+      "Mecanismo: Graduable",
+      "Asiento: Plástico o tapizado. Graduable en altura",
+      "Espaldar: Plástico",
+      "Base: Cromo o Nylon",
+      "Ruedas: Nylon",
+    ],
+  },
+  {
+    id: "S-CJR-003",
+    category: "sillas",
+    subtype: "cajero",
+    name: "ISOCELES CAJERO",
+    img: "https://i.pinimg.com/736x/af/47/ce/af47ceb002ce6cda1862d69b2e76b40f.jpg",
+    images: [
+      "https://i.pinimg.com/736x/af/47/ce/af47ceb002ce6cda1862d69b2e76b40f.jpg",
+      "https://i.pinimg.com/736x/40/2a/df/402adf91c4135e226f35b4ee095a7742.jpg",
+      "https://i.pinimg.com/736x/70/12/d3/7012d38e0f267d8fd711463c6c3f3cd9.jpg",
+    ],
+    features: [
+      "GARANTIA DE 3 AÑOS",
+      "Mecanismo: Graduable",
+      "Asiento: Tapizado. Graduable en altura",
+      "Espaldar: Malla",
+      "Base: Cromo o Nylon",
+      "Ruedas: Nylon",
+    ],
+  },
   
   // ========= ARCHIVADORES =========
   {
