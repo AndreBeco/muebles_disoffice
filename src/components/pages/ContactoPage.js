@@ -1,123 +1,261 @@
 import React from "react";
+import {
+  MessageCircle,
+  Phone,
+  Mail,
+  MapPin,
+  Clock3,
+  Instagram,
+  Facebook,
+  Music2,
+  CheckCircle2,
+} from "lucide-react";
 
 const ContactoPage = () => {
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Encabezado */}
-        <div className="text-center mb-14">
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            Contáctanos
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            Estamos listos para ayudarte con soluciones en mobiliario de oficina,
-            adaptación, reparación, mantenimiento y asesoría personalizada en Cali.
-          </p>
-        </div>
+    <section className="bg-white">
+      {/* HERO */}
+      <section className="bg-gradient-to-b from-gray-100 to-white py-20">
+        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+          {/* Texto */}
+          <div className="text-center lg:text-left">
+            <span className="inline-block bg-orange-100 text-orange-700 text-sm font-semibold px-4 py-2 rounded-full mb-5">
+              Estamos listos para ayudarte
+            </span>
 
-        {/* Bloques de contacto */}
-        <div className="grid md:grid-cols-2 gap-10 mb-16">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              Hablemos de la mejor solución para tu mobiliario
+            </h1>
 
-          {/* Información directa */}
-          <div className="bg-gray-50 rounded-2xl p-8 shadow-sm">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Información de contacto
-            </h2>
+            <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 mb-8">
+              Contáctanos para asesorarte en compra, adaptación, reparación o
+              mantenimiento de mobiliario de oficina en Cali.
+            </p>
 
-            <div className="space-y-5 text-gray-700">
-              <div>
-                <p className="font-semibold text-gray-900">Teléfonos</p>
-                <p>+57 318 406 3943</p>
-                <p>+57 317 711 0447</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <a
+                href="https://wa.me/573177110447"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-7 py-4 rounded-full text-lg font-semibold transition shadow-md"
+              >
+                <MessageCircle size={20} />
+                Hablar por WhatsApp
+              </a>
+
+              <a
+                href="mailto:mueblesdisoffice@gmail.com"
+                className="inline-flex items-center justify-center gap-2 bg-white border border-gray-300 hover:border-orange-400 text-gray-900 px-7 py-4 rounded-full text-lg font-semibold transition"
+              >
+                <Mail size={20} />
+                Escribir al correo
+              </a>
+            </div>
+
+            {/* Beneficios rápidos */}
+            <div className="grid sm:grid-cols-3 gap-4 text-sm text-gray-700">
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Atención rápida</p>
+                <p>Respuesta directa por WhatsApp</p>
               </div>
 
-              <div>
-                <p className="font-semibold text-gray-900">Correo electrónico</p>
-                <p>mueblesdisoffice@gmail.com</p>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Asesoría real</p>
+                <p>Según tu espacio y necesidad</p>
               </div>
 
-              <div>
-                <p className="font-semibold text-gray-900">Ubicación</p>
-                <p>Cali, Valle del Cauca, Colombia</p>
-              </div>
-
-              <div>
-                <p className="font-semibold text-gray-900">Horario de atención</p>
-                <p>Lunes a sábado</p>
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Atención en Cali</p>
+                <p>Soluciones cercanas y personalizadas</p>
               </div>
             </div>
           </div>
 
-          {/* Acción principal */}
-          <div className="bg-gray-900 text-white rounded-2xl p-8 shadow-sm flex flex-col justify-center">
-            <h2 className="text-2xl font-bold mb-4">
-              Recibe asesoría personalizada
-            </h2>
-            <p className="text-gray-300 mb-6">
-              Cuéntanos qué necesitas y te ayudamos a encontrar la mejor solución
-              para tu mobiliario de oficina, ya sea compra, adaptación, reparación
-              o mantenimiento.
-            </p>
+          {/* Tarjeta visual */}
+          <div className="relative">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 min-h-[430px] flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 p-10">
+              <div className="text-center text-white max-w-md">
+                <div className="w-20 h-20 mx-auto rounded-2xl bg-white/10 flex items-center justify-center mb-6">
+                  <MessageCircle size={36} />
+                </div>
 
-            <a
-              href="https://wa.me/573177110447"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg font-semibold transition text-center"
-            >
-              Hablar por WhatsApp
-            </a>
+                <h2 className="text-2xl md:text-3xl font-bold mb-4">
+                  Te ayudamos a encontrar la mejor solución
+                </h2>
+
+                <p className="text-gray-300 text-lg leading-relaxed">
+                  Compra, adapta, repara o mejora tu mobiliario de oficina con
+                  una atención más cercana, práctica y enfocada en tu necesidad real.
+                </p>
+              </div>
+            </div>
+
+            <div className="absolute bottom-5 left-5 md:bottom-6 md:left-6 bg-white rounded-2xl shadow-xl p-4 md:p-5 border border-gray-100 max-w-[320px]">
+              <p className="text-sm text-gray-500 mb-1">Canal recomendado</p>
+              <p className="font-bold text-gray-900 text-lg mb-1">
+                WhatsApp directo
+              </p>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Escríbenos y recibe atención rápida, asesoría personalizada y una
+                respuesta más ágil para tu solicitud.
+              </p>
+            </div>
           </div>
         </div>
+      </section>
 
-        {/* Redes sociales */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-8">
-            Síguenos en redes sociales
-          </h2>
+      {/* Información de contacto */}
+      <section className="py-20 bg-gray-50 border-t border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Información de contacto
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Aquí tienes nuestros principales canales de atención para que nos
+              contactes de la forma que te resulte más cómoda.
+            </p>
+          </div>
 
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Phone size={26} />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Teléfonos</h3>
+              <div className="space-y-2 text-gray-700">
+                <p>+57 318 406 3943</p>
+                <p>+57 317 711 0447</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Mail size={26} />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Correo</h3>
+              <div className="space-y-2 text-gray-700 break-words">
+                <p>mueblesdisoffice@gmail.com</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <MapPin size={26} />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Ubicación</h3>
+              <div className="space-y-2 text-gray-700">
+                <p>Cali, Valle del Cauca</p>
+                <p>Colombia</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Clock3 size={26} />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Atención</h3>
+              <div className="space-y-2 text-gray-700">
+                <p>Lunes a sábado</p>
+                <p>Asesoría personalizada</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Redes sociales */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Síguenos en redes sociales
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Estamos preparando nuestros canales para compartir más contenido,
+              trabajos, novedades y soluciones en mobiliario de oficina.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-gray-200 rounded-2xl p-6 text-center hover:shadow-md transition"
+              className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 hover:shadow-md transition"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Instagram</h3>
-              <p className="text-gray-600">@mueblesdisoffice</p>
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Instagram size={26} />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Instagram</h3>
+              <p className="text-gray-700">@mueblesdisoffice</p>
             </a>
 
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-gray-200 rounded-2xl p-6 text-center hover:shadow-md transition"
+              className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 hover:shadow-md transition"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Facebook</h3>
-              <p className="text-gray-600">Muebles DisOffice</p>
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Facebook size={26} />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Facebook</h3>
+              <p className="text-gray-700">Muebles DisOffice</p>
             </a>
 
             <a
               href="https://www.tiktok.com/@mueblesdisoffice"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-gray-200 rounded-2xl p-6 text-center hover:shadow-md transition"
+              className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 hover:shadow-md transition"
             >
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">TikTok</h3>
-              <p className="text-gray-600">@mueblesdisoffice</p>
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Music2 size={26} />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">TikTok</h3>
+              <p className="text-gray-700">@mueblesdisoffice</p>
             </a>
           </div>
         </div>
+      </section>
 
-        {/* Cierre */}
-        <div className="text-center">
-          <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-            En Muebles DisOffice estamos para ayudarte a crear, mejorar y mantener
-            espacios de trabajo más funcionales, cómodos y duraderos.
+      {/* CTA FINAL */}
+      <section className="py-20 bg-gray-900 text-center text-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            ¿Listo para cotizar o pedir asesoría?
+          </h2>
+
+          <p className="text-gray-300 mb-8 text-lg">
+            Escríbenos y te ayudamos a encontrar la mejor solución para tu
+            mobiliario de oficina.
           </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://wa.me/573177110447"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition"
+            >
+              <MessageCircle size={20} />
+              Hablar por WhatsApp
+            </a>
+
+            <a
+              href="mailto:mueblesdisoffice@gmail.com"
+              className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-full text-lg font-semibold transition"
+            >
+              <Mail size={20} />
+              Enviar correo
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
     </section>
   );
 };
