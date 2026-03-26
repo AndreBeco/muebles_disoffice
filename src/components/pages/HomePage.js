@@ -5,6 +5,7 @@ import {
   Armchair,
   MessageCircle,
   CheckCircle2,
+  Sparkles,
 } from "lucide-react";
 
 const HomePage = () => {
@@ -13,7 +14,6 @@ const HomePage = () => {
       {/* HERO */}
       <section className="bg-gradient-to-b from-gray-100 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
-          
           {/* Texto */}
           <div className="text-center lg:text-left">
             <span className="inline-block bg-orange-100 text-orange-700 text-sm font-semibold px-4 py-2 rounded-full mb-5">
@@ -25,7 +25,8 @@ const HomePage = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 mb-8">
-              Para que funcione mejor, dure más y se adapte a ti sin necesidad de reemplazar todo.
+              Para que funcione mejor, dure más y se adapte a ti sin necesidad de
+              reemplazar todo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
@@ -82,13 +83,13 @@ const HomePage = () => {
             </div>
 
             {/* Tarjeta */}
-            <div className="absolute bottom-6 left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 max-w-xs">
+            <div className="absolute bottom-5 left-5 md:bottom-6 md:left-6 bg-white rounded-2xl shadow-xl p-4 md:p-5 border border-gray-100 max-w-[300px]">
               <p className="text-sm text-gray-500 mb-1">Diferencial DisOffice</p>
-              <p className="font-bold text-gray-900 text-lg">
+              <p className="font-bold text-gray-900 text-lg mb-1">
                 No solo vendemos muebles
               </p>
-              <p className="text-gray-700 text-sm mt-1">
-                Los adaptamos, mejoramos y optimizamos para extender su vida útil.
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Los adaptamos y optimizamos para extender su vida útil.
               </p>
             </div>
           </div>
@@ -96,87 +97,110 @@ const HomePage = () => {
       </section>
 
       {/* DIFERENCIAL */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 border-t border-b border-gray-100">
         <div className="max-w-5xl mx-auto text-center px-4">
+          <div className="flex items-center justify-center gap-2 text-orange-600 mb-4">
+            <Sparkles size={18} />
+            <span className="text-sm font-semibold uppercase tracking-wide">
+              Nuestro valor diferencial
+            </span>
+          </div>
+
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 uppercase">
             No solo vendemos muebles
           </h2>
 
-          <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            Transformamos, adaptamos y mejoramos tu mobiliario para que realmente funcione para ti, se ajuste a tu espacio y dure más tiempo.
+          <div className="w-20 h-1 bg-orange-500 rounded-full mx-auto mb-6"></div>
+
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+            Transformamos, adaptamos y mejoramos tu mobiliario para que realmente
+            funcione para ti, se ajuste a tu espacio y dure más tiempo.
           </p>
         </div>
       </section>
 
       {/* SERVICIOS */}
       <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
-          
-          {/* Adaptación */}
-          <div className="bg-white p-7 rounded-2xl shadow-md border-2 border-orange-500 h-full">
-            <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
-              <Wrench size={28} />
-            </div>
-
-            <div className="inline-block mb-4 bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">
-              Más solicitado
-            </div>
-
-            <h3 className="text-xl font-bold mb-3 text-gray-900">
-              Adaptación y mejora ergonómica
-            </h3>
-
-            <p className="text-gray-700 mb-4">
-              Ajustamos tu mobiliario para mejorar postura, comodidad y productividad.
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Soluciones que impulsan tu espacio de trabajo
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Combinamos suministro, mejora, reparación y adaptación para ofrecer
+              soluciones prácticas, duraderas y funcionales.
             </p>
-
-            <ul className="space-y-2 text-gray-700">
-              <li>✔ Ajuste de altura y brazos</li>
-              <li>✔ Soporte lumbar</li>
-              <li>✔ Adaptación al usuario</li>
-            </ul>
           </div>
 
-          {/* Reparación */}
-          <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200 h-full">
-            <div className="w-14 h-14 rounded-2xl bg-gray-100 text-gray-900 flex items-center justify-center mb-5">
-              <Hammer size={28} />
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Adaptación */}
+            <div className="bg-white p-7 rounded-2xl shadow-md border-2 border-orange-500 h-full">
+              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Wrench size={28} />
+              </div>
+
+              <div className="inline-block mb-4 bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1 rounded-full">
+                Más solicitado
+              </div>
+
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                Adaptación y mejora ergonómica
+              </h3>
+
+              <p className="text-gray-700 mb-4">
+                Ajustamos tu mobiliario para mejorar postura, comodidad y
+                productividad.
+              </p>
+
+              <ul className="space-y-2 text-gray-700">
+                <li>✔ Ajuste de altura y brazos</li>
+                <li>✔ Soporte lumbar</li>
+                <li>✔ Adaptación al usuario</li>
+              </ul>
             </div>
 
-            <h3 className="text-xl font-bold mb-3 text-gray-900">
-              Reparación y mantenimiento
-            </h3>
+            {/* Reparación */}
+            <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200 h-full">
+              <div className="w-14 h-14 rounded-2xl bg-gray-100 text-gray-900 flex items-center justify-center mb-5">
+                <Hammer size={28} />
+              </div>
 
-            <p className="text-gray-700 mb-4">
-              Recuperamos y reforzamos mobiliario para extender su vida útil.
-            </p>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                Reparación y mantenimiento
+              </h3>
 
-            <ul className="space-y-2 text-gray-700">
-              <li>✔ Cambio de piezas</li>
-              <li>✔ Refuerzos estructurales</li>
-              <li>✔ Mantenimiento preventivo</li>
-            </ul>
-          </div>
+              <p className="text-gray-700 mb-4">
+                Recuperamos y reforzamos mobiliario para extender su vida útil.
+              </p>
 
-          {/* Diseño */}
-          <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200 h-full">
-            <div className="w-14 h-14 rounded-2xl bg-gray-100 text-gray-900 flex items-center justify-center mb-5">
-              <Armchair size={28} />
+              <ul className="space-y-2 text-gray-700">
+                <li>✔ Cambio de piezas</li>
+                <li>✔ Refuerzos estructurales</li>
+                <li>✔ Mantenimiento preventivo</li>
+              </ul>
             </div>
 
-            <h3 className="text-xl font-bold mb-3 text-gray-900">
-              Diseño y venta de mobiliario
-            </h3>
+            {/* Diseño */}
+            <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200 h-full">
+              <div className="w-14 h-14 rounded-2xl bg-gray-100 text-gray-900 flex items-center justify-center mb-5">
+                <Armchair size={28} />
+              </div>
 
-            <p className="text-gray-700 mb-4">
-              Suministramos mobiliario de oficina funcional y adaptado a tus espacios.
-            </p>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                Diseño y venta de mobiliario
+              </h3>
 
-            <ul className="space-y-2 text-gray-700">
-              <li>✔ Sillas ergonómicas</li>
-              <li>✔ Puestos de trabajo</li>
-              <li>✔ Archivadores</li>
-            </ul>
+              <p className="text-gray-700 mb-4">
+                Suministramos mobiliario de oficina funcional y adaptado a tus
+                espacios.
+              </p>
+
+              <ul className="space-y-2 text-gray-700">
+                <li>✔ Sillas ergonómicas</li>
+                <li>✔ Puestos de trabajo</li>
+                <li>✔ Archivadores</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
