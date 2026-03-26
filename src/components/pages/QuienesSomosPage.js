@@ -28,7 +28,8 @@ const QuienesSomosPage = () => {
             <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 mb-8">
               En Muebles DisOffice combinamos venta, adaptación, reparación y
               mejora de mobiliario de oficina para ofrecer soluciones más
-              funcionales, cómodas y duraderas en Cali.
+              funcionales, cómodas y duraderas en Cali, sin necesidad de
+              reemplazar todo y generar gastos innecesarios.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
@@ -141,7 +142,7 @@ const QuienesSomosPage = () => {
                 <Wrench size={28} />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Adaptación y mejora
+                Adaptamos lo que ya tienes
               </h3>
               <p className="text-gray-700">
                 No nos limitamos a suministrar mobiliario. También lo adaptamos,
@@ -154,7 +155,7 @@ const QuienesSomosPage = () => {
                 <ShieldCheck size={28} />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Soluciones duraderas
+                Más vida útil, menos gasto
               </h3>
               <p className="text-gray-700">
                 Buscamos que cada intervención represente una inversión mejor
@@ -167,13 +168,35 @@ const QuienesSomosPage = () => {
                 <Building2 size={28} />
               </div>
               <h3 className="text-xl font-bold mb-3 text-gray-900">
-                Enfoque profesional
+                Atención real para empresas
               </h3>
               <p className="text-gray-700">
                 Atendemos empresas, oficinas e instituciones con una visión más
                 seria, cercana y orientada a resolver necesidades reales.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRUEBA / CONFIANZA */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto text-center px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Empresas y clientes ya han confiado en nosotros
+          </h2>
+
+          <p className="text-gray-600 mb-6">
+            Hemos trabajado con diferentes oficinas, empresas, instituciones y
+            clientes en Cali, ayudando a mejorar sus espacios de trabajo sin
+            necesidad de reemplazar todo.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-6 text-gray-600 text-sm font-medium">
+            <span>✔ Empresas locales</span>
+            <span>✔ Oficinas corporativas</span>
+            <span>✔ Instituciones</span>
+            <span>✔ Clientes particulares</span>
           </div>
         </div>
       </section>
@@ -219,8 +242,8 @@ const QuienesSomosPage = () => {
           </h2>
 
           <p className="text-gray-300 mb-8 text-lg">
-            Si buscas una empresa que no solo venda mobiliario, sino que también
-            te ayude a optimizarlo y aprovecharlo mejor, estamos listos para ayudarte.
+            Cuéntanos tu necesidad y te ayudamos a encontrar una solución útil,
+            práctica y bien pensada para tu espacio de trabajo.
           </p>
 
           <a
