@@ -180,8 +180,34 @@ const AdaptacionPage = () => {
         </div>
       </section>
 
-      {/* Qué podemos adaptar */}
+      {/* Antes / después - subido más arriba */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="bg-white border border-dashed border-gray-300 rounded-3xl p-8 md:p-12 text-center shadow-sm">
+            <div className="w-16 h-16 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+              <Images size={30} />
+            </div>
+
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+              Próximamente: antes y después de nuestros trabajos
+            </h2>
+
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-4">
+              Esta sección quedará lista para mostrar imágenes o videos reales de
+              adaptaciones y mejoras realizadas, de modo que los clientes puedan
+              ver visualmente la transformación del mobiliario.
+            </p>
+
+            <p className="text-sm text-gray-500 max-w-2xl mx-auto">
+              Por ahora, nuestras soluciones se desarrollan según el tipo de
+              mobiliario, el espacio disponible y la necesidad específica de cada cliente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Qué podemos adaptar */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -247,32 +273,6 @@ const AdaptacionPage = () => {
                 <li>✔ Mejor aprovechamiento</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Espacio para antes / después */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="bg-gray-50 border border-dashed border-gray-300 rounded-3xl p-8 md:p-12 text-center">
-            <div className="w-16 h-16 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
-              <Images size={30} />
-            </div>
-
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-              Próximamente: antes y después de nuestros trabajos
-            </h2>
-
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-4">
-              Esta sección quedará lista para mostrar imágenes o videos reales de
-              adaptaciones y mejoras realizadas, de modo que los clientes puedan
-              ver visualmente la transformación del mobiliario.
-            </p>
-
-            <p className="text-sm text-gray-500 max-w-2xl mx-auto">
-              Por ahora, nuestras soluciones se desarrollan según el tipo de
-              mobiliario, el espacio disponible y la necesidad específica de cada cliente.
-            </p>
           </div>
         </div>
       </section>
