@@ -52,7 +52,7 @@ const ContactoPage = () => {
               </a>
             </div>
 
-            {/* Beneficios rápidos */}
+            {/* Beneficios */}
             <div className="grid sm:grid-cols-3 gap-4 text-sm text-gray-700">
               <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
                 <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
@@ -74,9 +74,9 @@ const ContactoPage = () => {
             </div>
           </div>
 
-          {/* Tarjeta visual */}
+          {/* Tarjeta derecha */}
           <div className="relative">
-            <div className="rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 min-h-[430px] flex items-center justify-center bg-gradient-to-br from-gray-900 to-gray-800 p-10">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-gray-900 to-gray-800 min-h-[430px] flex items-center justify-center p-10">
               <div className="text-center text-white max-w-md">
                 <div className="w-20 h-20 mx-auto rounded-2xl bg-white/10 flex items-center justify-center mb-6">
                   <MessageCircle size={36} />
@@ -87,138 +87,113 @@ const ContactoPage = () => {
                 </h2>
 
                 <p className="text-gray-300 text-lg leading-relaxed">
-                  Compra, adapta, repara o mejora tu mobiliario de oficina con
-                  una atención más cercana, práctica y enfocada en tu necesidad real.
+                  Compra, adapta, repara o mejora tu mobiliario con una atención
+                  cercana, práctica y enfocada en tu necesidad real.
                 </p>
               </div>
             </div>
 
-            <div className="absolute bottom-5 left-5 md:bottom-6 md:left-6 bg-white rounded-2xl shadow-xl p-4 md:p-5 border border-gray-100 max-w-[320px]">
+            <div className="absolute bottom-6 left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100 max-w-[320px]">
               <p className="text-sm text-gray-500 mb-1">Canal recomendado</p>
               <p className="font-bold text-gray-900 text-lg mb-1">
                 WhatsApp directo
               </p>
               <p className="text-gray-700 text-sm leading-relaxed">
-                Escríbenos y recibe atención rápida, asesoría personalizada y una
-                respuesta más ágil para tu solicitud.
+                Escríbenos y recibe atención rápida y asesoría personalizada.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Información de contacto */}
-      <section className="py-20 bg-gray-50 border-t border-b border-gray-100">
+      {/* INFO CONTACTO */}
+      <section className="py-20 bg-gray-50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-10">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Información de contacto
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Aquí tienes nuestros principales canales de atención para que nos
-              contactes de la forma que te resulte más cómoda.
+            <p className="text-lg text-gray-600">
+              Contáctanos de la forma que te resulte más cómoda.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+            {/* CARD */}
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                 <Phone size={26} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Teléfonos</h3>
-              <div className="space-y-2 text-gray-700">
-                <p>+57 318 406 3943</p>
-                <p>+57 317 711 0447</p>
-              </div>
+              <p className="text-gray-700">+57 318 406 3943</p>
+              <p className="text-gray-700">+57 317 711 0447</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                 <Mail size={26} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Correo</h3>
-              <div className="space-y-2 text-gray-700 break-words">
-                <p>mueblesdisoffice@gmail.com</p>
-              </div>
+              <p className="text-gray-700 break-words">
+                mueblesdisoffice@gmail.com
+              </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                 <MapPin size={26} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Ubicación</h3>
-              <div className="space-y-2 text-gray-700">
-                <p>Cali, Valle del Cauca</p>
-                <p>Colombia</p>
-              </div>
+              <p className="text-gray-700">Cali, Valle del Cauca</p>
+              <p className="text-gray-700">Colombia</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                 <Clock3 size={26} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Atención</h3>
-              <div className="space-y-2 text-gray-700">
-                <p>Lunes a sábado</p>
-                <p>Asesoría personalizada</p>
-              </div>
+              <p className="text-gray-700">Lunes a sábado</p>
+              <p className="text-gray-700">Asesoría personalizada</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Redes sociales */}
+      {/* REDES */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Síguenos en redes sociales
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Estamos preparando nuestros canales para compartir más contenido,
-              trabajos, novedades y soluciones en mobiliario de oficina.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 hover:shadow-md transition"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+            {/* CARD */}
+            <div className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                 <Instagram size={26} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Instagram</h3>
               <p className="text-gray-700">@mueblesdisoffice</p>
-            </a>
+            </div>
 
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 hover:shadow-md transition"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+            <div className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                 <Facebook size={26} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Facebook</h3>
               <p className="text-gray-700">Muebles DisOffice</p>
-            </a>
+            </div>
 
-            <a
-              href="https://www.tiktok.com/@mueblesdisoffice"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 hover:shadow-md transition"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+            <div className="bg-gray-50 rounded-2xl p-7 shadow-sm border border-gray-200 text-center hover:shadow-lg hover:-translate-y-1 transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                 <Music2 size={26} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">TikTok</h3>
               <p className="text-gray-700">@mueblesdisoffice</p>
-            </a>
+            </div>
           </div>
         </div>
       </section>
@@ -231,8 +206,7 @@ const ContactoPage = () => {
           </h2>
 
           <p className="text-gray-300 mb-8 text-lg">
-            Escríbenos y te ayudamos a encontrar la mejor solución para tu
-            mobiliario de oficina.
+            Escríbenos y te ayudamos a encontrar la mejor solución.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
