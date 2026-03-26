@@ -1,115 +1,239 @@
 import React from "react";
+import {
+  Sparkles,
+  Target,
+  ShieldCheck,
+  Wrench,
+  MessageCircle,
+  CheckCircle2,
+  Building2,
+} from "lucide-react";
 
 const QuienesSomosPage = () => {
   return (
-    <section className="bg-white py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Encabezado */}
-        <div className="text-center mb-14">
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
-            Quiénes Somos
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-            En Muebles DisOffice trabajamos para que tus espacios de oficina sean más cómodos,
-            funcionales y duraderos, combinando diseño, suministro, reparación y adaptación
-            del mobiliario según cada necesidad.
+    <section className="bg-white">
+      {/* HERO */}
+      <section className="bg-gradient-to-b from-gray-100 to-white py-20">
+        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+          {/* Texto */}
+          <div className="text-center lg:text-left">
+            <span className="inline-block bg-orange-100 text-orange-700 text-sm font-semibold px-4 py-2 rounded-full mb-5">
+              Más que mobiliario, soluciones reales
+            </span>
+
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+              Ayudamos a que los espacios de trabajo funcionen mejor
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 mb-8">
+              En Muebles DisOffice combinamos venta, adaptación, reparación y
+              mejora de mobiliario de oficina para ofrecer soluciones más
+              funcionales, cómodas y duraderas en Cali.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
+              <a
+                href="https://wa.me/573177110447"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-7 py-4 rounded-full text-lg font-semibold transition shadow-md"
+              >
+                <MessageCircle size={20} />
+                Hablar con un asesor
+              </a>
+
+              <a
+                href="https://wa.me/573177110447"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white border border-gray-300 hover:border-orange-400 text-gray-900 px-7 py-4 rounded-full text-lg font-semibold transition"
+              >
+                Conocer nuestros servicios
+              </a>
+            </div>
+
+            <div className="grid sm:grid-cols-3 gap-4 text-sm text-gray-700">
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Soluciones reales</p>
+                <p>Según necesidad y espacio</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Atención cercana</p>
+                <p>Asesoría personalizada en Cali</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Valor diferencial</p>
+                <p>No solo vendemos, optimizamos</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bloque visual */}
+          <div className="relative">
+            <div className="rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 min-h-[430px]">
+              <img
+                src="https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80"
+                alt="Oficina moderna profesional"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="absolute bottom-5 left-5 md:bottom-6 md:left-6 bg-white rounded-2xl shadow-xl p-4 md:p-5 border border-gray-100 max-w-[320px]">
+              <p className="text-sm text-gray-500 mb-1">Nuestra visión</p>
+              <p className="font-bold text-gray-900 text-lg mb-1">
+                Espacios más funcionales y duraderos
+              </p>
+              <p className="text-gray-700 text-sm leading-relaxed">
+                Queremos que cada cliente sienta que su mobiliario le aporta más
+                comodidad, mejor rendimiento y una inversión mejor aprovechada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* QUIÉNES SOMOS */}
+      <section className="py-20 bg-gray-50 border-t border-b border-gray-100">
+        <div className="max-w-5xl mx-auto text-center px-4">
+          <div className="flex items-center justify-center gap-2 text-orange-600 mb-4">
+            <Sparkles size={18} />
+            <span className="text-sm font-semibold uppercase tracking-wide">
+              Quiénes somos
+            </span>
+          </div>
+
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            No somos solo una empresa de muebles
+          </h2>
+
+          <div className="w-20 h-1 bg-orange-500 rounded-full mx-auto mb-6"></div>
+
+          <p className="text-lg md:text-xl text-gray-700 leading-relaxed max-w-4xl mx-auto">
+            En Muebles DisOffice entendemos que un espacio de trabajo no se
+            resuelve únicamente comprando muebles. Muchas veces la mejor decisión
+            está en adaptar, optimizar, reparar o mejorar lo que ya existe para
+            que funcione mejor, dure más y responda realmente al usuario.
           </p>
         </div>
+      </section>
 
-        {/* Historia / identidad */}
-        <div className="grid md:grid-cols-2 gap-10 items-start mb-16">
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Más que vender mobiliario, ofrecemos soluciones
+      {/* PROPUESTA DE VALOR */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Lo que nos hace diferentes
             </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              En Muebles DisOffice entendemos que cada espacio de trabajo necesita más que muebles:
-              necesita comodidad, funcionalidad y soluciones que realmente se adapten al usuario.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Por eso no nos enfocamos solo en la venta. También ayudamos a recuperar,
-              mejorar y optimizar mobiliario de oficina para extender su vida útil y
-              aprovechar mejor cada espacio.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Nuestro enfoque combina asesoría personalizada, atención cercana y soluciones prácticas
-              para empresas, oficinas, instituciones y personas que buscan mobiliario funcional y duradero.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Nuestro valor no está solo en vender mobiliario, sino en ofrecer
+              soluciones útiles, prácticas y bien pensadas para cada cliente.
             </p>
           </div>
-
-          <div className="bg-gray-50 rounded-2xl p-8 shadow-sm">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              Lo que nos diferencia
-            </h3>
-            <ul className="space-y-4 text-gray-700">
-              <li>✔ No solo vendemos: adaptamos, optimizamos y mejoramos.</li>
-              <li>✔ Ayudamos a ahorrar al aprovechar mejor el mobiliario existente.</li>
-              <li>✔ Ofrecemos soluciones según el espacio y la necesidad real del cliente.</li>
-              <li>✔ Combinamos funcionalidad, comodidad y durabilidad.</li>
-              <li>✔ Brindamos atención personalizada en Cali.</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Valores */}
-        <div className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-10">
-            Nuestro enfoque
-          </h2>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Funcionalidad
+            <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200 h-full text-center hover:shadow-md transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Wrench size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                Adaptación y mejora
               </h3>
               <p className="text-gray-700">
-                Diseñamos y proponemos soluciones que realmente respondan al uso diario,
-                al espacio disponible y a las necesidades del cliente.
+                No nos limitamos a suministrar mobiliario. También lo adaptamos,
+                mejoramos y optimizamos para que se ajuste mejor al espacio y al usuario.
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Comodidad
+            <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200 h-full text-center hover:shadow-md transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <ShieldCheck size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                Soluciones duraderas
               </h3>
               <p className="text-gray-700">
-                Buscamos que cada puesto de trabajo aporte bienestar, mejor postura y una
-                experiencia más cómoda para quien lo usa.
+                Buscamos que cada intervención represente una inversión mejor
+                aprovechada, con más funcionalidad, más durabilidad y más valor.
               </p>
             </div>
 
-            <div className="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Durabilidad
+            <div className="bg-gray-50 p-7 rounded-2xl shadow-sm border border-gray-200 h-full text-center hover:shadow-md transition">
+              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+                <Building2 size={28} />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                Enfoque profesional
               </h3>
               <p className="text-gray-700">
-                Apostamos por soluciones prácticas que alarguen la vida útil del mobiliario
-                y representen una inversión más inteligente.
+                Atendemos empresas, oficinas e instituciones con una visión más
+                seria, cercana y orientada a resolver necesidades reales.
               </p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Cierre */}
-        <div className="bg-gray-900 text-white rounded-2xl p-8 md:p-10 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Queremos que tu mobiliario trabaje a tu favor
+      {/* VISIÓN Y ENFOQUE */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-8">
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+            <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+              <Target size={28} />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Nuestra visión
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Queremos consolidarnos como una marca reconocida por ofrecer
+              soluciones en mobiliario de oficina que combinen funcionalidad,
+              comodidad, adaptación y durabilidad, generando más valor para cada cliente.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
+            <div className="w-14 h-14 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-5">
+              <Sparkles size={28} />
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Nuestro enfoque
+            </h3>
+            <p className="text-gray-700 leading-relaxed">
+              Creemos en una forma más inteligente de trabajar el mobiliario:
+              evaluar cada caso, proponer soluciones útiles y ayudar a que los
+              espacios funcionen mejor sin caer siempre en el reemplazo total.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA FINAL */}
+      <section className="py-20 bg-gray-900 text-center text-white">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Construimos espacios de trabajo con más valor
           </h2>
-          <p className="text-gray-300 max-w-3xl mx-auto mb-6">
-            En Muebles DisOffice creemos que un buen espacio de trabajo no solo se ve bien:
-            debe funcionar bien, durar y adaptarse a quienes lo usan.
+
+          <p className="text-gray-300 mb-8 text-lg">
+            Si buscas una empresa que no solo venda mobiliario, sino que también
+            te ayude a optimizarlo y aprovecharlo mejor, estamos listos para ayudarte.
           </p>
+
           <a
             href="https://wa.me/573177110447"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full text-lg font-semibold transition"
+            className="inline-flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition"
           >
-            Hablar por WhatsApp
+            <MessageCircle size={20} />
+            Hablar con un asesor
           </a>
         </div>
-      </div>
+      </section>
     </section>
   );
 };
