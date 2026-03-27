@@ -7,7 +7,39 @@ import {
   Briefcase,
   Wrench,
   MessageCircle,
+  PlayCircle,
+  Image as ImageIcon,
 } from "lucide-react";
+
+const visualCases = [
+  {
+    type: "image",
+    title: "Mejor ajuste al usuario",
+    media:
+      "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80",
+    beforeAfter: "Antes → Después",
+    description:
+      "Adaptaciones enfocadas en postura, comodidad y funcionalidad para jornadas de trabajo más cómodas.",
+  },
+  {
+    type: "video",
+    title: "Optimización del espacio",
+    media:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    beforeAfter: "Antes → Después",
+    description:
+      "Mejoras pensadas para aprovechar mejor el entorno, la distribución y el uso diario del mobiliario.",
+  },
+  {
+    type: "image",
+    title: "Mejora del mobiliario",
+    media:
+      "https://images.unsplash.com/photo-1497366412874-3415097a27e7?auto=format&fit=crop&w=1200&q=80",
+    beforeAfter: "Antes → Después",
+    description:
+      "Ajustes y optimizaciones que permiten alargar la vida útil del mobiliario sin reemplazar todo.",
+  },
+];
 
 const AdaptacionPage = () => {
   return (
@@ -25,7 +57,9 @@ const AdaptacionPage = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto lg:mx-0 mb-8">
-              Ajustamos, optimizamos y transformamos mobiliario de oficina para mejorar comodidad, postura, funcionalidad y durabilidad sin necesidad de reemplazar todo.
+              Ajustamos, optimizamos y transformamos mobiliario de oficina para
+              mejorar comodidad, postura, funcionalidad y durabilidad sin necesidad
+              de reemplazar todo.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
@@ -49,27 +83,31 @@ const AdaptacionPage = () => {
               </a>
             </div>
 
-            {/* BENEFICIOS RÁPIDOS */}
             <div className="grid sm:grid-cols-3 gap-4 text-sm text-gray-700">
-              {[
-                ["Más comodidad", "Mejor uso diario del mobiliario"],
-                ["Más ahorro", "Menos reemplazos innecesarios"],
-                ["Más funcionalidad", "Soluciones adaptadas a tu espacio"],
-              ].map(([title, desc], i) => (
-                <div key={i} className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
-                  <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
-                  <p className="font-semibold text-gray-900">{title}</p>
-                  <p>{desc}</p>
-                </div>
-              ))}
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Más comodidad</p>
+                <p>Mejor uso diario del mobiliario</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Más ahorro</p>
+                <p>Menos reemplazos innecesarios</p>
+              </div>
+
+              <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 text-center">
+                <CheckCircle2 className="mx-auto text-green-500 mb-2" size={20} />
+                <p className="font-semibold text-gray-900">Más funcionalidad</p>
+                <p>Soluciones adaptadas a tu espacio</p>
+              </div>
             </div>
           </div>
 
-          {/* IMAGEN */}
           <div className="relative">
             <div className="rounded-3xl overflow-hidden shadow-2xl bg-white border border-gray-200 min-h-[430px]">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c"
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
                 alt="Oficina moderna"
                 className="w-full h-full object-cover"
               />
@@ -97,11 +135,12 @@ const AdaptacionPage = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Mejoramos lo que ya tienes para que te sirva mejor
+            Mejora tu mobiliario sin reemplazarlo todo
           </h2>
 
           <p className="text-lg text-gray-700">
-            Identificamos cómo ajustar, reforzar o mejorar el mobiliario para que responda mejor al usuario, al espacio y al uso diario.
+            Identificamos cómo ajustar, mejorar y optimizar el mobiliario existente
+            para que responda mejor al usuario, al espacio y al uso diario.
           </p>
         </div>
       </section>
@@ -110,82 +149,196 @@ const AdaptacionPage = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
           {[
-            [Move, "Mejor ajuste al usuario", "Mejor postura, comodidad y funcionalidad"],
+            [Move, "Mejor ajuste al usuario", "Más comodidad y funcionalidad"],
             [LayoutGrid, "Mejor uso del espacio", "Optimización del entorno de trabajo"],
             [Briefcase, "Inversión más inteligente", "Menos gastos innecesarios"],
           ].map(([Icon, title, desc], i) => (
-            <div key={i} className="bg-gray-50 p-7 rounded-2xl border text-center h-full">
+            <div
+              key={i}
+              className="bg-gray-50 p-7 rounded-2xl border border-gray-200 text-center h-full shadow-sm hover:shadow-md transition"
+            >
               <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
                 <Icon size={28} />
               </div>
-              <h3 className="text-xl font-bold mb-2">{title}</h3>
+              <h3 className="text-xl font-bold mb-2 text-gray-900">{title}</h3>
               <p className="text-gray-600">{desc}</p>
             </div>
           ))}
+        </div>
+
+        <div className="max-w-4xl mx-auto text-center px-4 mt-10">
+          <p className="text-lg text-gray-600">
+            La función principal de este servicio es mostrar cómo mejoramos el
+            mobiliario existente y optimizamos los espacios de trabajo.
+          </p>
+        </div>
+      </section>
+
+      {/* CASOS VISUALES PREPARADOS */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Casos reales de adaptación ergonómica
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Esta sección está preparada para mostrar imágenes o videos de
+              antes y después, de forma que el cliente vea visualmente la mejora.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {visualCases.map((item, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition overflow-hidden"
+              >
+                <div className="p-6 text-center">
+                  <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+                    {item.type === "video" ? (
+                      <PlayCircle size={28} />
+                    ) : (
+                      <ImageIcon size={28} />
+                    )}
+                  </div>
+
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {item.title}
+                  </h3>
+                </div>
+
+                <div className="px-6 pb-4">
+                  <div className="relative rounded-xl overflow-hidden bg-gray-100">
+                    <img
+                      src={item.media}
+                      alt={item.title}
+                      className="w-full h-56 object-cover"
+                    />
+
+                    {item.type === "video" && (
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/10">
+                        <div className="bg-white/90 rounded-full p-3 shadow-md">
+                          <PlayCircle className="text-gray-800" size={36} />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="px-6 pb-6">
+                  <p className="text-orange-700 font-semibold text-xl mb-3">
+                    {item.beforeAfter}
+                  </p>
+                  <p className="text-gray-700 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* QUÉ ADAPTAMOS */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
-          {[
-            ["Sillas de oficina", "Ajustes ergonómicos, soporte lumbar, ruedas"],
-            ["Puestos de trabajo", "Distribución, comodidad y funcionalidad"],
-            ["Mobiliario complementario", "Archivadores, mesas y más"],
-          ].map(([title, desc], i) => (
-            <div key={i} className="bg-white p-7 rounded-2xl border text-center h-full">
-              <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
-                <Wrench size={28} />
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              ¿Qué podemos adaptar o mejorar?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Trabajamos sobre diferentes tipos de mobiliario para optimizar su uso,
+              comodidad y funcionalidad.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              [
+                "Sillas de oficina",
+                "Ajustes de altura, brazos, soporte lumbar, mecanismos, ruedas y otros componentes que influyen directamente en la comodidad.",
+                ["Ajuste ergonómico", "Mejor soporte", "Mejor experiencia de uso"],
+              ],
+              [
+                "Puestos de trabajo",
+                "Adecuaciones que ayudan a mejorar distribución, funcionalidad, comodidad y aprovechamiento del espacio.",
+                ["Optimización del espacio", "Mejor disposición", "Uso más práctico"],
+              ],
+              [
+                "Mobiliario complementario",
+                "Mejoras en archivadores, mesas u otros elementos para reforzar su uso, su estructura o su adaptación a nuevas necesidades.",
+                ["Más funcionalidad", "Más durabilidad", "Mejor aprovechamiento"],
+              ],
+            ].map(([title, desc, bullets], i) => (
+              <div
+                key={i}
+                className="bg-white p-7 rounded-2xl border border-gray-200 text-center h-full shadow-sm hover:shadow-md transition"
+              >
+                <div className="w-14 h-14 mx-auto rounded-2xl bg-gray-100 text-gray-900 flex items-center justify-center mb-4">
+                  <Wrench size={28} />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
+                <p className="text-gray-600 mb-5">{desc}</p>
+                <ul className="space-y-2 text-gray-700">
+                  {bullets.map((b, idx) => (
+                    <li key={idx}>✔ {b}</li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="text-xl font-bold mb-2">{title}</h3>
-              <p className="text-gray-600">{desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* PROCESO */}
-      <section className="py-20 bg-white text-center">
-        <h2 className="text-3xl font-bold mb-10">
-          ¿Cómo trabajamos este servicio?
-        </h2>
+      <section className="py-20 bg-gray-50 text-center">
+        <div className="max-w-5xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-10 text-gray-900">
+            ¿Cómo trabajamos este servicio?
+          </h2>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-6 px-4">
-          {[
-            "Escuchamos tu necesidad",
-            "Evaluamos el mobiliario",
-            "Proponemos solución",
-            "Ejecutamos mejora",
-          ].map((step, i) => (
-            <div key={i} className="bg-gray-50 p-6 rounded-xl border text-center">
-              <div className="w-10 h-10 mx-auto rounded-full bg-orange-500 text-white flex items-center justify-center mb-3">
-                {i + 1}
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              "Escuchamos tu necesidad",
+              "Evaluamos el mobiliario y el espacio",
+              "Proponemos la mejor adaptación",
+              "Ejecutamos la mejora",
+            ].map((step, i) => (
+              <div
+                key={i}
+                className="bg-white p-6 rounded-xl border border-gray-200 text-center shadow-sm hover:shadow-md transition"
+              >
+                <div className="w-12 h-12 mx-auto rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mb-3 font-bold">
+                  {i + 1}
+                </div>
+                <p className="font-semibold text-gray-900">{step}</p>
               </div>
-              <p className="font-semibold">{step}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-20 bg-gray-900 text-white text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          ¿Quieres mejorar tu mobiliario sin reemplazar todo?
-        </h2>
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            ¿Te gustaría ver cómo podemos mejorar tu mobiliario?
+          </h2>
 
-        <p className="text-gray-300 mb-8">
-          Recibe una solución funcional, cómoda y ajustada a tu espacio.
-        </p>
+          <p className="text-gray-300 mb-8 text-lg">
+            Recibe una asesoría personalizada para adaptar y optimizar lo que ya tienes.
+          </p>
 
-        <a
-          href="https://wa.me/573177110447"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 bg-green-500 px-8 py-4 rounded-full font-semibold"
-        >
-          <MessageCircle size={20} />
-          Hablar con un asesor
-        </a>
+          <a
+            href="https://wa.me/573177110447"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 px-8 py-4 rounded-full font-semibold transition"
+          >
+            <MessageCircle size={20} />
+            Hablar con un asesor
+          </a>
+        </div>
       </section>
     </section>
   );
