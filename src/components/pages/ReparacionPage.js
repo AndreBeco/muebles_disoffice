@@ -25,9 +25,10 @@ const visualCases = [
   },
   {
     type: "video",
-    title: "Mantenimiento funcional",
-    media:
+    media: "/videos/reparacion1.mp4",
+    poster:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    title: "Mantenimiento funcional",
     beforeAfter: "Antes → Después",
     description:
       "Intervenciones pensadas para prevenir daños mayores y conservar el mobiliario en mejores condiciones.",
@@ -153,9 +154,21 @@ const ReparacionPage = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
           {[
-            [ShieldCheck, "Mejor funcionamiento", "Corregimos fallas que afectan estabilidad y uso diario"],
-            [RefreshCw, "Más vida útil", "Reforzar y mantener a tiempo alarga el tiempo de uso"],
-            [Hammer, "Ahorro frente al reemplazo", "Menos gasto al evitar comprar nuevo sin necesidad"],
+            [
+              ShieldCheck,
+              "Mejor funcionamiento",
+              "Corregimos fallas que afectan estabilidad y uso diario",
+            ],
+            [
+              RefreshCw,
+              "Más vida útil",
+              "Reforzar y mantener a tiempo alarga el tiempo de uso",
+            ],
+            [
+              Hammer,
+              "Ahorro frente al reemplazo",
+              "Menos gasto al evitar comprar nuevo sin necesidad",
+            ],
           ].map(([Icon, title, desc], i) => (
             <div
               key={i}
@@ -186,9 +199,8 @@ const ReparacionPage = () => {
               Casos reales de reparación y mantenimiento
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Esta sección queda preparada para mostrar imágenes o videos de
-              antes y después, de forma que el cliente vea visualmente la mejora
-              lograda en cada intervención.
+              Mira cómo recuperamos mobiliario real para devolverle funcionalidad,
+              mejor presentación y mayor vida útil.
             </p>
           </div>
 
@@ -214,18 +226,19 @@ const ReparacionPage = () => {
 
                 <div className="px-6 pb-4">
                   <div className="relative rounded-xl overflow-hidden bg-gray-100">
-                    <img
-                      src={item.media}
-                      alt={item.title}
-                      className="w-full h-56 object-cover"
-                    />
-
-                    {item.type === "video" && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-                        <div className="bg-white/90 rounded-full p-3 shadow-md">
-                          <PlayCircle className="text-gray-800" size={36} />
-                        </div>
-                      </div>
+                    {item.type === "video" ? (
+                      <video
+                        src={item.media}
+                        poster={item.poster}
+                        controls
+                        className="w-full h-56 object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={item.media}
+                        alt={item.title}
+                        className="w-full h-56 object-cover"
+                      />
                     )}
                   </div>
                 </div>
@@ -331,7 +344,7 @@ const ReparacionPage = () => {
       <section className="py-20 bg-gray-900 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            ¿Tu mobiliario necesita reparación o mantenimiento?
+            ¿Tu mobiliario no está funcionando como debería?
           </h2>
 
           <p className="text-gray-300 mb-8 text-lg">
