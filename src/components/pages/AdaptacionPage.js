@@ -23,9 +23,10 @@ const visualCases = [
   },
   {
     type: "video",
-    title: "Optimización del espacio",
-    media:
+    media: "/videos/adaptacion1.mp4",
+    poster:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    title: "Optimización del espacio",
     beforeAfter: "Antes → Después",
     description:
       "Mejoras pensadas para aprovechar mejor el entorno, la distribución y el uso diario del mobiliario.",
@@ -182,8 +183,8 @@ const AdaptacionPage = () => {
               Casos reales de adaptación ergonómica
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Esta sección está preparada para mostrar imágenes o videos de
-              antes y después, de forma que el cliente vea visualmente la mejora.
+              Mira cómo transformamos mobiliario real en soluciones más funcionales,
+              cómodas y duraderas.
             </p>
           </div>
 
@@ -209,18 +210,19 @@ const AdaptacionPage = () => {
 
                 <div className="px-6 pb-4">
                   <div className="relative rounded-xl overflow-hidden bg-gray-100">
-                    <img
-                      src={item.media}
-                      alt={item.title}
-                      className="w-full h-56 object-cover"
-                    />
-
-                    {item.type === "video" && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-                        <div className="bg-white/90 rounded-full p-3 shadow-md">
-                          <PlayCircle className="text-gray-800" size={36} />
-                        </div>
-                      </div>
+                    {item.type === "video" ? (
+                      <video
+                        src={item.media}
+                        poster={item.poster}
+                        controls
+                        className="w-full h-56 object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={item.media}
+                        alt={item.title}
+                        className="w-full h-56 object-cover"
+                      />
                     )}
                   </div>
                 </div>
@@ -322,7 +324,7 @@ const AdaptacionPage = () => {
       <section className="py-20 bg-gray-900 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            ¿Te gustaría ver cómo podemos mejorar tu mobiliario?
+            ¿Tu mobiliario no está funcionando como debería?
           </h2>
 
           <p className="text-gray-300 mb-8 text-lg">
