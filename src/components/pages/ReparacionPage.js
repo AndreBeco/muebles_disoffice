@@ -6,14 +6,14 @@ import {
   ShieldCheck,
   RefreshCw,
   MessageCircle,
-  PlayCircle,
-  Image as ImageIcon,
   Armchair,
   LayoutGrid,
   Briefcase,
 } from "lucide-react";
 
-const visualCases = [
+import BeforeAfterSection from "../BeforeAfterSection";
+
+const reparacionCases = [
   {
     type: "image",
     title: "Recuperación de sillas",
@@ -22,16 +22,17 @@ const visualCases = [
     beforeAfter: "Antes → Después",
     description:
       "Reparaciones enfocadas en estabilidad, comodidad y mejor desempeño para prolongar la vida útil del mobiliario.",
+    result: "Mayor estabilidad y mejor experiencia de uso.",
   },
   {
-    type: "video",
-    media: "/videos/reparacion1.mp4",
-    poster:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    type: "image",
     title: "Mantenimiento funcional",
+    media:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
     beforeAfter: "Antes → Después",
     description:
       "Intervenciones pensadas para prevenir daños mayores y conservar el mobiliario en mejores condiciones.",
+    result: "Menos fallas y mejor durabilidad del mobiliario.",
   },
   {
     type: "image",
@@ -41,6 +42,7 @@ const visualCases = [
     beforeAfter: "Antes → Después",
     description:
       "Mejoras estructurales y correctivas que ayudan a recuperar funcionalidad sin reemplazar todo.",
+    result: "Más funcionalidad y ahorro frente al reemplazo.",
   },
 ];
 
@@ -130,25 +132,13 @@ const ReparacionPage = () => {
         </div>
       </section>
 
-      {/* ENFOQUE */}
-      <section className="py-20 bg-gray-50 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="flex justify-center items-center gap-2 text-orange-600 mb-4">
-            <Sparkles size={18} />
-            <span className="text-sm font-semibold uppercase">Nuestro enfoque</span>
-          </div>
-
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-            Cuidar tu mobiliario también es una inversión inteligente
-          </h2>
-
-          <p className="text-lg text-gray-700">
-            Reparar y mantener a tiempo ayuda a conservar funcionalidad,
-            estabilidad, presentación y durabilidad sin caer siempre en el
-            reemplazo total.
-          </p>
-        </div>
-      </section>
+      {/* ANTES Y DESPUÉS */}
+      <BeforeAfterSection
+        title="Casos reales de reparación y mantenimiento"
+        subtitle="Mira cómo recuperamos mobiliario real para devolverle funcionalidad, mejor presentación y mayor vida útil."
+        items={reparacionCases}
+        bgClass="bg-gray-50"
+      />
 
       {/* BENEFICIOS */}
       <section className="py-16 bg-white">
@@ -191,74 +181,8 @@ const ReparacionPage = () => {
         </div>
       </section>
 
-      {/* CASOS VISUALES PREPARADOS */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Casos reales de reparación y mantenimiento
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Mira cómo recuperamos mobiliario real para devolverle funcionalidad,
-              mejor presentación y mayor vida útil.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {visualCases.map((item, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition overflow-hidden"
-              >
-                <div className="p-6 text-center">
-                  <div className="w-14 h-14 mx-auto rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
-                    {item.type === "video" ? (
-                      <PlayCircle size={28} />
-                    ) : (
-                      <ImageIcon size={28} />
-                    )}
-                  </div>
-
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    {item.title}
-                  </h3>
-                </div>
-
-                <div className="px-6 pb-4">
-                  <div className="relative rounded-xl overflow-hidden bg-gray-100">
-                    {item.type === "video" ? (
-                      <video
-                        src={item.media}
-                        poster={item.poster}
-                        controls
-                        className="w-full h-56 object-cover"
-                      />
-                    ) : (
-                      <img
-                        src={item.media}
-                        alt={item.title}
-                        className="w-full h-56 object-cover"
-                      />
-                    )}
-                  </div>
-                </div>
-
-                <div className="px-6 pb-6">
-                  <p className="text-orange-700 font-semibold text-xl mb-3">
-                    {item.beforeAfter}
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* QUÉ REPARAMOS */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -313,7 +237,7 @@ const ReparacionPage = () => {
       </section>
 
       {/* PROCESO */}
-      <section className="py-20 bg-gray-50 text-center">
+      <section className="py-20 bg-white text-center">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-gray-900">
             ¿Cómo trabajamos este servicio?
@@ -328,7 +252,7 @@ const ReparacionPage = () => {
             ].map((step, i) => (
               <div
                 key={i}
-                className="bg-white p-6 rounded-xl border border-gray-200 text-center shadow-sm hover:shadow-md transition"
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 text-center shadow-sm hover:shadow-md transition"
               >
                 <div className="w-12 h-12 mx-auto rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mb-3 font-bold">
                   {i + 1}
